@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 | V8按钮修正版</title>
+  <title>小郑AI外贸工具站 | V10行业通用版</title>
   <meta name="description" content="小郑AI外贸工具站，为B2B外贸人提供AI工具、阿里国际站运营方法、客户跟进话术、广告诊断模板和付费资料项目。" />
   <style>
     :root {
@@ -656,6 +656,157 @@
       text-align: center;
     }
 
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .scenario-card,
+    .article-card,
+    .case-card,
+    .faq-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .scenario-card h3,
+    .article-card h3,
+    .case-card h3,
+    .faq-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .scenario-card p,
+    .article-card p,
+    .case-card p,
+    .faq-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .article-meta {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .case-kpi {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .case-kpi div {
+      background: #f8f9ff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .case-kpi strong {
+      display: block;
+      color: var(--primary);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .case-kpi span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .roadmap-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.04);
+    }
+
+    .roadmap-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .roadmap-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cta-strip {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-strip p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .check-list {
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 900;
+    }
+
     @media (max-width: 1050px) {
       .hero-grid,
       .split,
@@ -667,17 +818,23 @@
         max-width: 760px;
       }
 
-      .grid-4 {
+      .grid-4,
+      .scenario-grid,
+      .article-grid,
+      .case-grid,
+      .roadmap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 900px) {
-      .section-head {
+      .section-head,
+      .cta-strip {
         grid-template-columns: 1fr;
       }
 
-      .pricing {
+      .pricing,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -703,6 +860,10 @@
 
       .stats,
       .grid-4,
+      .scenario-grid,
+      .article-grid,
+      .case-grid,
+      .roadmap,
       .demo-grid {
         grid-template-columns: 1fr;
       }
@@ -723,7 +884,9 @@
       </a>
       <nav class="nav-links">
         <a href="#tools">免费工具</a>
-        <a href="#learn">学习路径</a>
+        <a href="#industries">适用行业</a>
+        <a href="#articles">学习内容</a>
+        <a href="#cases">案例库</a>
         <a href="#paid">付费项目</a>
         <a href="#contact">联系我</a>
         <a href="#tools" class="nav-cta">开始使用</a>
@@ -739,7 +902,7 @@
             <div class="eyebrow"><span class="dot"></span> AI外贸运营 · 工具 · 模板 · 实战</div>
             <h1>用AI提升<span class="gradient-text">外贸运营、询盘转化</span>和阿里投流效率</h1>
             <p class="hero-subtitle">
-              这里为B2B外贸人整理可直接使用的AI工具、运营模板、客户跟进话术、广告诊断方法和实战学习资料。
+              这里为不同行业的B2B外贸人整理可直接使用的AI工具、运营模板、客户跟进话术、广告诊断方法和实战学习资料。
               不讲空泛概念，只解决外贸日常工作里的真实问题。
             </p>
             <div class="actions">
@@ -749,8 +912,8 @@
             <div class="tags">
               <span class="tag">询盘分级</span>
               <span class="tag">客户跟进</span>
-              <span class="tag">阿里标题关键词</span>
-              <span class="tag">广告数据体检</span>
+              <span class="tag">标题关键词</span>
+              <span class="tag">广告/产品数据体检</span>
               <span class="tag">AI智能体搭建</span>
             </div>
           </div>
@@ -793,7 +956,7 @@
           </div>
           <div class="stat">
             <div class="stat-number">B2B</div>
-            <div class="stat-label">围绕外贸真实场景</div>
+            <div class="stat-label">适配多行业外贸场景</div>
           </div>
           <div class="stat">
             <div class="stat-number">AI</div>
@@ -810,14 +973,14 @@
             <div class="eyebrow"><span class="dot"></span> Free Tools</div>
             <h2>免费AI外贸工具</h2>
           </div>
-          <p>第一版先提供4个核心工具入口，适合外贸运营、业务员、SOHO和中小B2B企业老板做快速判断。</p>
+          <p>第一版先提供4个核心工具入口，不限制产品类目，适合机械、家居、服装、包装、电子、礼品、工业品等不同B2B行业做快速判断。</p>
         </div>
 
         <div class="grid-4">
           <article class="card">
             <div class="icon">📩</div>
             <h3>B2B询盘分级工具</h3>
-            <p>输入客户国家、采购数量、产品类型和当前状态，判断客户等级和跟进优先级。</p>
+            <p>输入客户国家、采购数量、产品/行业类型和当前状态，判断客户等级和跟进优先级。</p>
             <ul class="list">
               <li>客户等级 A/B/C/D</li>
               <li>成交概率判断</li>
@@ -843,7 +1006,7 @@
           <article class="card">
             <div class="icon">🔎</div>
             <h3>阿里标题关键词生成器</h3>
-            <p>根据产品名称、核心关键词、应用场景和目标客户，生成更偏B端的标题和关键词包。</p>
+            <p>根据产品名称/类目、核心关键词、应用场景和目标客户，生成更偏B端的标题和关键词包。</p>
             <ul class="list">
               <li>2条产品标题</li>
               <li>核心关键词包</li>
@@ -873,7 +1036,7 @@
               <div class="eyebrow"><span class="dot"></span> Demo</div>
               <h2>B2B询盘分级工具 · 试用版</h2>
             </div>
-            <p>这是第一版前端演示工具，不需要后台。填写基础信息后，会生成一个简单的客户分级和跟进方向。</p>
+            <p>这是第一版前端演示工具，不限制行业类目。填写任意产品/行业信息后，会生成一个简单的客户分级和跟进方向。</p>
           </div>
 
           <div class="demo-grid">
@@ -881,8 +1044,8 @@
               <label for="country">客户国家</label>
               <input id="country" placeholder="例如：United Kingdom / Spain / USA" />
 
-              <label for="product">产品类型</label>
-              <input id="product" placeholder="例如：Coffee Set / Barware Set / Drinkware Set" />
+              <label for="product">产品/行业类型</label>
+              <input id="product" placeholder="例如：Machinery / Home Goods / Apparel / Packaging / Electronics" />
 
               <label for="quantity">采购数量</label>
               <input id="quantity" type="number" placeholder="例如：500" />
@@ -928,8 +1091,8 @@
 
           <div class="demo-grid">
             <div>
-              <label for="followProduct">产品类型</label>
-              <input id="followProduct" placeholder="例如：Coffee Set / Barware Set / Drinkware Set" />
+              <label for="followProduct">产品/行业类型</label>
+              <input id="followProduct" placeholder="例如：Machinery / Home Goods / Apparel / Packaging / Electronics" />
 
               <label for="followCountry">客户国家</label>
               <input id="followCountry" placeholder="例如：Spain / UK / USA / Malaysia" />
@@ -983,11 +1146,11 @@
 
           <div class="demo-grid">
             <div>
-              <label for="titleProduct">产品名称</label>
-              <input id="titleProduct" placeholder="例如：Barware Set / Coffee Set / Drinkware Set" />
+              <label for="titleProduct">产品名称/类目</label>
+              <input id="titleProduct" placeholder="例如：Machinery / Home Goods / Apparel / Packaging / Electronics" />
 
               <label for="coreKeyword">核心关键词</label>
-              <input id="coreKeyword" placeholder="例如：Wine Glass Set / Drinkware Set / Kitchen Utensil Set" />
+              <input id="coreKeyword" placeholder="例如：Custom Packaging Box / CNC Router / Women Jacket / LED Strip Light" />
 
               <label for="targetBuyer">目标客户</label>
               <select id="targetBuyer">
@@ -1000,20 +1163,20 @@
 
               <label for="application">应用场景</label>
               <select id="application">
-                <option value="gift">Gift / Promotional / Corporate Gift</option>
-                <option value="home">Home / Kitchen / Daily Use</option>
-                <option value="bar">Bar / Restaurant / Hotel</option>
-                <option value="outdoor">Outdoor / Camping / Party</option>
-                <option value="holiday">Holiday / Christmas / Seasonal Promotion</option>
+                <option value="wholesale">Wholesale / Bulk Purchase</option>
+                <option value="retail">Retail / E-commerce / Store Sales</option>
+                <option value="industrial">Industrial / Commercial Use</option>
+                <option value="customProject">Custom Project / OEM ODM</option>
+                <option value="promotion">Promotion / Gift / Seasonal Campaign</option>
               </select>
 
-              <label for="packageType">包装方式</label>
+              <label for="packageType">包装/交付方式</label>
               <select id="packageType">
-                <option value="custom">Custom Logo Packaging</option>
-                <option value="giftbox">Gift Box Packaging</option>
-                <option value="window">Window Color Box</option>
+                <option value="custom">Custom Logo / Custom Packaging</option>
+                <option value="standard">Standard Export Packaging</option>
                 <option value="bulk">Bulk Packing</option>
-                <option value="premium">Premium Gift Packaging</option>
+                <option value="retail">Retail Packaging</option>
+                <option value="premium">Premium / Gift Packaging</option>
               </select>
 
               <label for="titleFeature">核心卖点</label>
@@ -1078,6 +1241,243 @@
                 提醒：广告诊断要结合产品利润、国家质量、买家等级和聊天质量。工具结果适合作为每周复盘初筛。
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="industries">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Multi-industry</div>
+            <h2>不限制产品类目，适合不同B2B行业使用</h2>
+          </div>
+          <p>工具里的“产品类型”都是开放输入，不绑定某一个行业。无论你做的是设备、服装、包装、家居、电子还是礼品，都可以按自己的业务填写。</p>
+        </div>
+
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <h3>机械设备 / 工业品</h3>
+            <p>适合用于设备询盘分级、项目客户跟进、技术参数沟通、报价后推进和广告产品初筛。</p>
+          </div>
+          <div class="scenario-card">
+            <h3>服装 / 配饰 / 纺织</h3>
+            <p>适合用于OEM/ODM询盘判断、样品后跟进、尺码材质沟通、标题关键词和季节性推广。</p>
+          </div>
+          <div class="scenario-card">
+            <h3>包装 / 印刷 / 定制品</h3>
+            <p>适合用于定制需求确认、MOQ解释、打样推进、报价后跟进和私标客户开发。</p>
+          </div>
+          <div class="scenario-card">
+            <h3>家居 / 礼品 / 日用品</h3>
+            <p>适合用于批发商、礼品商、电商客户的产品方案推荐、英文话术和关键词生成。</p>
+          </div>
+          <div class="scenario-card">
+            <h3>电子配件 / 消耗品</h3>
+            <p>适合用于规格确认、批量采购跟进、价格梯度沟通和广告数据初步诊断。</p>
+          </div>
+          <div class="scenario-card">
+            <h3>美妆个护 / 宠物 / 其他类目</h3>
+            <p>只要是B2B外贸询盘、产品发布、客户跟进和广告复盘场景，都可以用这套工具框架。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Use Cases</div>
+            <h2>这些工具适合解决哪些外贸问题？</h2>
+          </div>
+          <p>不是做一个好看的网页，而是把日常外贸运营里最频繁、最消耗时间的动作工具化。</p>
+        </div>
+
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <h3>新询盘进来，不知道优先级</h3>
+            <p>用询盘分级工具快速判断客户是A类重点客户、B类可推进客户，还是只适合低频跟进。</p>
+            <ul class="check-list">
+              <li>适合业务员每日筛客户</li>
+              <li>适合运营复盘询盘质量</li>
+              <li>适合老板判断团队跟进重点</li>
+            </ul>
+          </div>
+
+          <div class="scenario-card">
+            <h3>客户已读未回，不知道怎么追</h3>
+            <p>用客户跟进话术生成器，根据客户卡点生成不同语气的话术，避免每次都只会说“Any update?”。</p>
+            <ul class="check-list">
+              <li>报价后跟进</li>
+              <li>嫌价格贵应对</li>
+              <li>MOQ太高应对</li>
+            </ul>
+          </div>
+
+          <div class="scenario-card">
+            <h3>产品发布时标题关键词没思路</h3>
+            <p>用标题关键词生成器快速生成B端采购标题、关键词包和详情页短文案，适合新品发布和老品优化。</p>
+            <ul class="check-list">
+              <li>阿里国际站产品发布</li>
+              <li>关键词扩展</li>
+              <li>B端卖点表达</li>
+            </ul>
+          </div>
+
+          <div class="scenario-card">
+            <h3>广告烧钱但不知道停哪个品</h3>
+            <p>用广告体检工具计算CTR、询盘率、CPC和CPL，帮助做每周广告初筛和产品暂停判断。</p>
+            <ul class="check-list">
+              <li>20点击无询盘初筛</li>
+              <li>高花费低转化判断</li>
+              <li>广告复盘前快速整理</li>
+            </ul>
+          </div>
+
+          <div class="scenario-card">
+            <h3>想做公众号引流但缺少工具入口</h3>
+            <p>你可以把这些工具作为公众号文章底部的引流入口，让用户先免费体验，再转化到资料包或陪跑。</p>
+            <ul class="check-list">
+              <li>文章引流到工具</li>
+              <li>工具承接信任</li>
+              <li>资料包完成低价转化</li>
+            </ul>
+          </div>
+
+          <div class="scenario-card">
+            <h3>想把AI外贸做成副业产品</h3>
+            <p>这个工具站可以作为你的第一个MVP，用来验证用户需求、沉淀案例、承接咨询和智能体定制。</p>
+            <ul class="check-list">
+              <li>免费工具积累流量</li>
+              <li>付费资料变现</li>
+              <li>高价服务转化</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Free Learning</div>
+            <h2>免费学习内容规划</h2>
+          </div>
+          <p>后续这里可以承接你的公众号内容，把文章、工具和资料包连成一条完整转化链路。</p>
+        </div>
+
+        <div class="article-grid">
+          <article class="article-card">
+            <span class="article-meta">AI外贸实战</span>
+            <h3>用AI做外贸，不是写文案，而是重做工作流</h3>
+            <p>讲清楚AI在询盘分析、客户跟进、产品发布、广告复盘里的真实用法，适合作为网站第一篇导流文章。</p>
+          </article>
+
+          <article class="article-card">
+            <span class="article-meta">阿里运营</span>
+            <h3>阿里国际站产品标题怎么写，才更偏B端采购？</h3>
+            <p>围绕核心关键词、采购场景、客户类型、包装定制和工厂能力，拆解高曝光标题的组合逻辑。</p>
+          </article>
+
+          <article class="article-card">
+            <span class="article-meta">询盘转化</span>
+            <h3>客户已读未回，不一定是没兴趣，可能是你没给下一步</h3>
+            <p>从价格、MOQ、交期、信任感、方案不清晰五个角度，拆解客户不回复的真实原因和跟进方式。</p>
+          </article>
+
+          <article class="article-card">
+            <span class="article-meta">广告投流</span>
+            <h3>阿里广告每周复盘，先看这4个指标</h3>
+            <p>围绕点击率、询盘率、CPL、买家质量做广告初筛，帮助判断哪些产品继续跑、优化或暂停。</p>
+          </article>
+
+          <article class="article-card">
+            <span class="article-meta">客户开发</span>
+            <h3>外贸业务员如何用AI搭建自己的客户跟进SOP？</h3>
+            <p>把客户分层、话术生成、跟进节奏、复盘记录形成一套固定流程，而不是每天凭感觉跟客户。</p>
+          </article>
+
+          <article class="article-card">
+            <span class="article-meta">副业变现</span>
+            <h3>如何把AI外贸经验做成资料包、工具站和智能体服务？</h3>
+            <p>适合你后续做公众号、小红书和私域转化，用免费工具建立信任，用低价资料完成第一次付费。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Case Library</div>
+            <h2>后续可以沉淀的实战案例库</h2>
+          </div>
+          <p>案例不需要一开始很完整，但一定要真实、具体、可复盘。这里先预留3类最适合你变现的案例入口。</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <h3>案例1：广告账户体检</h3>
+            <p>把客户广告数据导入后，筛选高点击无询盘、高花费低转化、可继续放量的产品，并输出调整动作。</p>
+            <div class="case-kpi">
+              <div><strong>20+</strong><span>点击无询盘筛查</span></div>
+              <div><strong>7-14天</strong><span>观察周期</span></div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <h3>案例2：询盘跟进优化</h3>
+            <p>针对已读未回、嫌价格贵、MOQ太高、样品后无反馈的客户，拆解卡点并生成英文跟进话术。</p>
+            <div class="case-kpi">
+              <div><strong>A/B/C</strong><span>客户分层</span></div>
+              <div><strong>3轮</strong><span>跟进节奏</span></div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <h3>案例3：产品标题关键词优化</h3>
+            <p>针对阿里产品标题C端化、关键词堆砌、点击率低的问题，重写B端标题和关键词组合。</p>
+            <div class="case-kpi">
+              <div><strong>128</strong><span>标题字符控制</span></div>
+              <div><strong>B2B</strong><span>采购场景表达</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Update Plan</div>
+            <h2>工具站后续更新路线</h2>
+          </div>
+          <p>第一版先跑通“免费工具 + 付费资料 + 联系转化”，后面再逐步增加更强的自动化和会员功能。</p>
+        </div>
+
+        <div class="roadmap">
+          <div class="roadmap-item">
+            <strong>V1：免费工具站</strong>
+            <span>完成4个前端工具，适合发布到公众号、小红书和朋友圈做第一轮测试。</span>
+          </div>
+          <div class="roadmap-item">
+            <strong>V2：资料包转化</strong>
+            <span>增加资料包详情页、购买说明、微信/公众号二维码和领取流程。</span>
+          </div>
+          <div class="roadmap-item">
+            <strong>V3：案例库升级</strong>
+            <span>加入广告诊断、询盘跟进、标题优化的真实案例，提高用户信任。</span>
+          </div>
+          <div class="roadmap-item">
+            <strong>V4：智能体服务</strong>
+            <span>升级为行业智能体定制入口，承接399元起的陪跑和企业定制服务。</span>
           </div>
         </div>
       </div>
@@ -1172,6 +1572,66 @@
       </div>
     </section>
 
+
+    <section id="faq">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> FAQ</div>
+            <h2>常见问题</h2>
+          </div>
+          <p>这一部分可以降低用户使用门槛，也能提前回答“这个工具适不适合我”的问题。</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>这些工具是完全自动AI吗？</h3>
+            <p>当前第一版是前端规则工具，不需要登录，也不连接后台AI接口。它的优势是打开快、使用简单、适合免费体验。</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>工具生成的内容可以直接发给客户吗？</h3>
+            <p>可以作为初稿使用，但建议结合客户真实聊天记录、产品价格、交期和公司政策再微调，会更自然。</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>适合哪些行业？</h3>
+            <p>适合大部分B2B外贸行业，包括机械设备、家居用品、服装配件、包装材料、美妆个护、电子配件、礼品定制、工业品和消耗品等。</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>付费资料和免费工具有什么区别？</h3>
+            <p>免费工具解决单点问题，付费资料会提供完整提示词、SOP表格、话术库、案例模板和实操教程。</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>可以帮我的行业定制智能体吗？</h3>
+            <p>可以。后续可以根据你的产品、客户类型、平台数据和业务流程，定制询盘分析、标题关键词、广告诊断等智能体。</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>这个网站后续怎么变现？</h3>
+            <p>建议路径是：公众号文章引流 → 免费工具体验 → 49/99资料包 → 私域沉淀 → 智能体定制/陪跑/代运营咨询。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="final-cta">
+      <div class="site">
+        <div class="cta-strip">
+          <div>
+            <h2>先用免费工具跑起来，再慢慢做成你的AI外贸产品体系</h2>
+            <p>第一版的重点不是完美，而是让用户能使用、能理解、能联系你。后续每一次更新，都围绕“工具更好用、内容更可信、转化更清晰”。</p>
+          </div>
+          <div class="actions" style="margin:0;">
+            <a class="btn btn-primary" href="#tools">返回使用工具</a>
+            <a class="btn btn-light" href="#contact">联系领取资料</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="site">
         <div class="contact-box">
@@ -1209,7 +1669,7 @@
   </main>
 
   <footer>
-    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V8</div>
+    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V10</div>
   </footer>
 
   <script>
@@ -1252,7 +1712,7 @@
         probability = "中高";
         pain = "客户有一定兴趣，但还需要通过方案、价格梯度或样品降低决策成本。";
         action = "建议继续跟进，重点确认预算、用途、目标市场和是否能接受MOQ。";
-        message = "Hi, to recommend the most suitable option, may I know your target market and expected budget? We can also offer different set combinations to help match your price range.";
+        message = "Hi, to recommend the most suitable option, may I know your target market and expected budget? We can also offer different product configurations to help match your price range.";
       } else if (score >= 25) {
         level = "C类培育客户";
         probability = "中低";
@@ -1269,7 +1729,7 @@
 
       const result =
 `客户国家：${country}
-产品类型：${product}
+产品/行业类型：${product}
 采购数量：${quantity || "未填写"}
 
 客户等级：${level}
@@ -1312,12 +1772,12 @@ ${message}`;
         strategy = "不要直接催单，先用“补充价值 + 低压力确认”的方式重新打开对话。";
         whatsapp = `Hi, just checking if you had a chance to review our quotation for ${product}. If you need, I can also prepare a more cost-effective option for your ${country} market.`;
         alibaba = `Hi, I would like to follow up on the quotation we sent for ${product}. To help you compare more easily, we can also provide another option based on your target price or packaging requirement.`;
-        email = `Hi,\n\nI hope you are doing well. I just wanted to follow up on our quotation for ${product}.\n\nIf the current option is not fully matching your budget, we can also adjust the set combination, packaging, or material to make it more suitable for your ${country} market.\n\nMay I know if this project is still under consideration?\n\nBest regards`;
+        email = `Hi,\n\nI hope you are doing well. I just wanted to follow up on our quotation for ${product}.\n\nIf the current option is not fully matching your budget, we can also adjust the product configuration, packaging, or material to make it more suitable for your ${country} market.\n\nMay I know if this project is still under consideration?\n\nBest regards`;
       } else if (status === "expensive") {
         strategy = "不要马上降价，先拆分价格原因，再给客户两个方案：基础款和升级款。";
         whatsapp = `I understand your concern about the price. For ${product}, we can check a basic version and an upgraded version for you, so you can compare both options more easily.`;
-        alibaba = `Thanks for your feedback. The price depends on the material, set combination and packaging. We can help adjust the solution to better match your target budget.`;
-        email = `Hi,\n\nThank you for your feedback. I understand that price is an important point for this project.\n\nFor ${product}, the cost is mainly affected by material, set combination, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.\n\nCould you share your target price range? Then we can recommend the most suitable solution.\n\nBest regards`;
+        alibaba = `Thanks for your feedback. The price depends on the material, product configuration and packaging. We can help adjust the solution to better match your target budget.`;
+        email = `Hi,\n\nThank you for your feedback. I understand that price is an important point for this project.\n\nFor ${product}, the cost is mainly affected by material, product configuration, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.\n\nCould you share your target price range? Then we can recommend the most suitable solution.\n\nBest regards`;
       } else if (status === "moq") {
         strategy = "先解释MOQ原因，再提供样品/试单/简化包装方案，避免客户直接流失。";
         whatsapp = `Our standard MOQ is mainly for customized production and packaging. If you want to test first, we can start with a sample order before bulk production.`;
@@ -1331,13 +1791,13 @@ ${message}`;
       } else if (status === "thinking") {
         strategy = "客户说考虑一下时，要给一个决策辅助点，比如库存、交期、方案有效期或替代方案。";
         whatsapp = `No problem. To help with your decision, I can also prepare a short comparison of the available options for ${product}.`;
-        alibaba = `Sure, please take your time. If helpful, we can provide a comparison between different set combinations and packaging options.`;
-        email = `Hi,\n\nNo problem, please take your time to review.\n\nTo make your decision easier, we can also prepare a simple comparison for ${product}, including different set combinations, packaging options and estimated lead time.\n\nWould this be helpful for your evaluation?\n\nBest regards`;
+        alibaba = `Sure, please take your time. If helpful, we can provide a comparison between different product configurations and packaging options.`;
+        email = `Hi,\n\nNo problem, please take your time to review.\n\nTo make your decision easier, we can also prepare a simple comparison for ${product}, including different product configurations, packaging options and estimated lead time.\n\nWould this be helpful for your evaluation?\n\nBest regards`;
       } else {
         strategy = "老客户再开发不要一上来推销，先用新品/趋势/促销节点重新激活。";
         whatsapp = `Hi, long time no talk. We recently updated some new ${product} options that may be suitable for your market. Would you like me to share a quick catalog?`;
         alibaba = `Hi, we have recently updated several new options for ${product}. Since you checked similar products before, I thought these might be useful for your next purchasing plan.`;
-        email = `Hi,\n\nI hope everything is going well.\n\nWe recently updated some new ${product} options, including different set combinations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.\n\nWould you like me to share the latest options for your review?\n\nBest regards`;
+        email = `Hi,\n\nI hope everything is going well.\n\nWe recently updated some new ${product} options, including different product configurations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.\n\nWould you like me to share the latest options for your review?\n\nBest regards`;
       }
 
       let goalText = {
@@ -1356,7 +1816,7 @@ ${message}`;
 
       const result =
 `客户状态：${statusMap[status]}
-产品类型：${product}
+产品/行业类型：${product}
 客户市场：${country}
 
 跟进策略：
@@ -1381,7 +1841,7 @@ ${email}
     }
 
     function generateTitleKeywords() {
-      const product = document.getElementById("titleProduct").value.trim() || "Custom Product Set";
+      const product = document.getElementById("titleProduct").value.trim() || "Custom B2B Product";
       const core = document.getElementById("coreKeyword").value.trim() || product;
       const buyer = document.getElementById("targetBuyer").value;
       const app = document.getElementById("application").value;
@@ -1397,18 +1857,18 @@ ${email}
       };
 
       const appMap = {
-        gift: "Corporate Gift Promotional Gift",
-        home: "Home Kitchen Daily Use",
-        bar: "Bar Restaurant Hotel",
-        outdoor: "Outdoor Camping Party",
-        holiday: "Holiday Christmas Seasonal Promotion"
+        wholesale: "Wholesale Bulk Purchase",
+        retail: "Retail E-commerce Store Sales",
+        industrial: "Industrial Commercial Use",
+        customProject: "Custom Project OEM ODM",
+        promotion: "Promotion Gift Seasonal Campaign"
       };
 
       const packMap = {
-        custom: "Custom Logo Packaging",
-        giftbox: "Gift Box Packaging",
-        window: "Window Color Box",
+        custom: "Custom Logo Custom Packaging",
+        standard: "Standard Export Packaging",
         bulk: "Bulk Packing",
+        retail: "Retail Packaging",
         premium: "Premium Gift Packaging"
       };
 
@@ -1437,11 +1897,11 @@ ${email}
       ];
 
       const sellingPoints =
-`1. Support OEM/ODM customization for B2B buyers.
-2. Multiple packaging options available, including ${packMap[pack]}.
+`1. Suitable for B2B buyers across different industries.
+2. Support OEM/ODM, private label, custom specifications or custom packaging when applicable.
 3. Suitable for ${buyerMap[buyer]} and ${appMap[app]} scenarios.
-4. Factory direct supply, flexible solution based on target budget.
-5. Can adjust set combination, logo process and packaging according to order quantity.`;
+4. Factory direct or supplier-direct solution based on target budget and order quantity.
+5. Product specifications, packaging, material, size or configuration can be adjusted based on project requirements.`;
 
       const detailText =
 `This ${product} is designed for ${buyerMap[buyer]} looking for ${appMap[app]} solutions. We support ${feature}, ${packMap[pack]}, and flexible OEM/ODM customization for bulk orders.`;
@@ -1466,7 +1926,7 @@ ${sellingPoints}
 ${detailText}
 
 优化提醒：
-标题优先顺序建议：核心关键词 + Wholesale/Custom/OEM + 产品属性 + 应用场景 + 包装/客户类型。`;
+标题优先顺序建议：核心关键词 + Wholesale/Custom/OEM + 产品属性/规格 + 应用场景 + 目标客户类型。`;
 
       document.getElementById("titleResult").textContent = result;
     }

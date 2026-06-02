@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 | AI外贸运营学习与工具平台</title>
+  <title>小郑AI外贸工具站 V3 | AI外贸运营学习与工具平台</title>
   <meta name="description" content="小郑AI外贸工具站，为B2B外贸人提供AI工具、阿里国际站运营方法、客户跟进话术、广告诊断模板和付费资料项目。" />
   <style>
     :root {
@@ -127,10 +127,14 @@
     .hero-grid {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 46px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+      gap: 56px;
       align-items: center;
       width: 100%;
+    }
+
+    .hero-left {
+      min-width: 0;
     }
 
     .eyebrow {
@@ -303,20 +307,22 @@
       background: linear-gradient(90deg, var(--accent), var(--success));
     }
 
-    .stats {
+    .hero-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin: 34px 0 10px;
+      gap: 14px;
+      margin: 24px 0 0;
       width: 100%;
+      max-width: 760px;
     }
 
     .stat {
       background: white;
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 18px 16px;
       box-shadow: 0 10px 30px rgba(16, 24, 40, 0.04);
+      min-width: 0;
     }
 
     .stat-number {
@@ -328,8 +334,9 @@
 
     .stat-label {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
       margin-top: 4px;
+      line-height: 1.45;
     }
 
     section {
@@ -693,12 +700,16 @@
       font-size: 14px;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1080px) {
       .hero-grid, .split, .contact {
         grid-template-columns: 1fr;
       }
 
-      .cards-grid, .pricing-grid, .stats {
+      .hero-card {
+        max-width: 720px;
+      }
+
+      .cards-grid, .pricing-grid, .hero-stats {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -726,7 +737,7 @@
         padding-top: 48px;
       }
 
-      .cards-grid, .pricing-grid, .stats, .demo-grid {
+      .cards-grid, .pricing-grid, .hero-stats, .demo-grid {
         grid-template-columns: 1fr;
       }
 

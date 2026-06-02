@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 | V16去除转化FAQ版</title>
+  <title>小郑AI外贸工具站 | V19去除转化FAQ版</title>
   <meta name="description" content="小郑AI外贸工具站，为B2B外贸人提供AI工具、阿里国际站运营方法、客户跟进话术、广告诊断模板和付费资料项目。" />
   <style>
     :root {
@@ -848,45 +848,36 @@
     }
 
 
-    .ops-tools-grid {
+    .image-preview {
+      margin-top: 12px;
+      width: 100%;
+      min-height: 160px;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      background: #fbfcff;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .ops-tool-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-      display: flex;
-      flex-direction: column;
-      min-height: 270px;
-    }
-
-    .ops-tool-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .ops-tool-card p {
+      place-items: center;
+      overflow: hidden;
       color: var(--muted);
-      margin: 0 0 16px;
-      font-size: 14.5px;
+      font-size: 14px;
+      text-align: center;
+      padding: 12px;
     }
 
-    .ops-tool-card .card-action {
-      margin-top: auto;
+    .image-preview img {
+      max-width: 100%;
+      max-height: 260px;
+      display: block;
+      border-radius: 14px;
     }
 
-    .tool-note {
+    .tool-disclaimer {
       margin-top: 16px;
       padding: 14px 16px;
-      background: #f8f9ff;
-      border: 1px solid var(--line);
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
       border-radius: 18px;
-      color: var(--muted);
+      color: #9a3412;
       font-size: 14px;
     }
 
@@ -906,7 +897,6 @@
       .scenario-grid,
       .article-grid,
       .case-grid,
-      .ops-tools-grid,
       .roadmap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -948,7 +938,6 @@
       .scenario-grid,
       .article-grid,
       .case-grid,
-      .ops-tools-grid,
       .roadmap,
       .demo-grid {
         grid-template-columns: 1fr;
@@ -970,7 +959,7 @@
       </a>
       <nav class="nav-links">
         <a href="#tools">免费工具</a>
-        <a href="#ops-tools">运营辅助</a>
+        <a href="#image-tools">图片工具</a>
         <a href="#industries">适用行业</a>
         <a href="#articles">学习内容</a>
         <a href="#cases">案例库</a>
@@ -1034,7 +1023,7 @@
 
         <div class="stats">
           <div class="stat">
-            <div class="stat-number">7+</div>
+            <div class="stat-number">6+</div>
             <div class="stat-label">免费AI工具入口</div>
           </div>
           <div class="stat">
@@ -1115,7 +1104,76 @@
             </ul>
             <div class="card-action"><a href="#ad-demo" class="mini-btn">试用工具</a></div>
           </article>
+
+          <article class="card">
+            <div class="icon">图</div>
+            <h3>图片水印/多余文字处理助手</h3>
+            <p>适合处理自有或已授权图片里的水印、多余文字、杂乱背景和平台标识。点击后跳转到 Pic Copilot 使用。</p>
+            <ul class="list">
+              <li>去除水印/多余文字</li>
+              <li>优化产品图干净度</li>
+              <li>适合产品图/包装图</li>
+              <li>仅限授权图片</li>
+            </ul>
+            <div class="card-action"><a href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener" class="mini-btn">跳转使用</a></div>
+          </article>
+
+          <article class="card">
+            <div class="icon">译</div>
+            <h3>图片翻译改图助手</h3>
+            <p>适合产品图、包装图、海报图，把图片里的文字翻译成目标语言并替换成新的图片文字。</p>
+            <ul class="list">
+              <li>图片文字翻译</li>
+              <li>替换图片内文案</li>
+              <li>适合多语言市场</li>
+              <li>跳转 Pic Copilot 使用</li>
+            </ul>
+            <div class="card-action"><a href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener" class="mini-btn">跳转使用</a></div>
+          </article>
         </div>
+
+        <div class="demo" id="image-tools">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> Image Tools</div>
+              <h2>图片处理工具入口</h2>
+            </div>
+            <p>图片类工具需要专业AI图片处理能力，当前页面提供跳转入口，点击后前往 Pic Copilot 使用去水印和图片翻译功能。</p>
+          </div>
+
+          <div class="demo-grid">
+            <div class="scenario-card">
+              <h3>图片去水印 / 清理多余文字</h3>
+              <p>适合处理自有或已授权图片中的水印、平台标识、多余文字和杂乱背景，让产品图更干净。</p>
+              <ul class="check-list">
+                <li>产品主图清洁</li>
+                <li>包装图文字清理</li>
+                <li>海报图视觉优化</li>
+              </ul>
+              <div class="card-action" style="margin-top:18px;">
+                <a class="btn btn-primary" href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener">跳转 Pic Copilot 使用</a>
+              </div>
+            </div>
+
+            <div class="scenario-card">
+              <h3>图片文字翻译 / 替换图片文案</h3>
+              <p>适合把产品图、包装图、详情页图、宣传图里的文字翻译成英文、西语、法语等目标语言。</p>
+              <ul class="check-list">
+                <li>多语言产品图</li>
+                <li>包装文案翻译</li>
+                <li>海外市场素材本地化</li>
+              </ul>
+              <div class="card-action" style="margin-top:18px;">
+                <a class="btn btn-primary" href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener">跳转 Pic Copilot 使用</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="notice">
+            使用提醒：图片处理请仅用于自有、已授权或可合法编辑的素材。涉及品牌、版权、平台水印的图片，请先确认授权和使用范围。
+          </div>
+        </div>
+
 
         <div id="demo" class="demo">
           <div class="section-head" style="margin-bottom:10px;">
@@ -1342,191 +1400,6 @@
               <div class="notice">
                 提醒：广告诊断要结合产品利润、国家质量、买家等级和聊天质量。工具结果适合作为每周复盘初筛。
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-    <section id="ops-tools">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Operation Tools</div>
-            <h2>外贸运营辅助工具区</h2>
-          </div>
-          <p>参考跨境导航类工具的常用入口，先做成免费轻量版。用户输入行业、关键词或公司信息后，获得查询方向和运营判断，不直接开放完整数据抓取。</p>
-        </div>
-
-        <div class="ops-tools-grid">
-          <article class="ops-tool-card">
-            <div class="icon">国</div>
-            <h3>国际站行业TOP榜参考</h3>
-            <p>输入行业关键词，生成该行业适合关注的榜单维度、TOP产品观察点和选品/广告复盘方向。</p>
-            <ul class="list">
-              <li>行业热度判断</li>
-              <li>TOP产品观察维度</li>
-              <li>选品复盘建议</li>
-            </ul>
-            <div class="card-action"><a href="#ranking-demo" class="mini-btn">试用工具</a></div>
-          </article>
-
-          <article class="ops-tool-card">
-            <div class="icon">词</div>
-            <h3>国际站关键词查询助手</h3>
-            <p>输入行业关键词，输出核心词、长尾词、B端采购词和标题组合建议，适合新品发布前做初筛。</p>
-            <ul class="list">
-              <li>核心词拆解</li>
-              <li>长尾词扩展</li>
-              <li>B端标题方向</li>
-            </ul>
-            <div class="card-action"><a href="#keyword-demo" class="mini-btn">试用工具</a></div>
-          </article>
-
-          <article class="ops-tool-card">
-            <div class="icon">公</div>
-            <h3>公司信息查询清单</h3>
-            <p>输入客户或同行公司名称，生成背景调查清单，帮助判断客户真实性、采购可能性和跟进优先级。</p>
-            <ul class="list">
-              <li>客户背景核查</li>
-              <li>同行信息分析</li>
-              <li>跟进优先级判断</li>
-            </ul>
-            <div class="card-action"><a href="#company-demo" class="mini-btn">试用工具</a></div>
-          </article>
-        </div>
-
-        <div class="tool-note">
-          说明：当前是免费轻量版，不连接外部数据库，也不抓取实时平台数据。完整版后续可以做成“查询入口 + 数据记录模板 + AI分析报告”的付费工具。
-        </div>
-
-        <div id="ranking-demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>国际站行业TOP榜参考 · 轻量版</h2>
-            </div>
-            <p>输入行业关键词后，生成适合观察的TOP榜维度和运营动作，帮助你做选品、标题和广告复盘。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="rankIndustry">行业/产品关键词</label>
-              <input id="rankIndustry" placeholder="例如：Packaging Machine / Women Apparel / LED Light / Pet Supplies" />
-
-              <label for="rankGoal">你的使用目的</label>
-              <select id="rankGoal">
-                <option value="selection">选品参考</option>
-                <option value="ads">广告复盘</option>
-                <option value="title">标题关键词优化</option>
-                <option value="competitor">竞品观察</option>
-              </select>
-
-              <label for="rankMarket">目标市场</label>
-              <select id="rankMarket">
-                <option value="Global">全球市场</option>
-                <option value="North America">北美市场</option>
-                <option value="Europe">欧洲市场</option>
-                <option value="Middle East">中东市场</option>
-                <option value="South America">南美市场</option>
-              </select>
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateRankingGuide()">生成TOP榜参考</button>
-            </div>
-
-            <div>
-              <label>生成结果</label>
-              <div class="output" id="rankingResult">请填写左侧信息，然后点击“生成TOP榜参考”。</div>
-              <div class="notice">免费版只输出观察框架，不提供实时TOP榜数据。完整版可结合表格记录和AI复盘做更深分析。</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="keyword-demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>国际站关键词查询助手 · 轻量版</h2>
-            </div>
-            <p>输入核心关键词后，自动扩展B端采购词、长尾词、标题组合方向和详情页卖点方向。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="kwSeed">核心关键词</label>
-              <input id="kwSeed" placeholder="例如：custom packaging box / cnc machine / yoga wear" />
-
-              <label for="kwBuyer">目标客户</label>
-              <select id="kwBuyer">
-                <option value="wholesale buyers">批发采购商</option>
-                <option value="brand owners">品牌商</option>
-                <option value="retail chains">连锁零售商</option>
-                <option value="ecommerce sellers">电商卖家</option>
-                <option value="project buyers">项目采购商</option>
-              </select>
-
-              <label for="kwScene">应用场景</label>
-              <select id="kwScene">
-                <option value="bulk order">批量采购</option>
-                <option value="custom project">定制项目</option>
-                <option value="private label">私标/OEM</option>
-                <option value="retail packaging">零售包装</option>
-                <option value="industrial use">工业/商业使用</option>
-              </select>
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateKeywordGuide()">生成关键词方向</button>
-            </div>
-
-            <div>
-              <label>生成结果</label>
-              <div class="output" id="keywordResult">请填写左侧信息，然后点击“生成关键词方向”。</div>
-              <div class="notice">免费版适合做关键词初筛。正式发布前仍建议结合平台搜索框、后台词表和广告数据二次验证。</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="company-demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>公司信息查询清单 · 轻量版</h2>
-            </div>
-            <p>输入客户/同行公司信息后，生成背景核查清单和跟进判断，适合报价前、重点客户跟进前使用。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="companyName">公司名称/客户名称</label>
-              <input id="companyName" placeholder="例如：ABC Trading LLC / XXX Import Co., Ltd." />
-
-              <label for="companyCountry">国家/地区</label>
-              <input id="companyCountry" placeholder="例如：USA / UK / UAE / Germany" />
-
-              <label for="companyRole">查询对象</label>
-              <select id="companyRole">
-                <option value="customer">潜在客户</option>
-                <option value="competitor">同行/竞品公司</option>
-                <option value="supplier">供应商/合作方</option>
-              </select>
-
-              <label for="companyStage">当前阶段</label>
-              <select id="companyStage">
-                <option value="beforeQuote">报价前</option>
-                <option value="afterQuote">报价后</option>
-                <option value="sample">样品阶段</option>
-                <option value="order">订单前确认</option>
-              </select>
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateCompanyChecklist()">生成查询清单</button>
-            </div>
-
-            <div>
-              <label>生成结果</label>
-              <div class="output" id="companyResult">请填写左侧信息，然后点击“生成查询清单”。</div>
-              <div class="notice">免费版只提供核查清单和判断框架，不直接查询外部公司数据库。</div>
             </div>
           </div>
         </div>
@@ -1917,7 +1790,7 @@
   </main>
 
   <footer>
-    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V16</div>
+    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V19</div>
   </footer>
 
   <script>
@@ -2268,140 +2141,6 @@ ${next}`;
       document.getElementById("adResult").textContent = result;
     }
 
-    function generateRankingGuide() {
-      const industry = document.getElementById("rankIndustry").value.trim() || "your industry";
-      const goal = document.getElementById("rankGoal").value;
-      const market = document.getElementById("rankMarket").value;
-
-      const goalText = {
-        selection: "选品参考",
-        ads: "广告复盘",
-        title: "标题关键词优化",
-        competitor: "竞品观察"
-      }[goal];
-
-      const focusMap = {
-        selection: "重点看高频产品形态、价格区间、MOQ、包装方式和是否支持OEM/ODM。",
-        ads: "重点看哪些产品适合持续投放，哪些只是有曝光但转化弱。",
-        title: "重点观察TOP产品标题前半段的核心词、属性词和B端采购词。",
-        competitor: "重点拆解同行的主图、标题、详情页首屏、包装和服务承诺。"
-      };
-
-      const result =
-`行业/关键词：${industry}
-目标市场：${market}
-使用目的：${goalText}
-
-建议观察的TOP榜维度：
-1. TOP产品标题前半段用了哪些核心关键词。
-2. 主图是否突出产品本体、使用场景、包装或工厂能力。
-3. 产品价格表达是否偏低价引流，还是偏定制方案。
-4. MOQ、交期、定制服务是否清晰。
-5. 是否突出Factory Direct / OEM ODM / Custom / Wholesale等B端词。
-6. 详情页前3屏是否解决买家最关心的问题。
-
-当前重点：
-${focusMap[goal]}
-
-运营动作建议：
-1. 记录10个同行TOP产品的标题、主图、价格、MOQ和卖点。
-2. 提炼3-5个高频关键词，用于自己的标题和广告词包。
-3. 找出同行没有讲清楚的点，作为你详情页的差异化内容。
-4. 如果用于广告复盘，优先对比“高点击有询盘”和“高点击无询盘”的产品差异。
-
-免费版提醒：
-当前只提供分析框架，不提供实时TOP榜数据。完整版可做成表格模板 + AI复盘报告。`;
-
-      document.getElementById("rankingResult").textContent = result;
-    }
-
-    function generateKeywordGuide() {
-      const seed = document.getElementById("kwSeed").value.trim() || "your product keyword";
-      const buyer = document.getElementById("kwBuyer").value;
-      const scene = document.getElementById("kwScene").value;
-
-      const coreWords = [
-        seed,
-        `wholesale ${seed}`,
-        `custom ${seed}`,
-        `${seed} supplier`,
-        `${seed} manufacturer`,
-        `${seed} factory`
-      ];
-
-      const b2bWords = [
-        `OEM ${seed}`,
-        `ODM ${seed}`,
-        `private label ${seed}`,
-        `bulk order ${seed}`,
-        `factory direct ${seed}`,
-        `custom logo ${seed}`
-      ];
-
-      const longTail = [
-        `${seed} for ${buyer}`,
-        `${seed} for ${scene}`,
-        `custom ${seed} for ${buyer}`,
-        `wholesale ${seed} for ${scene}`,
-        `${seed} with custom packaging`,
-        `${seed} bulk supplier`
-      ];
-
-      const result =
-`核心关键词：
-${coreWords.join(", ")}
-
-B端采购词：
-${b2bWords.join(", ")}
-
-长尾关键词方向：
-${longTail.join(", ")}
-
-标题组合建议：
-1. Wholesale ${seed} for ${buyer} with Custom Solution
-2. Custom ${seed} Manufacturer for ${scene} OEM ODM
-3. Factory Direct ${seed} Bulk Order Supplier for ${buyer}
-
-详情页卖点方向：
-1. 说明适合的采购客户：${buyer}
-2. 说明应用场景：${scene}
-3. 突出定制能力、供货能力、交期和包装方式。
-4. 避免只写产品参数，要补充B端客户为什么选择你。
-
-免费版提醒：
-这是关键词初筛方向。正式发布前建议结合平台搜索框、后台词表、广告数据和同行标题二次验证。`;
-
-      document.getElementById("keywordResult").textContent = result;
-    }
-
-    function generateCompanyChecklist() {
-      const name = document.getElementById("companyName").value.trim() || "未填写";
-      const country = document.getElementById("companyCountry").value.trim() || "未填写";
-      const role = document.getElementById("companyRole").value;
-      const stage = document.getElementById("companyStage").value;
-
-      const roleMap = {
-        customer: "潜在客户",
-        competitor: "同行/竞品公司",
-        supplier: "供应商/合作方"
-      };
-
-      const stageMap = {
-        beforeQuote: "报价前",
-        afterQuote: "报价后",
-        sample: "样品阶段",
-        order: "订单前确认"
-      };
-
-      let focus = "";
-      if (role === "customer") {
-        focus = "重点确认客户是否真实存在、是否有采购渠道、是否匹配你的产品定位，以及是否值得投入深度报价。";
-      } else if (role === "competitor") {
-        focus = "重点观察同行产品结构、价格表达、主图风格、关键词布局、定制能力和目标市场。";
-      } else {
-        focus = "重点核查对方供货能力、资质、交付稳定性、历史记录和合作风险。";
-      }
-
       const result =
 `查询对象：${name}
 国家/地区：${country}
@@ -2429,6 +2168,12 @@ ${focus}
 当前工具不直接联网查询公司数据库，只提供核查框架。完整版可升级为“公司信息记录表 + AI客户可信度评分”。`;
 
       document.getElementById("companyResult").textContent = result;
+    }
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.innerHTML = `<img src="${e.target.result}" alt="上传图片预览" />`;
+      };
+      reader.readAsDataURL(file);
     }
 
   </script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 | V5稳定对齐版</title>
+  <title>小郑AI外贸工具站 | V7全工具版</title>
   <meta name="description" content="小郑AI外贸工具站，为B2B外贸人提供AI工具、阿里国际站运营方法、客户跟进话术、广告诊断模板和付费资料项目。" />
   <style>
     :root {
@@ -837,7 +837,7 @@
               <li>MOQ太高应对</li>
               <li>样品后跟进</li>
             </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">即将开放</a></div>
+            <div class="card-action"><a href="#followup-demo" class="mini-btn">试用工具</a></div>
           </article>
 
           <article class="card">
@@ -850,7 +850,7 @@
               <li>B端卖点表达</li>
               <li>详情页短文案</li>
             </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">即将开放</a></div>
+            <div class="card-action"><a href="#title-demo" class="mini-btn">试用工具</a></div>
           </article>
 
           <article class="card">
@@ -863,7 +863,7 @@
               <li>CPL判断</li>
               <li>产品处理建议</li>
             </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">即将开放</a></div>
+            <div class="card-action"><a href="#ad-demo" class="mini-btn">试用工具</a></div>
           </article>
         </div>
 
@@ -912,6 +912,170 @@
               <div class="output" id="leadResult">请填写左侧信息，然后点击“生成客户分析”。</div>
               <div class="notice">
                 提醒：这个结果适合作为初步判断。真实成交还需要结合聊天记录、利润空间、交期、付款方式和客户背景一起判断。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="followup-demo" class="demo">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> Demo</div>
+              <h2>客户跟进话术生成器 · 试用版</h2>
+            </div>
+            <p>选择客户当前状态和沟通目标后，自动生成适合阿里站内信、WhatsApp和邮件使用的英文跟进话术。</p>
+          </div>
+
+          <div class="demo-grid">
+            <div>
+              <label for="followProduct">产品类型</label>
+              <input id="followProduct" placeholder="例如：Coffee Set / Barware Set / Drinkware Set" />
+
+              <label for="followCountry">客户国家</label>
+              <input id="followCountry" placeholder="例如：Spain / UK / USA / Malaysia" />
+
+              <label for="followStatus">客户当前状态</label>
+              <select id="followStatus">
+                <option value="noReply">报价后已读未回</option>
+                <option value="expensive">客户嫌价格贵</option>
+                <option value="moq">客户觉得MOQ太高</option>
+                <option value="sample">样品后未回复</option>
+                <option value="thinking">客户说再考虑一下</option>
+                <option value="oldCustomer">老客户再开发</option>
+              </select>
+
+              <label for="followGoal">你想推进的目标</label>
+              <select id="followGoal">
+                <option value="confirm">确认客户是否继续推进</option>
+                <option value="sample">推动客户先确认样品</option>
+                <option value="budget">确认客户目标预算</option>
+                <option value="order">推动客户尽快下单</option>
+                <option value="call">预约一次语音/视频沟通</option>
+              </select>
+
+              <label for="followTone">话术语气</label>
+              <select id="followTone">
+                <option value="soft">自然礼貌，不强推</option>
+                <option value="direct">直接推进成交</option>
+                <option value="professional">专业稳重，适合B端客户</option>
+              </select>
+
+              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateFollowup()">生成跟进话术</button>
+            </div>
+
+            <div>
+              <label>生成结果</label>
+              <div class="output" id="followResult">请填写左侧信息，然后点击“生成跟进话术”。</div>
+              <div class="notice">
+                提醒：生成话术后，建议你根据客户真实聊天记录再微调1-2句，会更自然，也更像真人业务员。
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="title-demo" class="demo">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> Demo</div>
+              <h2>阿里标题关键词生成器 · 试用版</h2>
+            </div>
+            <p>输入产品、核心关键词、包装方式和目标客户后，自动生成更偏B端采购场景的标题、关键词包和卖点表达。</p>
+          </div>
+
+          <div class="demo-grid">
+            <div>
+              <label for="titleProduct">产品名称</label>
+              <input id="titleProduct" placeholder="例如：Barware Set / Coffee Set / Drinkware Set" />
+
+              <label for="coreKeyword">核心关键词</label>
+              <input id="coreKeyword" placeholder="例如：Wine Glass Set / Drinkware Set / Kitchen Utensil Set" />
+
+              <label for="targetBuyer">目标客户</label>
+              <select id="targetBuyer">
+                <option value="wholesaler">批发商 / Distributor / Wholesaler</option>
+                <option value="brand">品牌商 / Private Label Brand</option>
+                <option value="gift">礼品客户 / Corporate Gift Buyer</option>
+                <option value="retail">商超零售 / Retail Chain</option>
+                <option value="ecommerce">电商卖家 / E-commerce Seller</option>
+              </select>
+
+              <label for="application">应用场景</label>
+              <select id="application">
+                <option value="gift">Gift / Promotional / Corporate Gift</option>
+                <option value="home">Home / Kitchen / Daily Use</option>
+                <option value="bar">Bar / Restaurant / Hotel</option>
+                <option value="outdoor">Outdoor / Camping / Party</option>
+                <option value="holiday">Holiday / Christmas / Seasonal Promotion</option>
+              </select>
+
+              <label for="packageType">包装方式</label>
+              <select id="packageType">
+                <option value="custom">Custom Logo Packaging</option>
+                <option value="giftbox">Gift Box Packaging</option>
+                <option value="window">Window Color Box</option>
+                <option value="bulk">Bulk Packing</option>
+                <option value="premium">Premium Gift Packaging</option>
+              </select>
+
+              <label for="titleFeature">核心卖点</label>
+              <input id="titleFeature" placeholder="例如：OEM ODM / Factory Direct / Custom Logo / Gift Set" />
+
+              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateTitleKeywords()">生成标题关键词</button>
+            </div>
+
+            <div>
+              <label>生成结果</label>
+              <div class="output" id="titleResult">请填写左侧信息，然后点击“生成标题关键词”。</div>
+              <div class="notice">
+                提醒：阿里标题建议控制在128字符以内，优先放核心词 + 产品属性 + B端采购场景，不要只堆关键词。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="ad-demo" class="demo">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> Demo</div>
+              <h2>阿里广告数据体检工具 · 试用版</h2>
+            </div>
+            <p>输入产品ID、曝光、点击、花费和询盘数后，自动判断产品是否建议继续跑、优化观察或暂停。</p>
+          </div>
+
+          <div class="demo-grid">
+            <div>
+              <label for="productId">产品ID</label>
+              <input id="productId" placeholder="例如：1601236849225" />
+
+              <label for="impressions">曝光量</label>
+              <input id="impressions" type="number" placeholder="例如：5000" />
+
+              <label for="clicks">点击量</label>
+              <input id="clicks" type="number" placeholder="例如：80" />
+
+              <label for="cost">广告花费</label>
+              <input id="cost" type="number" placeholder="例如：300" />
+
+              <label for="inquiries">询盘数</label>
+              <input id="inquiries" type="number" placeholder="例如：3" />
+
+              <label for="adMarket">目标市场</label>
+              <select id="adMarket">
+                <option value="欧美市场">欧美市场</option>
+                <option value="北美市场">北美市场</option>
+                <option value="欧洲市场">欧洲市场</option>
+                <option value="中东市场">中东市场</option>
+                <option value="南美市场">南美市场</option>
+                <option value="全球市场">全球市场</option>
+              </select>
+
+              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateAdDiagnosis()">生成广告体检</button>
+            </div>
+
+            <div>
+              <label>体检结果</label>
+              <div class="output" id="adResult">请填写左侧广告数据，然后点击“生成广告体检”。</div>
+              <div class="notice">
+                提醒：广告诊断要结合产品利润、国家质量、买家等级和聊天质量。工具结果适合作为每周复盘初筛。
               </div>
             </div>
           </div>
@@ -1123,6 +1287,279 @@ ${message}`;
 
       document.getElementById("leadResult").textContent = result;
     }
+    function generateFollowup() {
+      const product = document.getElementById("followProduct").value.trim() || "your product";
+      const country = document.getElementById("followCountry").value.trim() || "your market";
+      const status = document.getElementById("followStatus").value;
+      const goal = document.getElementById("followGoal").value;
+      const tone = document.getElementById("followTone").value;
+
+      const statusMap = {
+        noReply: "报价后已读未回",
+        expensive: "客户嫌价格贵",
+        moq: "客户觉得MOQ太高",
+        sample: "样品后未回复",
+        thinking: "客户说再考虑一下",
+        oldCustomer: "老客户再开发"
+      };
+
+      let strategy = "";
+      let whatsapp = "";
+      let alibaba = "";
+      let email = "";
+
+      if (status === "noReply") {
+        strategy = "不要直接催单，先用“补充价值 + 低压力确认”的方式重新打开对话。";
+        whatsapp = `Hi, just checking if you had a chance to review our quotation for ${product}. If you need, I can also prepare a more cost-effective option for your ${country} market.`;
+        alibaba = `Hi, I would like to follow up on the quotation we sent for ${product}. To help you compare more easily, we can also provide another option based on your target price or packaging requirement.`;
+        email = `Hi,\n\nI hope you are doing well. I just wanted to follow up on our quotation for ${product}.\n\nIf the current option is not fully matching your budget, we can also adjust the set combination, packaging, or material to make it more suitable for your ${country} market.\n\nMay I know if this project is still under consideration?\n\nBest regards`;
+      } else if (status === "expensive") {
+        strategy = "不要马上降价，先拆分价格原因，再给客户两个方案：基础款和升级款。";
+        whatsapp = `I understand your concern about the price. For ${product}, we can check a basic version and an upgraded version for you, so you can compare both options more easily.`;
+        alibaba = `Thanks for your feedback. The price depends on the material, set combination and packaging. We can help adjust the solution to better match your target budget.`;
+        email = `Hi,\n\nThank you for your feedback. I understand that price is an important point for this project.\n\nFor ${product}, the cost is mainly affected by material, set combination, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.\n\nCould you share your target price range? Then we can recommend the most suitable solution.\n\nBest regards`;
+      } else if (status === "moq") {
+        strategy = "先解释MOQ原因，再提供样品/试单/简化包装方案，避免客户直接流失。";
+        whatsapp = `Our standard MOQ is mainly for customized production and packaging. If you want to test first, we can start with a sample order before bulk production.`;
+        alibaba = `For customized ${product}, MOQ is related to production setup and packaging cost. If your quantity is still under discussion, we can first support sample checking.`;
+        email = `Hi,\n\nI understand the MOQ concern. For customized ${product}, MOQ is mainly required because of production setup, logo process and packaging cost.\n\nIf you are not ready for bulk order yet, we can first arrange samples for quality and packaging checking. After you confirm the sample, we can move forward with the bulk order plan.\n\nWould you like us to prepare the sample details first?\n\nBest regards`;
+      } else if (status === "sample") {
+        strategy = "样品后跟进要聚焦反馈，而不是只问是否下单。先问质量、包装、修改点，再推进订单。";
+        whatsapp = `Hi, may I know if you have received or checked the sample of ${product}? Any feedback on quality, packaging or logo effect would be helpful for the next step.`;
+        alibaba = `Hi, I would like to follow up on the sample checking status. Please let us know if there is anything you would like to adjust before bulk order.`;
+        email = `Hi,\n\nI hope the sample of ${product} has arrived safely.\n\nMay I know your feedback on the quality, packaging and overall presentation? If there is anything that needs to be adjusted, we can revise it before moving to bulk order.\n\nLooking forward to your comments.\n\nBest regards`;
+      } else if (status === "thinking") {
+        strategy = "客户说考虑一下时，要给一个决策辅助点，比如库存、交期、方案有效期或替代方案。";
+        whatsapp = `No problem. To help with your decision, I can also prepare a short comparison of the available options for ${product}.`;
+        alibaba = `Sure, please take your time. If helpful, we can provide a comparison between different set combinations and packaging options.`;
+        email = `Hi,\n\nNo problem, please take your time to review.\n\nTo make your decision easier, we can also prepare a simple comparison for ${product}, including different set combinations, packaging options and estimated lead time.\n\nWould this be helpful for your evaluation?\n\nBest regards`;
+      } else {
+        strategy = "老客户再开发不要一上来推销，先用新品/趋势/促销节点重新激活。";
+        whatsapp = `Hi, long time no talk. We recently updated some new ${product} options that may be suitable for your market. Would you like me to share a quick catalog?`;
+        alibaba = `Hi, we have recently updated several new options for ${product}. Since you checked similar products before, I thought these might be useful for your next purchasing plan.`;
+        email = `Hi,\n\nI hope everything is going well.\n\nWe recently updated some new ${product} options, including different set combinations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.\n\nWould you like me to share the latest options for your review?\n\nBest regards`;
+      }
+
+      let goalText = {
+        confirm: "当前目标：确认客户是否继续推进。",
+        sample: "当前目标：推动客户先确认样品。",
+        budget: "当前目标：确认客户目标预算。",
+        order: "当前目标：推动客户尽快下单。",
+        call: "当前目标：预约一次语音/视频沟通。"
+      }[goal];
+
+      let toneText = {
+        soft: "语气建议：自然礼貌，不要压迫客户。",
+        direct: "语气建议：可以更直接推进下一步动作。",
+        professional: "语气建议：保持专业、稳重，突出解决方案。"
+      }[tone];
+
+      const result =
+`客户状态：${statusMap[status]}
+产品类型：${product}
+客户市场：${country}
+
+跟进策略：
+${strategy}
+
+${goalText}
+${toneText}
+
+WhatsApp短话术：
+${whatsapp}
+
+阿里站内信话术：
+${alibaba}
+
+邮件跟进话术：
+${email}
+
+下一步建议：
+如果客户24-48小时内仍未回复，可以再补发一条“方案选择型”消息，例如：Would you prefer a more cost-effective option or a premium packaging option?`;
+
+      document.getElementById("followResult").textContent = result;
+    }
+
+    function generateTitleKeywords() {
+      const product = document.getElementById("titleProduct").value.trim() || "Custom Product Set";
+      const core = document.getElementById("coreKeyword").value.trim() || product;
+      const buyer = document.getElementById("targetBuyer").value;
+      const app = document.getElementById("application").value;
+      const pack = document.getElementById("packageType").value;
+      const feature = document.getElementById("titleFeature").value.trim() || "OEM ODM Custom Logo";
+
+      const buyerMap = {
+        wholesaler: "Wholesale Distributor",
+        brand: "Private Label Brand",
+        gift: "Corporate Gift Buyer",
+        retail: "Retail Chain Buyer",
+        ecommerce: "E-commerce Seller"
+      };
+
+      const appMap = {
+        gift: "Corporate Gift Promotional Gift",
+        home: "Home Kitchen Daily Use",
+        bar: "Bar Restaurant Hotel",
+        outdoor: "Outdoor Camping Party",
+        holiday: "Holiday Christmas Seasonal Promotion"
+      };
+
+      const packMap = {
+        custom: "Custom Logo Packaging",
+        giftbox: "Gift Box Packaging",
+        window: "Window Color Box",
+        bulk: "Bulk Packing",
+        premium: "Premium Gift Packaging"
+      };
+
+      const title1 = `Wholesale ${core} ${feature} for ${buyerMap[buyer]} with ${packMap[pack]}`;
+      const title2 = `Custom ${product} ${appMap[app]} ${packMap[pack]} OEM ODM Factory Direct`;
+
+      const keywords = [
+        core,
+        product,
+        `wholesale ${core}`,
+        `custom ${core}`,
+        `${core} supplier`,
+        `${core} manufacturer`,
+        `${product} factory`,
+        `OEM ${product}`,
+        `ODM ${product}`,
+        `${packMap[pack]}`,
+        `${appMap[app]}`,
+        `${buyerMap[buyer]}`,
+        "bulk order",
+        "factory direct",
+        "custom logo",
+        "gift set",
+        "B2B supplier",
+        "private label"
+      ];
+
+      const sellingPoints =
+`1. Support OEM/ODM customization for B2B buyers.
+2. Multiple packaging options available, including ${packMap[pack]}.
+3. Suitable for ${buyerMap[buyer]} and ${appMap[app]} scenarios.
+4. Factory direct supply, flexible solution based on target budget.
+5. Can adjust set combination, logo process and packaging according to order quantity.`;
+
+      const detailText =
+`This ${product} is designed for ${buyerMap[buyer]} looking for ${appMap[app]} solutions. We support ${feature}, ${packMap[pack]}, and flexible OEM/ODM customization for bulk orders.`;
+
+      const result =
+`高曝光标题1：
+${title1}
+
+高曝光标题2：
+${title2}
+
+核心关键词：
+${core}
+
+关键词包：
+${keywords.join(", ")}
+
+B端卖点表达：
+${sellingPoints}
+
+详情页短文案：
+${detailText}
+
+优化提醒：
+标题优先顺序建议：核心关键词 + Wholesale/Custom/OEM + 产品属性 + 应用场景 + 包装/客户类型。`;
+
+      document.getElementById("titleResult").textContent = result;
+    }
+
+    function generateAdDiagnosis() {
+      const productId = document.getElementById("productId").value.trim() || "未填写";
+      const impressions = Number(document.getElementById("impressions").value || 0);
+      const clicks = Number(document.getElementById("clicks").value || 0);
+      const cost = Number(document.getElementById("cost").value || 0);
+      const inquiries = Number(document.getElementById("inquiries").value || 0);
+      const market = document.getElementById("adMarket").value;
+
+      const ctr = impressions > 0 ? (clicks / impressions * 100) : 0;
+      const inquiryRate = clicks > 0 ? (inquiries / clicks * 100) : 0;
+      const cpc = clicks > 0 ? (cost / clicks) : 0;
+      const cpl = inquiries > 0 ? (cost / inquiries) : 0;
+
+      let status = "";
+      let action = "";
+      let issue = "";
+      let next = "";
+
+      if (clicks >= 20 && inquiries === 0) {
+        status = "建议暂停或降权观察";
+        issue = "产品已有一定点击，但没有产生询盘，可能存在主图、价格、详情页承接或客户不匹配问题。";
+        action = "先暂停高消耗投放，检查主图、标题、价格区间、MOQ和详情页卖点。";
+        next = "如果产品本身利润和供应链一般，建议暂停；如果是战略品，可换主图和标题后小预算测试。";
+      } else if (inquiries > 0 && inquiryRate >= 8) {
+        status = "建议继续投放，可适度加预算";
+        issue = "点击后询盘率较好，说明产品承接能力较强。";
+        action = "继续保留，并重点看询盘质量、买家等级和国家质量。";
+        next = "可以增加同类产品、扩展长尾关键词，并沉淀为优爆品模板。";
+      } else if (clicks > 0 && inquiryRate > 0 && inquiryRate < 5) {
+        status = "建议优化后继续观察";
+        issue = "产品有询盘但转化偏弱，说明不是完全无效，但承接效率不够。";
+        action = "优化首图、价格表达、MOQ说明、详情页前3屏和询盘入口。";
+        next = "再观察7-14天，如果点击继续增加但询盘无改善，再考虑暂停。";
+      } else if (impressions > 0 && ctr < 0.5) {
+        status = "建议优化标题和主图";
+        issue = "曝光有了但点击率偏低，说明买家看到后点击意愿不足。";
+        action = "优先换主图、标题前半段关键词和产品卖点表达。";
+        next = "用更强的B端词：Wholesale / Custom / OEM / Factory Direct / Gift Set。";
+      } else if (clicks < 20) {
+        status = "数据不足，继续观察";
+        issue = "点击量还不足，暂时不能判断产品真实转化能力。";
+        action = "先保持小预算测试，等点击累计到20-30以上再做暂停判断。";
+        next = "同步检查国家点击来源，避免预算被低质量市场消耗。";
+      } else {
+        status = "建议进入人工复盘";
+        issue = "数据处于中间状态，需要结合买家质量、产品利润和国家来源进一步判断。";
+        action = "查看点击国家、买家等级、详情页停留和询盘内容质量。";
+        next = "把该产品加入每周广告复盘表，和同类产品横向对比。";
+      }
+
+      const ctrText = ctr >= 1 ? "点击率表现尚可" : "点击率偏低，需要优化主图/标题";
+      const inquiryText = inquiryRate >= 8 ? "询盘率较好" : inquiryRate > 0 ? "询盘率偏弱，可优化承接" : "暂无询盘";
+      const cplText = inquiries > 0 ? `CPL约为 ${cpl.toFixed(2)}` : "暂无询盘，无法计算CPL";
+
+      const result =
+`产品ID：${productId}
+目标市场：${market}
+
+基础指标：
+曝光量：${impressions}
+点击量：${clicks}
+广告花费：${cost}
+询盘数：${inquiries}
+
+计算结果：
+CTR点击率：${ctr.toFixed(2)}%
+询盘率：${inquiryRate.toFixed(2)}%
+CPC平均点击成本：${cpc.toFixed(2)}
+${cplText}
+
+诊断结论：
+${status}
+
+指标判断：
+${ctrText}
+${inquiryText}
+
+核心问题：
+${issue}
+
+建议动作：
+${action}
+
+下一步：
+${next}`;
+
+      document.getElementById("adResult").textContent = result;
+    }
+
   </script>
 </body>
 </html>

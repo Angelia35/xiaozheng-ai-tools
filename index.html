@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 | V19去除转化FAQ版</title>
+  <title>小郑AI外贸工具站 | V21去除转化FAQ版</title>
   <meta name="description" content="小郑AI外贸工具站，为B2B外贸人提供AI工具、阿里国际站运营方法、客户跟进话术、广告诊断模板和付费资料项目。" />
   <style>
     :root {
@@ -881,6 +881,74 @@
       font-size: 14px;
     }
 
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .resource-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 285px;
+    }
+
+    .resource-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 14.5px;
+    }
+
+    .resource-card .card-action {
+      margin-top: auto;
+    }
+
+    .resource-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .contact-highlight {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-highlight div {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .contact-highlight strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-highlight span {
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+    }
+
     @media (max-width: 1050px) {
       .hero-grid,
       .split,
@@ -897,6 +965,8 @@
       .scenario-grid,
       .article-grid,
       .case-grid,
+      .resource-grid,
+      .contact-highlight,
       .roadmap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -938,6 +1008,8 @@
       .scenario-grid,
       .article-grid,
       .case-grid,
+      .resource-grid,
+      .contact-highlight,
       .roadmap,
       .demo-grid {
         grid-template-columns: 1fr;
@@ -961,6 +1033,7 @@
         <a href="#tools">免费工具</a>
         <a href="#image-tools">图片工具</a>
         <a href="#industries">适用行业</a>
+        <a href="#resources">资料领取</a>
         <a href="#articles">学习内容</a>
         <a href="#cases">案例库</a>
         <a href="#paid">付费项目</a>
@@ -983,7 +1056,7 @@
             </p>
             <div class="actions">
               <a class="btn btn-primary" href="#tools">免费使用工具 →</a>
-              <a class="btn btn-light" href="#paid">查看付费资料</a>
+              <a class="btn btn-light" href="#resources">领取免费资料</a>
             </div>
             <div class="tags">
               <span class="tag">询盘分级</span>
@@ -1637,6 +1710,73 @@
       </div>
     </section>
 
+
+    <section id="resources">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Free Resources</div>
+            <h2>免费资料领取区</h2>
+          </div>
+          <p>工具适合快速体验和判断方向，资料适合收藏复用。你可以先领取体验版模板，再根据自己的行业做调整。</p>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card">
+            <span class="resource-label">体验版</span>
+            <h3>AI外贸提示词体验包</h3>
+            <p>适合刚开始学习AI外贸的人，包含客户分析、标题关键词、跟进话术和广告复盘的基础提示词。</p>
+            <ul class="list">
+              <li>客户分析基础提示词</li>
+              <li>标题关键词基础提示词</li>
+              <li>跟进话术基础提示词</li>
+            </ul>
+            <div class="card-action"><a href="#contact" class="mini-btn">关注公众号领取</a></div>
+          </article>
+
+          <article class="resource-card">
+            <span class="resource-label">模板</span>
+            <h3>B2B客户跟进话术体验版</h3>
+            <p>适合报价后已读未回、客户嫌价格贵、MOQ太高、样品后未回复等常见场景。</p>
+            <ul class="list">
+              <li>WhatsApp短话术</li>
+              <li>阿里站内信话术</li>
+              <li>邮件跟进话术</li>
+            </ul>
+            <div class="card-action"><a href="#contact" class="mini-btn">回复关键词领取</a></div>
+          </article>
+
+          <article class="resource-card">
+            <span class="resource-label">表格</span>
+            <h3>广告体检表体验版</h3>
+            <p>适合每周广告初筛，记录曝光、点击、花费、询盘数、CPL和产品处理动作。</p>
+            <ul class="list">
+              <li>产品ID记录</li>
+              <li>CTR/询盘率/CPL</li>
+              <li>暂停/优化/观察判断</li>
+            </ul>
+            <div class="card-action"><a href="#contact" class="mini-btn">获取表格模板</a></div>
+          </article>
+
+          <article class="resource-card">
+            <span class="resource-label">清单</span>
+            <h3>AI外贸运营检查清单</h3>
+            <p>适合新手快速检查自己的产品发布、客户跟进、广告复盘和内容引流是否有遗漏。</p>
+            <ul class="list">
+              <li>产品发布检查</li>
+              <li>询盘跟进检查</li>
+              <li>广告复盘检查</li>
+            </ul>
+            <div class="card-action"><a href="#contact" class="mini-btn">领取检查清单</a></div>
+          </article>
+        </div>
+
+        <div class="notice" style="margin-top:18px;">
+          建议领取方式：关注公众号「小郑的运营笔记」，后续可设置自动回复关键词，例如「AI工具站」「提示词」「话术库」「广告表」。
+        </div>
+      </div>
+    </section>
+
     <section id="paid">
       <div class="site">
         <div class="section-head">
@@ -1644,14 +1784,14 @@
             <div class="eyebrow"><span class="dot"></span> Paid Projects</div>
             <h2>付费资料与陪跑项目</h2>
           </div>
-          <p>免费工具用于快速判断方向，付费资料和陪跑服务用于系统提升外贸运营效率。</p>
+          <p>如果你想从“体验工具”进一步升级到“系统执行”，可以选择完整资料、话术库或智能体搭建陪跑。</p>
         </div>
 
         <div class="pricing">
           <article class="price-card">
             <span class="badge">入门资料</span>
             <h3>AI外贸提示词资料包</h3>
-            <p>适合刚开始学习AI外贸，希望快速拿到可复制模板的人。</p>
+            <p>适合刚开始学习AI外贸、希望快速拿到可复制模板和基础工作流的人。</p>
             <div class="price">¥49 <small>/ 套</small></div>
             <ul>
               <li>外贸客户分析提示词</li>
@@ -1666,7 +1806,7 @@
           <article class="price-card featured">
             <span class="badge">推荐</span>
             <h3>B2B客户跟进话术库</h3>
-            <p>适合外贸业务员、外贸SOHO、B2B销售团队做客户转化。</p>
+            <p>适合每天需要跟进客户，但经常卡在“怎么写英文话术”的外贸业务员和SOHO。</p>
             <div class="price">¥99 <small>/ 套</small></div>
             <ul>
               <li>报价后跟进话术</li>
@@ -1682,7 +1822,7 @@
           <article class="price-card">
             <span class="badge">陪跑服务</span>
             <h3>AI外贸智能体搭建陪跑</h3>
-            <p>适合想把AI真正用进日常外贸运营流程的团队或个人。</p>
+            <p>适合想把AI真正放进询盘分析、标题关键词、客户跟进和广告复盘流程的团队或个人。</p>
             <div class="price">¥399 <small>起</small></div>
             <ul>
               <li>行业专属智能体设计</li>
@@ -1742,8 +1882,8 @@
       <div class="site">
         <div class="cta-strip">
           <div>
-            <h2>先用免费工具跑起来，再慢慢做成你的AI外贸产品体系</h2>
-            <p>第一版的重点不是完美，而是让用户能使用、能理解、能联系你。后续每一次更新，都围绕“工具更好用、内容更可信、转化更清晰”。</p>
+            <h2>先用免费工具跑起来，再用资料和方法建立自己的AI外贸工作流</h2>
+            <p>先从免费工具体验开始，再通过资料、模板、案例和智能体搭建，把AI真正用到日常外贸运营流程里。</p>
           </div>
           <div class="actions" style="margin:0;">
             <a class="btn btn-primary" href="#tools">返回使用工具</a>
@@ -1780,8 +1920,8 @@
               <span>AI外贸资料包 / 阿里运营诊断 / 智能体搭建 / 外贸工具站搭建</span>
             </div>
             <div class="contact-row">
-              <strong>备注</strong>
-              <span>付款方式、二维码、表单链接可以后续再添加。</span>
+              <strong>建议自动回复关键词</strong>
+              <span>AI工具站 / 提示词 / 话术库 / 广告表 / 智能体</span>
             </div>
           </div>
         </div>
@@ -1790,7 +1930,7 @@
   </main>
 
   <footer>
-    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V19</div>
+    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V21</div>
   </footer>
 
   <script>
@@ -1850,7 +1990,7 @@
 
       const result =
 `客户国家：${country}
-产品/行业类型：${product}
+产品类型：${product}
 采购数量：${quantity || "未填写"}
 
 客户等级：${level}
@@ -1868,6 +2008,7 @@ ${message}`;
 
       document.getElementById("leadResult").textContent = result;
     }
+
     function generateFollowup() {
       const product = document.getElementById("followProduct").value.trim() || "your product";
       const country = document.getElementById("followCountry").value.trim() || "your market";
@@ -1893,35 +2034,83 @@ ${message}`;
         strategy = "不要直接催单，先用“补充价值 + 低压力确认”的方式重新打开对话。";
         whatsapp = `Hi, just checking if you had a chance to review our quotation for ${product}. If you need, I can also prepare a more cost-effective option for your ${country} market.`;
         alibaba = `Hi, I would like to follow up on the quotation we sent for ${product}. To help you compare more easily, we can also provide another option based on your target price or packaging requirement.`;
-        email = `Hi,\n\nI hope you are doing well. I just wanted to follow up on our quotation for ${product}.\n\nIf the current option is not fully matching your budget, we can also adjust the product configuration, packaging, or material to make it more suitable for your ${country} market.\n\nMay I know if this project is still under consideration?\n\nBest regards`;
+        email = `Hi,
+
+I hope you are doing well. I just wanted to follow up on our quotation for ${product}.
+
+If the current option is not fully matching your budget, we can also adjust the product configuration, packaging, or material to make it more suitable for your ${country} market.
+
+May I know if this project is still under consideration?
+
+Best regards`;
       } else if (status === "expensive") {
         strategy = "不要马上降价，先拆分价格原因，再给客户两个方案：基础款和升级款。";
         whatsapp = `I understand your concern about the price. For ${product}, we can check a basic version and an upgraded version for you, so you can compare both options more easily.`;
-        alibaba = `Thanks for your feedback. The price depends on the material, product configuration and packaging. We can help adjust the solution to better match your target budget.`;
-        email = `Hi,\n\nThank you for your feedback. I understand that price is an important point for this project.\n\nFor ${product}, the cost is mainly affected by material, product configuration, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.\n\nCould you share your target price range? Then we can recommend the most suitable solution.\n\nBest regards`;
+        alibaba = `Thanks for your feedback. The price depends on the material, specification, packaging and quantity. We can help adjust the solution to better match your target budget.`;
+        email = `Hi,
+
+Thank you for your feedback. I understand that price is an important point for this project.
+
+For ${product}, the cost is mainly affected by material, specification, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.
+
+Could you share your target price range? Then we can recommend the most suitable solution.
+
+Best regards`;
       } else if (status === "moq") {
         strategy = "先解释MOQ原因，再提供样品/试单/简化包装方案，避免客户直接流失。";
         whatsapp = `Our standard MOQ is mainly for customized production and packaging. If you want to test first, we can start with a sample order before bulk production.`;
         alibaba = `For customized ${product}, MOQ is related to production setup and packaging cost. If your quantity is still under discussion, we can first support sample checking.`;
-        email = `Hi,\n\nI understand the MOQ concern. For customized ${product}, MOQ is mainly required because of production setup, logo process and packaging cost.\n\nIf you are not ready for bulk order yet, we can first arrange samples for quality and packaging checking. After you confirm the sample, we can move forward with the bulk order plan.\n\nWould you like us to prepare the sample details first?\n\nBest regards`;
+        email = `Hi,
+
+I understand the MOQ concern. For customized ${product}, MOQ is mainly required because of production setup, logo process and packaging cost.
+
+If you are not ready for bulk order yet, we can first arrange samples for quality and packaging checking. After you confirm the sample, we can move forward with the bulk order plan.
+
+Would you like us to prepare the sample details first?
+
+Best regards`;
       } else if (status === "sample") {
         strategy = "样品后跟进要聚焦反馈，而不是只问是否下单。先问质量、包装、修改点，再推进订单。";
-        whatsapp = `Hi, may I know if you have received or checked the sample of ${product}? Any feedback on quality, packaging or logo effect would be helpful for the next step.`;
+        whatsapp = `Hi, may I know if you have received or checked the sample of ${product}? Any feedback on quality, packaging or details would be helpful for the next step.`;
         alibaba = `Hi, I would like to follow up on the sample checking status. Please let us know if there is anything you would like to adjust before bulk order.`;
-        email = `Hi,\n\nI hope the sample of ${product} has arrived safely.\n\nMay I know your feedback on the quality, packaging and overall presentation? If there is anything that needs to be adjusted, we can revise it before moving to bulk order.\n\nLooking forward to your comments.\n\nBest regards`;
+        email = `Hi,
+
+I hope the sample of ${product} has arrived safely.
+
+May I know your feedback on the quality, packaging and overall presentation? If there is anything that needs to be adjusted, we can revise it before moving to bulk order.
+
+Looking forward to your comments.
+
+Best regards`;
       } else if (status === "thinking") {
         strategy = "客户说考虑一下时，要给一个决策辅助点，比如库存、交期、方案有效期或替代方案。";
         whatsapp = `No problem. To help with your decision, I can also prepare a short comparison of the available options for ${product}.`;
         alibaba = `Sure, please take your time. If helpful, we can provide a comparison between different product configurations and packaging options.`;
-        email = `Hi,\n\nNo problem, please take your time to review.\n\nTo make your decision easier, we can also prepare a simple comparison for ${product}, including different product configurations, packaging options and estimated lead time.\n\nWould this be helpful for your evaluation?\n\nBest regards`;
+        email = `Hi,
+
+No problem, please take your time to review.
+
+To make your decision easier, we can also prepare a simple comparison for ${product}, including different product configurations, packaging options and estimated lead time.
+
+Would this be helpful for your evaluation?
+
+Best regards`;
       } else {
         strategy = "老客户再开发不要一上来推销，先用新品/趋势/促销节点重新激活。";
         whatsapp = `Hi, long time no talk. We recently updated some new ${product} options that may be suitable for your market. Would you like me to share a quick catalog?`;
         alibaba = `Hi, we have recently updated several new options for ${product}. Since you checked similar products before, I thought these might be useful for your next purchasing plan.`;
-        email = `Hi,\n\nI hope everything is going well.\n\nWe recently updated some new ${product} options, including different product configurations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.\n\nWould you like me to share the latest options for your review?\n\nBest regards`;
+        email = `Hi,
+
+I hope everything is going well.
+
+We recently updated some new ${product} options, including different configurations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.
+
+Would you like me to share the latest options for your review?
+
+Best regards`;
       }
 
-      let goalText = {
+      const goalText = {
         confirm: "当前目标：确认客户是否继续推进。",
         sample: "当前目标：推动客户先确认样品。",
         budget: "当前目标：确认客户目标预算。",
@@ -1929,7 +2118,7 @@ ${message}`;
         call: "当前目标：预约一次语音/视频沟通。"
       }[goal];
 
-      let toneText = {
+      const toneText = {
         soft: "语气建议：自然礼貌，不要压迫客户。",
         direct: "语气建议：可以更直接推进下一步动作。",
         professional: "语气建议：保持专业、稳重，突出解决方案。"
@@ -1937,7 +2126,7 @@ ${message}`;
 
       const result =
 `客户状态：${statusMap[status]}
-产品/行业类型：${product}
+产品类型：${product}
 客户市场：${country}
 
 跟进策略：
@@ -2012,7 +2201,6 @@ ${email}
         "bulk order",
         "factory direct",
         "custom logo",
-        "gift set",
         "B2B supplier",
         "private label"
       ];
@@ -2089,7 +2277,7 @@ ${detailText}
         status = "建议优化标题和主图";
         issue = "曝光有了但点击率偏低，说明买家看到后点击意愿不足。";
         action = "优先换主图、标题前半段关键词和产品卖点表达。";
-        next = "用更强的B端词：Wholesale / Custom / OEM / Factory Direct / Gift Set。";
+        next = "用更强的B端词：Wholesale / Custom / OEM / Factory Direct。";
       } else if (clicks < 20) {
         status = "数据不足，继续观察";
         issue = "点击量还不足，暂时不能判断产品真实转化能力。";
@@ -2140,42 +2328,7 @@ ${next}`;
 
       document.getElementById("adResult").textContent = result;
     }
-
-      const result =
-`查询对象：${name}
-国家/地区：${country}
-对象类型：${roleMap[role]}
-当前阶段：${stageMap[stage]}
-
-查询重点：
-${focus}
-
-建议核查清单：
-1. 公司官网是否存在，页面是否长期维护。
-2. 公司名称、国家、邮箱后缀和联系人信息是否一致。
-3. 是否能找到LinkedIn、Facebook、公司目录或展会记录。
-4. 是否有明确产品线、客户群体、渠道或项目记录。
-5. 如果是客户：判断是否像真实采购商、品牌商、批发商或项目方。
-6. 如果是同行：记录其标题、主图、价格、MOQ、认证和详情页结构。
-7. 如果是订单前客户：建议确认付款方式、收货信息、公司信息和订单细节。
-
-跟进建议：
-1. 信息完整：可以进入重点跟进或报价优化。
-2. 信息一般：先补问用途、数量、预算和采购时间。
-3. 信息很少：不要投入过多定制方案，先用标准资料测试意向。
-
-免费版提醒：
-当前工具不直接联网查询公司数据库，只提供核查框架。完整版可升级为“公司信息记录表 + AI客户可信度评分”。`;
-
-      document.getElementById("companyResult").textContent = result;
-    }
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        preview.innerHTML = `<img src="${e.target.result}" alt="上传图片预览" />`;
-      };
-      reader.readAsDataURL(file);
-    }
-
   </script>
+
 </body>
 </html>

@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI外贸快捷指令库 - 小郑AI外贸工具站</title>
+  <style>
+
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --primary: #3157ff;
+      --primary-dark: #1838c9;
+      --dark: #0f172a;
+      --line: #e6e9f1;
+      --soft: #eef2ff;
+      --success: #12b76a;
+      --warning: #ffb020;
+      --shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site {
+      width: 100%;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 247, 251, 0.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-row {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #3157ff, #7c3aed);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 25px rgba(49, 87, 255, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      background: var(--dark);
+      color: #fff !important;
+      border-radius: 999px;
+    }
+
+    .hero {
+      padding: 76px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 28px rgba(16, 24, 40, 0.04);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.18;
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5.2vw, 70px);
+      max-width: 700px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3157ff, #7c3aed);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin: 24px 0 30px;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 15px 35px rgba(49, 87, 255, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .btn-light:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .tag {
+      padding: 7px 11px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .hero-panel {
+      width: 100%;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(230,233,241,0.95);
+      border-radius: 32px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .mock {
+      background: var(--dark);
+      border-radius: 24px;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .mock-top {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+    }
+
+    .mock-body {
+      padding: 22px;
+    }
+
+    .result-card {
+      padding: 16px;
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+    }
+
+    .result-card strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .bar {
+      height: 9px;
+      margin-top: 10px;
+      background: rgba(255,255,255,0.13);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--warning), var(--success));
+      border-radius: 999px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 16px;
+      box-shadow: 0 10px 30px rgba(16, 24, 40, 0.04);
+    }
+
+    .stat-number {
+      color: var(--primary);
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    section {
+      padding: 62px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+      transition: 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(49, 87, 255, 0.25);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 10px 0 16px;
+      font-size: 14.5px;
+    }
+
+    .list {
+      padding: 0;
+      margin: 0 0 20px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .list li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .card-action {
+      margin-top: auto;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 13px;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .mini-btn:hover {
+      background: var(--primary);
+    }
+
+    .demo {
+      margin-top: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(16, 24, 40, 0.05);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 900;
+      font-size: 13px;
+      margin: 14px 0 7px;
+    }
+
+    label:first-child {
+      margin-top: 0;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 13px;
+      font: inherit;
+      background: #fbfcff;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(49, 87, 255, 0.08);
+      background: #fff;
+    }
+
+    .output {
+      min-height: 220px;
+      white-space: pre-line;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 22px;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 13px 15px;
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-radius: 16px;
+      color: #92400e;
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 12px 36px rgba(16, 24, 40, 0.05);
+    }
+
+    .panel p {
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      background: #fafbff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .step-num {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 12px 36px rgba(16, 24, 40, 0.05);
+    }
+
+    .price-card.featured {
+      border-color: rgba(49,87,255,0.36);
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      margin: 14px 0;
+      font-size: 36px;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .price-card ul {
+      padding: 0;
+      margin: 18px 0 24px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price-card li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .price-card li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #111827, #182152);
+      color: #fff;
+      border-radius: 34px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 24px 60px rgba(17, 24, 39, 0.2);
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .contact-row {
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-row strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .contact-row span {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .scenario-card,
+    .article-card,
+    .case-card,
+    .faq-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .scenario-card h3,
+    .article-card h3,
+    .case-card h3,
+    .faq-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .scenario-card p,
+    .article-card p,
+    .case-card p,
+    .faq-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .article-meta {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .case-kpi {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .case-kpi div {
+      background: #f8f9ff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .case-kpi strong {
+      display: block;
+      color: var(--primary);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .case-kpi span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .roadmap-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.04);
+    }
+
+    .roadmap-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .roadmap-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cta-strip {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-strip p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .check-list {
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 900;
+    }
+
+
+    .locked-box {
+      margin-top: 18px;
+      background: linear-gradient(135deg, #101828, #1d2b6c);
+      color: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 18px 45px rgba(16, 24, 40, 0.14);
+    }
+
+    .locked-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .locked-box p {
+      color: rgba(255,255,255,0.76);
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    .locked-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .locked-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 12px;
+      color: rgba(255,255,255,0.82);
+    }
+
+
+    .image-preview {
+      margin-top: 12px;
+      width: 100%;
+      min-height: 160px;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      background: #fbfcff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      max-height: 260px;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .tool-disclaimer {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 18px;
+      color: #9a3412;
+      font-size: 14px;
+    }
+
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .resource-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 285px;
+    }
+
+    .resource-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 14.5px;
+    }
+
+    .resource-card .card-action {
+      margin-top: auto;
+    }
+
+    .resource-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .contact-highlight {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-highlight div {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .contact-highlight strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-highlight span {
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+    }
+
+
+    .learning-path-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .learning-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .learning-step strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .learning-step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .article-card.featured-article {
+      border-color: rgba(49,87,255,0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .article-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .article-actions a {
+      display: inline-flex;
+      padding: 9px 12px;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .article-actions a.secondary {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--line);
+    }
+
+    .case-card.detailed {
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+    }
+
+    .case-flow {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .case-flow div {
+      background: #f8f9ff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .case-flow strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .case-flow span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .case-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .case-tag-row span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .content-note {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      margin-top: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .content-note p {
+      color: var(--muted);
+      margin: 10px 0 0;
+    }
+
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .prompt-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+    }
+
+    .prompt-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .prompt-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 14.5px;
+    }
+
+    .prompt-box {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 13px;
+      line-height: 1.7;
+      white-space: pre-line;
+      margin-top: 10px;
+      flex: 1;
+    }
+
+    .copy-btn {
+      margin-top: 14px;
+      width: fit-content;
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 13px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .prompt-category {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .prompt-note {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      margin-top: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .prompt-note p {
+      color: var(--muted);
+      margin: 10px 0 0;
+    }
+
+
+    .page-hero {
+      padding: 58px 0 26px;
+      background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 55%, #ffffff 100%);
+    }
+
+    .page-hero .hero-panel {
+      min-height: auto;
+    }
+
+    .home-shortcuts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .shortcut-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .shortcut-card h3 {
+      margin: 10px 0 8px;
+    }
+
+    .shortcut-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 14.5px;
+    }
+
+    .shortcut-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .home-section {
+      padding: 50px 0;
+    }
+
+    .home-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .home-mini-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .home-mini-card p {
+      color: var(--muted);
+      margin: 8px 0 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .home-shortcuts,
+      .home-mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .home-shortcuts,
+      .home-mini-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .split,
+      .contact-box,
+      .locked-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        max-width: 760px;
+      }
+
+      .grid-4,
+      .scenario-grid,
+      .article-grid,
+      .case-grid,
+      .resource-grid,
+      .contact-highlight,
+      .learning-path-grid,
+      .prompt-grid,
+      .roadmap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .section-head,
+      .cta-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .nav-row {
+        height: auto;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .stats,
+      .grid-4,
+      .scenario-grid,
+      .article-grid,
+      .case-grid,
+      .resource-grid,
+      .contact-highlight,
+      .learning-path-grid,
+      .prompt-grid,
+      .roadmap,
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 28px;
+      }
+    }
+  
+  
+    header {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #3157ff, #7c3aed);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow: 0 14px 28px rgba(49, 87, 255, 0.22);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -0.2px;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #334155;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    nav a::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: 0.72;
+    }
+
+    nav a:nth-child(1) {
+      background: #eef2ff;
+      color: #3157ff;
+      border-color: #dbe4ff;
+    }
+
+    nav a:nth-child(2) {
+      background: #ecfeff;
+      color: #0891b2;
+      border-color: #cffafe;
+    }
+
+    nav a:nth-child(3) {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #dcfce7;
+    }
+
+    nav a:nth-child(4) {
+      background: #fff7ed;
+      color: #ea580c;
+      border-color: #fed7aa;
+    }
+
+    nav a:nth-child(5) {
+      background: #fdf2f8;
+      color: #db2777;
+      border-color: #fbcfe8;
+    }
+
+    nav a:nth-child(6) {
+      background: #f5f3ff;
+      color: #7c3aed;
+      border-color: #ddd6fe;
+    }
+
+    nav a:nth-child(7) {
+      background: #fff1f2;
+      color: #e11d48;
+      border-color: #fecdd3;
+    }
+
+    nav a:nth-child(8) {
+      background: #f8fafc;
+      color: #475569;
+      border-color: #e2e8f0;
+    }
+
+    nav a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+      filter: saturate(1.08);
+    }
+
+    nav a.active {
+      color: #fff !important;
+      border-color: transparent !important;
+      background: linear-gradient(135deg, #3157ff, #7c3aed) !important;
+      box-shadow: 0 12px 28px rgba(49, 87, 255, 0.22);
+    }
+
+    nav a.active::before {
+      background: #fff;
+      opacity: 1;
+    }
+
+    @media (max-width: 1050px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        position: static;
+      }
+
+      nav {
+        gap: 7px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site nav">
+      <div class="brand">
+        <div class="brand-logo">郑</div>
+        <div>
+          <strong>小郑AI外贸工具站</strong>
+          <span>AI B2B Tools</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="tools.html">免费工具</a>
+        <a href="prompts.html" class="active">快捷指令</a>
+        <a href="resources.html">资料领取</a>
+        <a href="articles.html">学习内容</a>
+        <a href="cases.html">案例库</a>
+        <a href="paid.html">付费项目</a>
+        <a href="contact.html">联系我</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="page-hero">
+    <div class="site">
+      <div class="hero-panel">
+        <div class="eyebrow"><span class="dot"></span> Prompt Library</div>
+        <h1>AI外贸快捷指令库</h1>
+        <p>适合公众号用户直接复制使用，替换自己的产品、客户和聊天记录即可。</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+    <section id="prompts">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Prompt Library</div>
+            <h2>AI外贸快捷指令库</h2>
+          </div>
+          <p>适合从公众号引导过来的用户直接复制使用。先用简单指令解决高频问题，再通过工具和资料继续深入学习。</p>
+        </div>
+
+        <div class="prompt-grid">
+          <article class="prompt-card">
+            <span class="prompt-category">询盘分析</span>
+            <h3>客户意向快速判断</h3>
+            <p>适合新询盘进来后，快速判断这个客户是否值得重点跟进。</p>
+            <div class="prompt-box" id="prompt1">你是一名B2B外贸销售顾问。请根据以下客户信息，帮我判断客户意向等级、当前卡点和下一步跟进动作。
+
+客户国家：
+产品类型：
+采购数量：
+是否定制：
+客户当前问题：
+聊天记录：
+
+请输出：
+1. 客户等级：A/B/C/D
+2. 成交概率：高/中/低
+3. 当前核心卡点
+4. 我下一步应该问客户什么
+5. 一段英文跟进话术</div>
+            <button class="copy-btn" onclick="copyPrompt('prompt1')">复制指令</button>
+          </article>
+
+          <article class="prompt-card">
+            <span class="prompt-category">客户跟进</span>
+            <h3>已读未回跟进话术</h3>
+            <p>适合报价后客户看了不回、样品后不反馈、说考虑一下的场景。</p>
+            <div class="prompt-box" id="prompt2">你是一名专业外贸业务员。客户目前已读未回，请帮我写一段自然、不强迫、但能推动客户回复的英文跟进话术。
+
+产品：
+客户国家：
+上次沟通内容：
+客户可能卡点：
+我想推进的目标：
+
+请输出：
+1. WhatsApp短话术
+2. 阿里站内信话术
+3. 邮件版本
+4. 下一次跟进时间建议</div>
+            <button class="copy-btn" onclick="copyPrompt('prompt2')">复制指令</button>
+          </article>
+
+          <article class="prompt-card">
+            <span class="prompt-category">价格异议</span>
+            <h3>客户嫌价格贵应对</h3>
+            <p>适合客户说 expensive、price too high、cheaper supplier 的情况。</p>
+            <div class="prompt-box" id="prompt3">你是一名B2B外贸谈判顾问。客户反馈价格太贵，请帮我分析如何回应，不要一上来直接降价。
+
+产品：
+我们的报价：
+客户目标价：
+订单数量：
+定制要求：
+客户原话：
+
+请输出：
+1. 客户嫌贵的可能原因
+2. 是否应该降价
+3. 可以替代的方案：材质/配置/包装/MOQ
+4. 英文回复话术
+5. 下一步成交动作</div>
+            <button class="copy-btn" onclick="copyPrompt('prompt3')">复制指令</button>
+          </article>
+
+          <article class="prompt-card">
+            <span class="prompt-category">标题关键词</span>
+            <h3>阿里产品标题生成</h3>
+            <p>适合新品发布、老品重写标题、关键词不够B端的情况。</p>
+            <div class="prompt-box" id="prompt4">你是一名阿里国际站B2B SEO运营专家。请根据以下产品信息，生成适合B端采购客户的产品标题和关键词。
+
+产品名称：
+核心关键词：
+目标客户：
+应用场景：
+包装方式：
+是否支持定制：
+核心卖点：
+
+要求：
+1. 生成2条英文标题，每条不超过128字符
+2. 减少C端表达，偏B端采购
+3. 输出核心关键词、长尾词、B端采购词
+4. 输出适合详情页首屏的卖点短文案</div>
+            <button class="copy-btn" onclick="copyPrompt('prompt4')">复制指令</button>
+          </article>
+
+          <article class="prompt-card">
+            <span class="prompt-category">广告复盘</span>
+            <h3>广告产品暂停判断</h3>
+            <p>适合每周广告复盘，判断哪些产品继续跑、优化或暂停。</p>
+            <div class="prompt-box" id="prompt5">你是一名阿里国际站广告优化师。请根据以下产品广告数据，帮我判断这个产品应该继续投放、优化观察还是暂停。
+
+产品ID：
+曝光：
+点击：
+花费：
+询盘数：
+点击国家：
+买家等级：
+产品类型：
+利润空间：
+
+请输出：
+1. CTR、询盘率、CPL判断
+2. 当前最大问题
+3. 是否建议暂停
+4. 如果不暂停，优先优化什么
+5. 下周观察指标</div>
+            <button class="copy-btn" onclick="copyPrompt('prompt5')">复制指令</button>
+          </article>
+
+          <article class="prompt-card">
+            <span class="prompt-category">图片素材</span>
+            <h3>图片翻译改图需求</h3>
+            <p>适合把产品图、包装图、详情页图翻译成英文或其他语言。</p>
+            <div class="prompt-box" id="prompt6">你是一名B2B视觉设计师和本地化翻译顾问。请帮我把图片上的文字翻译成目标语言，并生成适合AI改图工具使用的改图指令。
+
+图片用途：
+原图文字：
+目标语言：
+目标市场：
+排版要求：
+
+请输出：
+1. 翻译后的文案
+2. 更适合B2B客户的表达
+3. 图片改图提示词
+4. 需要保留不变的元素
+5. 人工检查提醒：数字、单位、规格、品牌名</div>
+            <button class="copy-btn" onclick="copyPrompt('prompt6')">复制指令</button>
+          </article>
+        </div>
+
+        <div class="prompt-note">
+          <h3>公众号引导建议</h3>
+          <p>你可以在公众号文章结尾写：如果你不知道怎么问AI，可以先复制这个快捷指令库里的模板，把自己的产品、客户和聊天记录替换进去。这样用户更容易上手，也更愿意回到网站继续使用工具。</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+  <footer>
+    <div class="site">
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V25 彩色导航版</p>
+    </div>
+  </footer>
+
+
+  <script>
+
+    function generateLeadScore() {
+      const country = document.getElementById("country").value.trim() || "未填写";
+      const product = document.getElementById("product").value.trim() || "未填写";
+      const quantity = Number(document.getElementById("quantity").value || 0);
+      const custom = document.getElementById("custom").value;
+      const status = document.getElementById("status").value;
+
+      let score = 0;
+      let level = "C类普通客户";
+      let probability = "中低";
+      let action = "先补充关键信息，再判断是否值得重点推进。";
+      let pain = "信息不完整，客户意向还需要进一步确认。";
+      let message = "Hi, thanks for your inquiry. Could you please share your target quantity, packaging requirement, and delivery timeline? Then we can recommend a more suitable solution for you.";
+
+      if (quantity >= 500) score += 35;
+      else if (quantity >= 200) score += 20;
+      else if (quantity > 0) score += 8;
+
+      if (custom === "yes") score += 25;
+      if (custom === "unknown") score += 10;
+
+      if (status === "new") score += 12;
+      if (status === "quoted") score += 18;
+      if (status === "read") score += 8;
+      if (status === "price") score += 12;
+      if (status === "moq") score += 6;
+      if (status === "sample") score += 20;
+
+      if (score >= 70) {
+        level = "A类重点客户";
+        probability = "高";
+        pain = "客户具备较强采购可能，建议重点推进报价细节、样品或包装方案。";
+        action = "24小时内跟进，提供基础款/升级款两个方案，并推动客户确认数量、包装和交期。";
+        message = "Hi, based on your quantity and customization needs, we can prepare two options for you: a basic solution and an upgraded packaging solution. Could you confirm your preferred target price and delivery timeline? Then we can move forward with the sample or final quotation.";
+      } else if (score >= 45) {
+        level = "B类可推进客户";
+        probability = "中高";
+        pain = "客户有一定兴趣，但还需要通过方案、价格梯度或样品降低决策成本。";
+        action = "建议继续跟进，重点确认预算、用途、目标市场和是否能接受MOQ。";
+        message = "Hi, to recommend the most suitable option, may I know your target market and expected budget? We can also offer different product configurations to help match your price range.";
+      } else if (score >= 25) {
+        level = "C类培育客户";
+        probability = "中低";
+        pain = "客户需求不够明确，可能处于比价或早期了解阶段。";
+        action = "先轻量跟进，不要投入过多定制设计成本，可引导客户先看现有方案或样品。";
+        message = "Hi, no worries. I can first share some popular options for your reference. If you have a target quantity or packaging idea later, we can provide a more accurate quotation.";
+      } else {
+        level = "D类低优先级客户";
+        probability = "低";
+        pain = "数量、需求或预算信息不足，暂不建议作为重点客户投入。";
+        action = "建议用标准话术收集信息，若客户无回复，则进入低频跟进池。";
+        message = "Hi, thanks for your interest. Could you please share more details about your required quantity and usage? This will help us check whether we can support your order properly.";
+      }
+
+      const result =
+`客户国家：${country}
+产品类型：${product}
+采购数量：${quantity || "未填写"}
+
+客户等级：${level}
+成交概率：${probability}
+综合评分：${score}/100
+
+当前核心卡点：
+${pain}
+
+建议下一步动作：
+${action}
+
+英文跟进话术：
+${message}`;
+
+      document.getElementById("leadResult").textContent = result;
+    }
+
+    function generateFollowup() {
+      const product = document.getElementById("followProduct").value.trim() || "your product";
+      const country = document.getElementById("followCountry").value.trim() || "your market";
+      const status = document.getElementById("followStatus").value;
+      const goal = document.getElementById("followGoal").value;
+      const tone = document.getElementById("followTone").value;
+
+      const statusMap = {
+        noReply: "报价后已读未回",
+        expensive: "客户嫌价格贵",
+        moq: "客户觉得MOQ太高",
+        sample: "样品后未回复",
+        thinking: "客户说再考虑一下",
+        oldCustomer: "老客户再开发"
+      };
+
+      let strategy = "";
+      let whatsapp = "";
+      let alibaba = "";
+      let email = "";
+
+      if (status === "noReply") {
+        strategy = "不要直接催单，先用“补充价值 + 低压力确认”的方式重新打开对话。";
+        whatsapp = `Hi, just checking if you had a chance to review our quotation for ${product}. If you need, I can also prepare a more cost-effective option for your ${country} market.`;
+        alibaba = `Hi, I would like to follow up on the quotation we sent for ${product}. To help you compare more easily, we can also provide another option based on your target price or packaging requirement.`;
+        email = `Hi,
+
+I hope you are doing well. I just wanted to follow up on our quotation for ${product}.
+
+If the current option is not fully matching your budget, we can also adjust the product configuration, packaging, or material to make it more suitable for your ${country} market.
+
+May I know if this project is still under consideration?
+
+Best regards`;
+      } else if (status === "expensive") {
+        strategy = "不要马上降价，先拆分价格原因，再给客户两个方案：基础款和升级款。";
+        whatsapp = `I understand your concern about the price. For ${product}, we can check a basic version and an upgraded version for you, so you can compare both options more easily.`;
+        alibaba = `Thanks for your feedback. The price depends on the material, specification, packaging and quantity. We can help adjust the solution to better match your target budget.`;
+        email = `Hi,
+
+Thank you for your feedback. I understand that price is an important point for this project.
+
+For ${product}, the cost is mainly affected by material, specification, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.
+
+Could you share your target price range? Then we can recommend the most suitable solution.
+
+Best regards`;
+      } else if (status === "moq") {
+        strategy = "先解释MOQ原因，再提供样品/试单/简化包装方案，避免客户直接流失。";
+        whatsapp = `Our standard MOQ is mainly for customized production and packaging. If you want to test first, we can start with a sample order before bulk production.`;
+        alibaba = `For customized ${product}, MOQ is related to production setup and packaging cost. If your quantity is still under discussion, we can first support sample checking.`;
+        email = `Hi,
+
+I understand the MOQ concern. For customized ${product}, MOQ is mainly required because of production setup, logo process and packaging cost.
+
+If you are not ready for bulk order yet, we can first arrange samples for quality and packaging checking. After you confirm the sample, we can move forward with the bulk order plan.
+
+Would you like us to prepare the sample details first?
+
+Best regards`;
+      } else if (status === "sample") {
+        strategy = "样品后跟进要聚焦反馈，而不是只问是否下单。先问质量、包装、修改点，再推进订单。";
+        whatsapp = `Hi, may I know if you have received or checked the sample of ${product}? Any feedback on quality, packaging or details would be helpful for the next step.`;
+        alibaba = `Hi, I would like to follow up on the sample checking status. Please let us know if there is anything you would like to adjust before bulk order.`;
+        email = `Hi,
+
+I hope the sample of ${product} has arrived safely.
+
+May I know your feedback on the quality, packaging and overall presentation? If there is anything that needs to be adjusted, we can revise it before moving to bulk order.
+
+Looking forward to your comments.
+
+Best regards`;
+      } else if (status === "thinking") {
+        strategy = "客户说考虑一下时，要给一个决策辅助点，比如库存、交期、方案有效期或替代方案。";
+        whatsapp = `No problem. To help with your decision, I can also prepare a short comparison of the available options for ${product}.`;
+        alibaba = `Sure, please take your time. If helpful, we can provide a comparison between different product configurations and packaging options.`;
+        email = `Hi,
+
+No problem, please take your time to review.
+
+To make your decision easier, we can also prepare a simple comparison for ${product}, including different product configurations, packaging options and estimated lead time.
+
+Would this be helpful for your evaluation?
+
+Best regards`;
+      } else {
+        strategy = "老客户再开发不要一上来推销，先用新品/趋势/促销节点重新激活。";
+        whatsapp = `Hi, long time no talk. We recently updated some new ${product} options that may be suitable for your market. Would you like me to share a quick catalog?`;
+        alibaba = `Hi, we have recently updated several new options for ${product}. Since you checked similar products before, I thought these might be useful for your next purchasing plan.`;
+        email = `Hi,
+
+I hope everything is going well.
+
+We recently updated some new ${product} options, including different configurations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.
+
+Would you like me to share the latest options for your review?
+
+Best regards`;
+      }
+
+      const goalText = {
+        confirm: "当前目标：确认客户是否继续推进。",
+        sample: "当前目标：推动客户先确认样品。",
+        budget: "当前目标：确认客户目标预算。",
+        order: "当前目标：推动客户尽快下单。",
+        call: "当前目标：预约一次语音/视频沟通。"
+      }[goal];
+
+      const toneText = {
+        soft: "语气建议：自然礼貌，不要压迫客户。",
+        direct: "语气建议：可以更直接推进下一步动作。",
+        professional: "语气建议：保持专业、稳重，突出解决方案。"
+      }[tone];
+
+      const result =
+`客户状态：${statusMap[status]}
+产品类型：${product}
+客户市场：${country}
+
+跟进策略：
+${strategy}
+
+${goalText}
+${toneText}
+
+WhatsApp短话术：
+${whatsapp}
+
+阿里站内信话术：
+${alibaba}
+
+邮件跟进话术：
+${email}
+
+下一步建议：
+如果客户24-48小时内仍未回复，可以再补发一条“方案选择型”消息，例如：Would you prefer a more cost-effective option or a premium packaging option?`;
+
+      document.getElementById("followResult").textContent = result;
+    }
+
+    function generateTitleKeywords() {
+      const product = document.getElementById("titleProduct").value.trim() || "Custom B2B Product";
+      const core = document.getElementById("coreKeyword").value.trim() || product;
+      const buyer = document.getElementById("targetBuyer").value;
+      const app = document.getElementById("application").value;
+      const pack = document.getElementById("packageType").value;
+      const feature = document.getElementById("titleFeature").value.trim() || "OEM ODM Custom Logo";
+
+      const buyerMap = {
+        wholesaler: "Wholesale Distributor",
+        brand: "Private Label Brand",
+        gift: "Corporate Gift Buyer",
+        retail: "Retail Chain Buyer",
+        ecommerce: "E-commerce Seller"
+      };
+
+      const appMap = {
+        wholesale: "Wholesale Bulk Purchase",
+        retail: "Retail E-commerce Store Sales",
+        industrial: "Industrial Commercial Use",
+        customProject: "Custom Project OEM ODM",
+        promotion: "Promotion Gift Seasonal Campaign"
+      };
+
+      const packMap = {
+        custom: "Custom Logo Custom Packaging",
+        standard: "Standard Export Packaging",
+        bulk: "Bulk Packing",
+        retail: "Retail Packaging",
+        premium: "Premium Gift Packaging"
+      };
+
+      const title1 = `Wholesale ${core} ${feature} for ${buyerMap[buyer]} with ${packMap[pack]}`;
+      const title2 = `Custom ${product} ${appMap[app]} ${packMap[pack]} OEM ODM Factory Direct`;
+
+      const keywords = [
+        core,
+        product,
+        `wholesale ${core}`,
+        `custom ${core}`,
+        `${core} supplier`,
+        `${core} manufacturer`,
+        `${product} factory`,
+        `OEM ${product}`,
+        `ODM ${product}`,
+        `${packMap[pack]}`,
+        `${appMap[app]}`,
+        `${buyerMap[buyer]}`,
+        "bulk order",
+        "factory direct",
+        "custom logo",
+        "B2B supplier",
+        "private label"
+      ];
+
+      const sellingPoints =
+`1. Suitable for B2B buyers across different industries.
+2. Support OEM/ODM, private label, custom specifications or custom packaging when applicable.
+3. Suitable for ${buyerMap[buyer]} and ${appMap[app]} scenarios.
+4. Factory direct or supplier-direct solution based on target budget and order quantity.
+5. Product specifications, packaging, material, size or configuration can be adjusted based on project requirements.`;
+
+      const detailText =
+`This ${product} is designed for ${buyerMap[buyer]} looking for ${appMap[app]} solutions. We support ${feature}, ${packMap[pack]}, and flexible OEM/ODM customization for bulk orders.`;
+
+      const result =
+`高曝光标题1：
+${title1}
+
+高曝光标题2：
+${title2}
+
+核心关键词：
+${core}
+
+关键词包：
+${keywords.join(", ")}
+
+B端卖点表达：
+${sellingPoints}
+
+详情页短文案：
+${detailText}
+
+优化提醒：
+标题优先顺序建议：核心关键词 + Wholesale/Custom/OEM + 产品属性/规格 + 应用场景 + 目标客户类型。`;
+
+      document.getElementById("titleResult").textContent = result;
+    }
+
+    function generateAdDiagnosis() {
+      const productId = document.getElementById("productId").value.trim() || "未填写";
+      const impressions = Number(document.getElementById("impressions").value || 0);
+      const clicks = Number(document.getElementById("clicks").value || 0);
+      const cost = Number(document.getElementById("cost").value || 0);
+      const inquiries = Number(document.getElementById("inquiries").value || 0);
+      const market = document.getElementById("adMarket").value;
+
+      const ctr = impressions > 0 ? (clicks / impressions * 100) : 0;
+      const inquiryRate = clicks > 0 ? (inquiries / clicks * 100) : 0;
+      const cpc = clicks > 0 ? (cost / clicks) : 0;
+      const cpl = inquiries > 0 ? (cost / inquiries) : 0;
+
+      let status = "";
+      let action = "";
+      let issue = "";
+      let next = "";
+
+      if (clicks >= 20 && inquiries === 0) {
+        status = "建议暂停或降权观察";
+        issue = "产品已有一定点击，但没有产生询盘，可能存在主图、价格、详情页承接或客户不匹配问题。";
+        action = "先暂停高消耗投放，检查主图、标题、价格区间、MOQ和详情页卖点。";
+        next = "如果产品本身利润和供应链一般，建议暂停；如果是战略品，可换主图和标题后小预算测试。";
+      } else if (inquiries > 0 && inquiryRate >= 8) {
+        status = "建议继续投放，可适度加预算";
+        issue = "点击后询盘率较好，说明产品承接能力较强。";
+        action = "继续保留，并重点看询盘质量、买家等级和国家质量。";
+        next = "可以增加同类产品、扩展长尾关键词，并沉淀为优爆品模板。";
+      } else if (clicks > 0 && inquiryRate > 0 && inquiryRate < 5) {
+        status = "建议优化后继续观察";
+        issue = "产品有询盘但转化偏弱，说明不是完全无效，但承接效率不够。";
+        action = "优化首图、价格表达、MOQ说明、详情页前3屏和询盘入口。";
+        next = "再观察7-14天，如果点击继续增加但询盘无改善，再考虑暂停。";
+      } else if (impressions > 0 && ctr < 0.5) {
+        status = "建议优化标题和主图";
+        issue = "曝光有了但点击率偏低，说明买家看到后点击意愿不足。";
+        action = "优先换主图、标题前半段关键词和产品卖点表达。";
+        next = "用更强的B端词：Wholesale / Custom / OEM / Factory Direct。";
+      } else if (clicks < 20) {
+        status = "数据不足，继续观察";
+        issue = "点击量还不足，暂时不能判断产品真实转化能力。";
+        action = "先保持小预算测试，等点击累计到20-30以上再做暂停判断。";
+        next = "同步检查国家点击来源，避免预算被低质量市场消耗。";
+      } else {
+        status = "建议进入人工复盘";
+        issue = "数据处于中间状态，需要结合买家质量、产品利润和国家来源进一步判断。";
+        action = "查看点击国家、买家等级、详情页停留和询盘内容质量。";
+        next = "把该产品加入每周广告复盘表，和同类产品横向对比。";
+      }
+
+      const ctrText = ctr >= 1 ? "点击率表现尚可" : "点击率偏低，需要优化主图/标题";
+      const inquiryText = inquiryRate >= 8 ? "询盘率较好" : inquiryRate > 0 ? "询盘率偏弱，可优化承接" : "暂无询盘";
+      const cplText = inquiries > 0 ? `CPL约为 ${cpl.toFixed(2)}` : "暂无询盘，无法计算CPL";
+
+      const result =
+`产品ID：${productId}
+目标市场：${market}
+
+基础指标：
+曝光量：${impressions}
+点击量：${clicks}
+广告花费：${cost}
+询盘数：${inquiries}
+
+计算结果：
+CTR点击率：${ctr.toFixed(2)}%
+询盘率：${inquiryRate.toFixed(2)}%
+CPC平均点击成本：${cpc.toFixed(2)}
+${cplText}
+
+诊断结论：
+${status}
+
+指标判断：
+${ctrText}
+${inquiryText}
+
+核心问题：
+${issue}
+
+建议动作：
+${action}
+
+下一步：
+${next}`;
+
+      document.getElementById("adResult").textContent = result;
+    }
+
+    function copyPrompt(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert("已复制快捷指令，可以直接粘贴到ChatGPT使用。");
+        }).catch(function() {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("已复制快捷指令，可以直接粘贴到ChatGPT使用。");
+    }
+
+  
+  </script>
+
+</body>
+</html>

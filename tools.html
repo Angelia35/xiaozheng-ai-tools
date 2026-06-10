@@ -1493,6 +1493,220 @@
       }
     }
 
+  
+    .tools-guide {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .guide-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .guide-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .guide-card span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .tool-section-label {
+      margin: 38px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tool-section-label span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--primary);
+      box-shadow: 0 0 0 7px var(--soft);
+    }
+
+    .tool-section-label h3 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .tool-section-label p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tool-next {
+      margin-top: 18px;
+      padding: 16px;
+      background: #f8f9ff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .tool-next strong {
+      color: var(--text);
+    }
+
+    .tool-next a {
+      font-weight: 900;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .result-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .result-card strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .result-card span {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: pre-line;
+      line-height: 1.65;
+    }
+
+    .output.enhanced-output {
+      background: #f8f9ff;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .image-entry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .image-entry-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .image-entry-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .image-entry-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 14.5px;
+    }
+
+    .tool-page-notice {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      border-radius: 20px;
+      padding: 18px 20px;
+      margin-top: 22px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .tools-guide,
+      .image-entry-grid,
+      .result-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .tools-guide,
+      .image-entry-grid,
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+      resize: vertical;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: rgba(49,87,255,0.55);
+      box-shadow: 0 0 0 4px rgba(49,87,255,0.08);
+    }
+
+    .priority-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #ea580c;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+  
+    nav a:nth-child(9){background:#ecfdf5;color:#059669;border-color:#bbf7d0;}
+    .purchase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:24px}
+    .purchase-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 16px 44px rgba(16,24,40,.06);display:flex;flex-direction:column}
+    .purchase-card.featured{border-color:rgba(49,87,255,.36);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .purchase-card.featured:before{content:"推荐";position:absolute;top:18px;right:-36px;width:140px;text-align:center;transform:rotate(36deg);background:linear-gradient(135deg,#3157ff,#7c3aed);color:#fff;font-size:12px;font-weight:900;padding:6px 0}
+    .purchase-price{font-size:38px;font-weight:950;color:var(--text);margin:12px 0;letter-spacing:-1px}
+    .purchase-price small{font-size:15px;color:var(--muted);font-weight:800}
+    .agent-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+    .agent-list div{padding:12px 14px;border:1px solid var(--line);background:#f8f9ff;border-radius:16px;font-weight:800}
+    .notice-box{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:22px;padding:22px;margin-top:22px;line-height:1.8}
+    .process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:22px}
+    .process-step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 12px 34px rgba(16,24,40,.05)}
+    .process-step strong{display:block;color:var(--primary);margin-bottom:8px}.process-step span{color:var(--muted);font-size:13.5px}
+    .confirm-form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);margin-top:22px}
+    .checkbox-row{display:flex;gap:10px;align-items:flex-start;margin:12px 0;color:var(--muted);font-size:14px;line-height:1.65}.checkbox-row input{width:auto;margin-top:5px}
+    .buy-output{margin-top:18px;background:#0f172a;color:#fff;border-radius:18px;padding:18px;white-space:pre-line;line-height:1.75;font-size:14px}
+    @media(max-width:1050px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:720px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:1fr}}
+
   </style>
 </head>
 <body>
@@ -1514,6 +1728,7 @@
         <a href="articles.html">学习内容</a>
         <a href="cases.html">案例库</a>
         <a href="paid.html">付费项目</a>
+        <a href="buy.html">购买确认</a>
         <a href="contact.html">联系我</a>
       </nav>
     </div>
@@ -1525,7 +1740,44 @@
       <div class="hero-panel">
         <div class="eyebrow"><span class="dot"></span> Free Tools</div>
         <h1>免费AI外贸工具</h1>
-        <p>这里集中放所有可试用工具和图片工具跳转入口。</p>
+        <p>这里集中放所有可试用工具。建议先按自己的问题选择工具：询盘判断、客户跟进、标题关键词、广告体检或图片处理。</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section>
+    <div class="site">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> How to Use</div>
+          <h2>免费工具使用说明</h2>
+        </div>
+        <p>工具页不是让用户一次性全部填写，而是根据当前卡点选择对应工具。每个工具都保留轻量试用版，适合快速判断方向。</p>
+      </div>
+
+      <div class="tools-guide">
+        <div class="guide-card">
+          <strong>新询盘进来</strong>
+          <span>先用「询盘分级工具」判断优先级；如果有聊天记录，再用「聊天记录分析工具」看客户卡点。</span>
+        </div>
+        <div class="guide-card">
+          <strong>客户不回复</strong>
+          <span>用「跟进话术工具」生成 WhatsApp、阿里站内信和邮件版本。</span>
+        </div>
+        <div class="guide-card">
+          <strong>产品没流量</strong>
+          <span>用「标题关键词工具」检查标题是否更偏B端采购表达。</span>
+        </div>
+        <div class="guide-card">
+          <strong>广告在花钱</strong>
+          <span>用「广告体检工具」初步判断产品继续、优化还是暂停。</span>
+        </div>
+      </div>
+
+      <div class="tool-page-notice">
+        使用建议：免费版适合快速判断方向；如果需要完整判断维度、SOP表格和更多话术，可以去「资料领取」或「快捷指令」页面继续使用。
       </div>
     </div>
   </section>
@@ -1536,7 +1788,7 @@
         <div class="section-head">
           <div>
             <div class="eyebrow"><span class="dot"></span> Free Tools</div>
-            <h2>免费AI外贸工具</h2>
+            <h2>免费AI外贸工具入口</h2>
           </div>
           <p>第一版先提供4个核心工具入口，不限制产品类目，适合机械、家居、服装、包装、电子、礼品、工业品等不同B2B行业做快速判断。</p>
         </div>
@@ -1625,7 +1877,7 @@
           <div class="section-head" style="margin-bottom:10px;">
             <div>
               <div class="eyebrow"><span class="dot"></span> Image Tools</div>
-              <h2>图片处理工具入口</h2>
+              <h2>图片处理工具入口：去水印与图片翻译</h2>
             </div>
             <p>图片类工具需要专业AI图片处理能力，当前页面提供跳转入口，点击后前往 Pic Copilot 使用去水印和图片翻译功能。</p>
           </div>
@@ -1663,6 +1915,14 @@
           </div>
         </div>
 
+
+        <div class="tool-section-label">
+          <span></span>
+          <div>
+            <h3>询盘判断类工具</h3>
+            <p>适合新询盘进来后，快速判断客户等级、成交概率、核心卡点和下一步动作。</p>
+          </div>
+        </div>
 
         <div id="demo" class="demo">
           <div class="section-head" style="margin-bottom:10px;">
@@ -1706,7 +1966,7 @@
 
             <div>
               <label>分析结果</label>
-              <div class="output" id="leadResult">请填写左侧信息，然后点击“生成客户分析”。</div>
+              <div class="output enhanced-output" id="leadResult">请填写左侧信息，然后点击“生成客户分析”。</div>
               <div class="notice">
                 提醒：这个结果适合作为初步判断。真实成交还需要结合聊天记录、利润空间、交期、付款方式和客户背景一起判断。
               </div>
@@ -1726,6 +1986,71 @@
               </div>
             </div>
             <a class="btn btn-primary" href="paid.html">查看付费资料</a>
+          </div>
+        </div>
+
+        
+        <div class="tool-section-label">
+          <span></span>
+          <div>
+            <h3>聊天记录分析类工具</h3>
+            <p>适合把阿里站内信、WhatsApp、邮件或客户聊天记录复制进来，快速判断客户真实意向和下一步沟通方向。</p>
+          </div>
+        </div>
+
+        <div id="chat-demo" class="demo">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> Demo</div>
+              <h2>客户聊天记录AI分析工具 · 免费试用版</h2>
+            </div>
+            <p>复制客户聊天记录，填写产品和阶段，工具会输出客户意向、核心卡点、下一步问题和英文回复话术。</p>
+          </div>
+
+          <div class="demo-grid">
+            <div>
+              <label for="chatProduct">产品/行业类型</label>
+              <input id="chatProduct" placeholder="例如：Custom Packaging Box / Coffee Set / Industrial Machine" />
+
+              <label for="chatStage">当前沟通阶段</label>
+              <select id="chatStage">
+                <option value="new">新询盘阶段</option>
+                <option value="quoted">已报价阶段</option>
+                <option value="price">价格异议阶段</option>
+                <option value="moq">MOQ异议阶段</option>
+                <option value="sample">样品确认阶段</option>
+                <option value="order">订单前确认阶段</option>
+              </select>
+
+              <label for="chatGoal">我想推进的目标</label>
+              <select id="chatGoal">
+                <option value="clarify">确认真实需求</option>
+                <option value="budget">确认目标预算</option>
+                <option value="sample">推动样品</option>
+                <option value="quote">推动重新报价</option>
+                <option value="order">推动下单</option>
+                <option value="call">预约沟通</option>
+              </select>
+
+              <label for="chatRecord">粘贴客户聊天记录</label>
+              <textarea id="chatRecord" placeholder="把客户的聊天记录粘贴到这里。可以是阿里站内信、WhatsApp、邮件内容，也可以是你和客户的几轮对话。"></textarea>
+
+              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateChatAnalysis()">生成聊天记录分析</button>
+            </div>
+
+            <div>
+              <label>生成结果</label>
+              <div class="output enhanced-output" id="chatResult">请填写左侧信息并粘贴聊天记录，然后点击“生成聊天记录分析”。</div>
+              <div class="tool-next"><strong>下一步：</strong>如果客户卡点是价格、MOQ或已读未回，可以继续使用下方「客户跟进话术工具」，或去 <a href="prompts.html">快捷指令库</a> 复制更完整的多轮跟进指令。</div>
+            </div>
+          </div>
+        </div>
+
+<div class="tool-section-label">
+          <span></span>
+          <div>
+            <h3>客户跟进类工具</h3>
+            <p>适合报价后已读未回、客户嫌价格贵、MOQ太高、样品后未反馈等场景。</p>
           </div>
         </div>
 
@@ -1777,13 +2102,22 @@
 
             <div>
               <label>生成结果</label>
-              <div class="output" id="followResult">请填写左侧信息，然后点击“生成跟进话术”。</div>
+              <div class="output enhanced-output" id="followResult">请填写左侧信息，然后点击“生成跟进话术”。</div>
+              <div class="tool-next"><strong>下一步：</strong>如果客户仍然不回复，可以去 <a href="prompts.html">快捷指令库</a> 复制“已读未回跟进话术”和“价格异议处理”指令继续优化。</div>
               <div class="notice">
                 提醒：生成话术后，建议你根据客户真实聊天记录再微调1-2句，会更自然，也更像真人业务员。
               </div>
             </div>
           </div>
         </div>
+        <div class="tool-section-label">
+          <span></span>
+          <div>
+            <h3>产品发布类工具</h3>
+            <p>适合阿里国际站产品标题、关键词、B端卖点和详情页首屏文案优化。</p>
+          </div>
+        </div>
+
         <div id="title-demo" class="demo">
           <div class="section-head" style="margin-bottom:10px;">
             <div>
@@ -1836,11 +2170,20 @@
 
             <div>
               <label>生成结果</label>
-              <div class="output" id="titleResult">请填写左侧信息，然后点击“生成标题关键词”。</div>
+              <div class="output enhanced-output" id="titleResult">请填写左侧信息，然后点击“生成标题关键词”。</div>
+              <div class="tool-next"><strong>下一步：</strong>标题生成后，建议结合产品主图、详情页首屏和关键词来源一起优化。可去 <a href="articles.html">学习内容</a> 页面查看标题关键词方法。</div>
               <div class="notice">
                 提醒：阿里标题建议控制在128字符以内，优先放核心词 + 产品属性 + B端采购场景，不要只堆关键词。
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="tool-section-label">
+          <span></span>
+          <div>
+            <h3>广告复盘类工具</h3>
+            <p>适合每周广告体检，判断产品继续投放、优化观察还是暂停。</p>
           </div>
         </div>
 
@@ -1885,7 +2228,7 @@
 
             <div>
               <label>体检结果</label>
-              <div class="output" id="adResult">请填写左侧广告数据，然后点击“生成广告体检”。</div>
+              <div class="output enhanced-output" id="adResult">请填写左侧广告数据，然后点击“生成广告体检”。</div>
               <div class="notice">
                 提醒：广告诊断要结合产品利润、国家质量、买家等级和聊天质量。工具结果适合作为每周复盘初筛。
               </div>
@@ -1900,12 +2243,22 @@
 
   <footer>
     <div class="site">
-      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V25 彩色导航版</p>
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V28 智能体购买确认页版</p>
     </div>
   </footer>
 
 
   <script>
+
+    function renderResultCards(targetId, cards, fullText) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      const html = '<div class="result-grid">' + cards.map(function(card) {
+        return '<div class="result-card"><strong>' + card.title + '</strong><span>' + card.content + '</span></div>';
+      }).join('') + '</div>' + '<div style="margin-top:14px; white-space:pre-line; font-size:13px; color:#64748b;">' + fullText + '</div>';
+      target.innerHTML = html;
+    }
+
 
     function generateLeadScore() {
       const country = document.getElementById("country").value.trim() || "未填写";
@@ -1979,8 +2332,166 @@ ${action}
 英文跟进话术：
 ${message}`;
 
-      document.getElementById("leadResult").textContent = result;
+      renderResultCards("leadResult", [
+        { title: "客户等级", content: level },
+        { title: "成交概率", content: probability + "｜评分：" + score + "/100" },
+        { title: "核心卡点", content: pain },
+        { title: "建议动作", content: action },
+        { title: "英文话术", content: message },
+        { title: "客户信息", content: "国家：" + country + "\n产品：" + product + "\n数量：" + (quantity || "未填写") }
+      ], result);
     }
+
+
+    function generateChatAnalysis() {
+      const product = document.getElementById("chatProduct").value.trim() || "your product";
+      const stage = document.getElementById("chatStage").value;
+      const goal = document.getElementById("chatGoal").value;
+      const record = document.getElementById("chatRecord").value.trim();
+
+      const stageMap = {
+        new: "新询盘阶段",
+        quoted: "已报价阶段",
+        price: "价格异议阶段",
+        moq: "MOQ异议阶段",
+        sample: "样品确认阶段",
+        order: "订单前确认阶段"
+      };
+
+      const goalMap = {
+        clarify: "确认真实需求",
+        budget: "确认目标预算",
+        sample: "推动样品",
+        quote: "推动重新报价",
+        order: "推动下单",
+        call: "预约沟通"
+      };
+
+      const lower = record.toLowerCase();
+      let intent = "中等意向";
+      let priority = "B类可继续推进";
+      let stuckPoint = "客户需求还不够完整，需要进一步确认数量、预算、包装、交期或用途。";
+      let nextQuestion = "Could you please share your target quantity, packaging requirement, and expected delivery time?";
+      let reply = "Hi, thanks for sharing the details. To recommend a more suitable solution for you, could you please confirm your target quantity, packaging requirement and expected delivery timeline?";
+      let risk = "当前信息不足，暂时不要投入过多定制设计或复杂报价成本。";
+      let action = "先补齐关键信息，再判断是否进入重点跟进。";
+
+      const hasQuantity = /\d+\s*(pcs|pieces|sets|units|cartons|boxes|个|件|套)/i.test(record) || lower.includes("quantity") || lower.includes("qty") || lower.includes("moq");
+      const hasPrice = lower.includes("price") || lower.includes("cost") || lower.includes("expensive") || lower.includes("cheap") || lower.includes("budget") || lower.includes("target price") || lower.includes("价格") || lower.includes("预算") || lower.includes("贵");
+      const hasSample = lower.includes("sample") || lower.includes("样品");
+      const hasUrgent = lower.includes("urgent") || lower.includes("asap") || lower.includes("soon") || lower.includes("delivery") || lower.includes("lead time") || lower.includes("交期") || lower.includes("尽快");
+      const hasCustomization = lower.includes("logo") || lower.includes("custom") || lower.includes("oem") || lower.includes("odm") || lower.includes("packaging") || lower.includes("定制") || lower.includes("包装");
+      const hasOrder = lower.includes("order") || lower.includes("po") || lower.includes("invoice") || lower.includes("下单") || lower.includes("订单");
+
+      let score = 35;
+      if (hasQuantity) score += 15;
+      if (hasPrice) score += 10;
+      if (hasSample) score += 12;
+      if (hasUrgent) score += 12;
+      if (hasCustomization) score += 10;
+      if (hasOrder) score += 18;
+      if (record.length > 500) score += 8;
+      if (stage === "order") score += 16;
+      if (stage === "sample") score += 12;
+      if (stage === "quoted") score += 8;
+      if (!record) score = 20;
+
+      if (lower.includes("expensive") || lower.includes("too high") || lower.includes("贵") || lower.includes("cheaper")) {
+        stuckPoint = "客户目前主要卡在价格或性价比，需要先拆分成本原因，再给基础款/标准款/升级款方案。";
+        nextQuestion = "May I know your target price range? Then we can adjust the material, configuration or packaging to better match your budget.";
+        reply = "Hi, I understand your concern about the price. The cost depends on material, specification, packaging and quantity. If you can share your target price range, we can prepare a more cost-effective option for your review.";
+        risk = "不要马上无条件降价，否则会削弱后续谈判空间。";
+        action = "先确认目标价，再提供可替代配置或包装方案。";
+      } else if (lower.includes("moq") || lower.includes("minimum") || lower.includes("最小起订") || lower.includes("起订量")) {
+        stuckPoint = "客户主要卡在MOQ，需要解释MOQ原因，并引导样品、试单或简化定制方案。";
+        nextQuestion = "May I know your first trial order quantity? We can check whether a sample order or simplified packaging option is possible.";
+        reply = "Hi, our MOQ is mainly related to production setup, customization and packaging cost. If you want to test first, we can start with samples or check a simplified option for your first order.";
+        risk = "如果客户数量明显过低，不建议投入复杂方案。";
+        action = "先确认客户测试数量和是否接受样品，再决定是否继续推进。";
+      } else if (hasSample || stage === "sample") {
+        stuckPoint = "客户进入样品相关阶段，重点不是催下单，而是确认样品反馈和修改点。";
+        nextQuestion = "Have you checked the sample? Any feedback on quality, packaging, size, logo or details?";
+        reply = "Hi, may I know if you have checked the sample? Any feedback on the quality, packaging, size or logo details would be helpful. We can adjust the details before moving to bulk order.";
+        risk = "样品后如果不问具体反馈，容易变成无效催单。";
+        action = "围绕质量、包装、尺寸、Logo、测试结果收集反馈。";
+      } else if (hasUrgent) {
+        stuckPoint = "客户可能关注交期和项目时间节点，需要优先确认deadline和可接受运输方式。";
+        nextQuestion = "Could you please confirm your required delivery date and destination country?";
+        reply = "Hi, thanks for the information. To check the fastest workable solution, could you please confirm your required delivery date and destination country? Then we can review production time and shipping options for you.";
+        risk = "交期不清楚时不要直接承诺时间。";
+        action = "先确认deadline、目的国、运输方式，再报价或推方案。";
+      } else if (hasCustomization) {
+        stuckPoint = "客户有定制需求，需要补齐Logo、包装、材质、规格、数量和目标市场信息。";
+        nextQuestion = "Could you share your logo file, packaging idea, target quantity and target market?";
+        reply = "Hi, we can support customization. To prepare a more accurate solution, could you please share your logo file, packaging idea, target quantity and target market?";
+        risk = "定制信息不完整时，报价容易不准确，后续反复修改。";
+        action = "用问题清单一次性收集定制信息。";
+      }
+
+      if (score >= 80) {
+        intent = "高意向";
+        priority = "A类重点跟进";
+      } else if (score >= 55) {
+        intent = "中高意向";
+        priority = "B类重点培育";
+      } else if (score >= 35) {
+        intent = "中等意向";
+        priority = "C类继续观察";
+      } else {
+        intent = "低意向/信息不足";
+        priority = "D类低频跟进";
+      }
+
+      const goalSuggestion = {
+        clarify: "当前目标是确认真实需求，建议优先问用途、数量、规格、包装和交期。",
+        budget: "当前目标是确认目标预算，建议不要直接问最低价，而是问目标价格区间和可接受配置。",
+        sample: "当前目标是推动样品，建议强调样品可帮助确认质量、包装和细节。",
+        quote: "当前目标是推动重新报价，建议先明确需要调整的是材质、配置、包装还是数量。",
+        order: "当前目标是推动下单，建议确认PI、付款方式、交期、包装和收货信息。",
+        call: "当前目标是预约沟通，建议给客户两个可选时间，降低回复成本。"
+      }[goal];
+
+      const fullText =
+`产品/行业：${product}
+当前阶段：${stageMap[stage]}
+推进目标：${goalMap[goal]}
+
+客户意向判断：
+${intent}
+
+跟进优先级：
+${priority}
+
+核心卡点：
+${stuckPoint}
+
+下一步建议问题：
+${nextQuestion}
+
+建议动作：
+${action}
+
+风险提醒：
+${risk}
+
+英文回复话术：
+${reply}
+
+目标提醒：
+${goalSuggestion}`;
+
+      renderResultCards("chatResult", [
+        { title: "客户意向", content: intent },
+        { title: "跟进优先级", content: priority },
+        { title: "核心卡点", content: stuckPoint },
+        { title: "下一步问题", content: nextQuestion },
+        { title: "建议动作", content: action },
+        { title: "英文回复话术", content: reply },
+        { title: "风险提醒", content: risk },
+        { title: "目标提醒", content: goalSuggestion }
+      ], fullText);
+    }
+
 
     function generateFollowup() {
       const product = document.getElementById("followProduct").value.trim() || "your product";
@@ -2120,7 +2631,14 @@ ${email}
 下一步建议：
 如果客户24-48小时内仍未回复，可以再补发一条“方案选择型”消息，例如：Would you prefer a more cost-effective option or a premium packaging option?`;
 
-      document.getElementById("followResult").textContent = result;
+      renderResultCards("followResult", [
+        { title: "客户状态", content: statusMap[status] },
+        { title: "跟进策略", content: strategy },
+        { title: "WhatsApp短话术", content: whatsapp },
+        { title: "阿里站内信", content: alibaba },
+        { title: "邮件版本", content: email },
+        { title: "下一步建议", content: "如果24-48小时仍未回复，再补发方案选择型消息。" }
+      ], result);
     }
 
     function generateTitleKeywords() {
@@ -2210,7 +2728,14 @@ ${detailText}
 优化提醒：
 标题优先顺序建议：核心关键词 + Wholesale/Custom/OEM + 产品属性/规格 + 应用场景 + 目标客户类型。`;
 
-      document.getElementById("titleResult").textContent = result;
+      renderResultCards("titleResult", [
+        { title: "标题1", content: title1 },
+        { title: "标题2", content: title2 },
+        { title: "核心关键词", content: core },
+        { title: "关键词包", content: keywords.join(", ") },
+        { title: "B端卖点", content: sellingPoints },
+        { title: "详情页短文案", content: detailText }
+      ], result);
     }
 
     function generateAdDiagnosis() {
@@ -2299,7 +2824,14 @@ ${action}
 下一步：
 ${next}`;
 
-      document.getElementById("adResult").textContent = result;
+      renderResultCards("adResult", [
+        { title: "诊断结论", content: status },
+        { title: "核心问题", content: issue },
+        { title: "建议动作", content: action },
+        { title: "关键指标", content: "CTR：" + ctr.toFixed(2) + "%\n询盘率：" + inquiryRate.toFixed(2) + "%\nCPC：" + cpc.toFixed(2) },
+        { title: "CPL判断", content: cplText },
+        { title: "下一步", content: next }
+      ], result);
     }
 
     function copyPrompt(id) {

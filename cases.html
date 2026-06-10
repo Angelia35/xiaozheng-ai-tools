@@ -1493,6 +1493,26 @@
       }
     }
 
+  
+    nav a:nth-child(9){background:#ecfdf5;color:#059669;border-color:#bbf7d0;}
+    .purchase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:24px}
+    .purchase-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 16px 44px rgba(16,24,40,.06);display:flex;flex-direction:column}
+    .purchase-card.featured{border-color:rgba(49,87,255,.36);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .purchase-card.featured:before{content:"推荐";position:absolute;top:18px;right:-36px;width:140px;text-align:center;transform:rotate(36deg);background:linear-gradient(135deg,#3157ff,#7c3aed);color:#fff;font-size:12px;font-weight:900;padding:6px 0}
+    .purchase-price{font-size:38px;font-weight:950;color:var(--text);margin:12px 0;letter-spacing:-1px}
+    .purchase-price small{font-size:15px;color:var(--muted);font-weight:800}
+    .agent-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+    .agent-list div{padding:12px 14px;border:1px solid var(--line);background:#f8f9ff;border-radius:16px;font-weight:800}
+    .notice-box{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:22px;padding:22px;margin-top:22px;line-height:1.8}
+    .process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:22px}
+    .process-step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 12px 34px rgba(16,24,40,.05)}
+    .process-step strong{display:block;color:var(--primary);margin-bottom:8px}.process-step span{color:var(--muted);font-size:13.5px}
+    .confirm-form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);margin-top:22px}
+    .checkbox-row{display:flex;gap:10px;align-items:flex-start;margin:12px 0;color:var(--muted);font-size:14px;line-height:1.65}.checkbox-row input{width:auto;margin-top:5px}
+    .buy-output{margin-top:18px;background:#0f172a;color:#fff;border-radius:18px;padding:18px;white-space:pre-line;line-height:1.75;font-size:14px}
+    @media(max-width:1050px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:720px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:1fr}}
+
   </style>
 </head>
 <body>
@@ -1514,6 +1534,7 @@
         <a href="articles.html">学习内容</a>
         <a href="cases.html" class="active">案例库</a>
         <a href="paid.html">付费项目</a>
+        <a href="buy.html">购买确认</a>
         <a href="contact.html">联系我</a>
       </nav>
     </div>
@@ -1726,7 +1747,7 @@
 
   <footer>
     <div class="site">
-      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V25 彩色导航版</p>
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V28 智能体购买确认页版</p>
     </div>
   </footer>
 

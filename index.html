@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 | V22去除转化FAQ版</title>
-  <meta name="description" content="小郑AI外贸工具站，为B2B外贸人提供AI工具、阿里国际站运营方法、客户跟进话术、广告诊断模板和付费资料项目。" />
+  <title>小郑AI外贸工具站 - 首页</title>
   <style>
+
     :root {
       --bg: #f6f7fb;
       --card: #ffffff;
@@ -1066,6 +1066,175 @@
       margin: 10px 0 0;
     }
 
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .prompt-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+    }
+
+    .prompt-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .prompt-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 14.5px;
+    }
+
+    .prompt-box {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 13px;
+      line-height: 1.7;
+      white-space: pre-line;
+      margin-top: 10px;
+      flex: 1;
+    }
+
+    .copy-btn {
+      margin-top: 14px;
+      width: fit-content;
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 13px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .prompt-category {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .prompt-note {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      margin-top: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .prompt-note p {
+      color: var(--muted);
+      margin: 10px 0 0;
+    }
+
+
+    .page-hero {
+      padding: 58px 0 26px;
+      background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 55%, #ffffff 100%);
+    }
+
+    .page-hero .hero-panel {
+      min-height: auto;
+    }
+
+    .home-shortcuts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .shortcut-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .shortcut-card h3 {
+      margin: 10px 0 8px;
+    }
+
+    .shortcut-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 14.5px;
+    }
+
+    .shortcut-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .home-section {
+      padding: 50px 0;
+    }
+
+    .home-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .home-mini-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .home-mini-card p {
+      color: var(--muted);
+      margin: 8px 0 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .home-shortcuts,
+      .home-mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .home-shortcuts,
+      .home-mini-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 1050px) {
       .hero-grid,
       .split,
@@ -1085,6 +1254,7 @@
       .resource-grid,
       .contact-highlight,
       .learning-path-grid,
+      .prompt-grid,
       .roadmap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1129,6 +1299,7 @@
       .resource-grid,
       .contact-highlight,
       .learning-path-grid,
+      .prompt-grid,
       .roadmap,
       .demo-grid {
         grid-template-columns: 1fr;
@@ -1138,1540 +1309,343 @@
         padding: 28px;
       }
     }
+  
+  
+    header {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #3157ff, #7c3aed);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow: 0 14px 28px rgba(49, 87, 255, 0.22);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -0.2px;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #334155;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    nav a::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: 0.72;
+    }
+
+    nav a:nth-child(1) {
+      background: #eef2ff;
+      color: #3157ff;
+      border-color: #dbe4ff;
+    }
+
+    nav a:nth-child(2) {
+      background: #ecfeff;
+      color: #0891b2;
+      border-color: #cffafe;
+    }
+
+    nav a:nth-child(3) {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #dcfce7;
+    }
+
+    nav a:nth-child(4) {
+      background: #fff7ed;
+      color: #ea580c;
+      border-color: #fed7aa;
+    }
+
+    nav a:nth-child(5) {
+      background: #fdf2f8;
+      color: #db2777;
+      border-color: #fbcfe8;
+    }
+
+    nav a:nth-child(6) {
+      background: #f5f3ff;
+      color: #7c3aed;
+      border-color: #ddd6fe;
+    }
+
+    nav a:nth-child(7) {
+      background: #fff1f2;
+      color: #e11d48;
+      border-color: #fecdd3;
+    }
+
+    nav a:nth-child(8) {
+      background: #f8fafc;
+      color: #475569;
+      border-color: #e2e8f0;
+    }
+
+    nav a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+      filter: saturate(1.08);
+    }
+
+    nav a.active {
+      color: #fff !important;
+      border-color: transparent !important;
+      background: linear-gradient(135deg, #3157ff, #7c3aed) !important;
+      box-shadow: 0 12px 28px rgba(49, 87, 255, 0.22);
+    }
+
+    nav a.active::before {
+      background: #fff;
+      opacity: 1;
+    }
+
+    @media (max-width: 1050px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        position: static;
+      }
+
+      nav {
+        gap: 7px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
   </style>
 </head>
-
 <body>
-  <header class="nav">
-    <div class="site nav-row">
-      <a href="#home" class="brand">
-        <span class="brand-logo">郑</span>
-        <span>小郑AI外贸工具站</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#tools">免费工具</a>
-        <a href="#image-tools">图片工具</a>
-        <a href="#industries">适用行业</a>
-        <a href="#resources">资料领取</a>
-        <a href="#articles">学习内容</a>
-        <a href="#cases">案例库</a>
-        <a href="#paid">付费项目</a>
-        <a href="#contact">联系我</a>
-        <a href="#tools" class="nav-cta">开始使用</a>
+
+  <header>
+    <div class="site nav">
+      <div class="brand">
+        <div class="brand-logo">郑</div>
+        <div>
+          <strong>小郑AI外贸工具站</strong>
+          <span>AI B2B Tools</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html" class="active">首页</a>
+        <a href="tools.html">免费工具</a>
+        <a href="prompts.html">快捷指令</a>
+        <a href="resources.html">资料领取</a>
+        <a href="articles.html">学习内容</a>
+        <a href="cases.html">案例库</a>
+        <a href="paid.html">付费项目</a>
+        <a href="contact.html">联系我</a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="site">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> AI外贸运营 · 工具 · 模板 · 实战</div>
-            <h1>用AI提升<span class="gradient-text">外贸运营、询盘转化</span>和阿里投流效率</h1>
-            <p class="hero-subtitle">
-              这里为不同行业的B2B外贸人整理可直接使用的AI工具、运营模板、客户跟进话术、广告诊断方法和实战学习资料。
-              不讲空泛概念，只解决外贸日常工作里的真实问题。
-            </p>
-            <div class="actions">
-              <a class="btn btn-primary" href="#tools">免费使用工具 →</a>
-              <a class="btn btn-light" href="#resources">领取免费资料</a>
-            </div>
-            <div class="tags">
-              <span class="tag">询盘分级</span>
-              <span class="tag">客户跟进</span>
-              <span class="tag">标题关键词</span>
-              <span class="tag">广告/产品数据体检</span>
-              <span class="tag">AI智能体搭建</span>
-            </div>
-          </div>
 
-          <div class="hero-panel">
-            <div class="mock">
-              <div class="mock-top">
-                <span class="circle"></span>
-                <span class="circle"></span>
-                <span class="circle"></span>
-              </div>
-              <div class="mock-body">
-                <div class="result-card">
-                  <strong>客户等级：A类重点客户</strong>
-                  <span>采购数量达标，有明确定制需求，建议24小时内推进样品或确认包装方案。</span>
-                  <div class="bar"><span style="width:86%;"></span></div>
-                </div>
-                <div class="result-card">
-                  <strong>当前卡点：价格 + MOQ</strong>
-                  <span>建议提供基础款/升级款两个方案，降低客户决策压力。</span>
-                  <div class="bar"><span style="width:68%;"></span></div>
-                </div>
-                <div class="result-card">
-                  <strong>推荐动作</strong>
-                  <span>发送英文跟进话术 + 产品方案图 + 打样周期说明。</span>
-                </div>
-              </div>
-            </div>
-          </div>
+  <section class="hero">
+    <div class="site hero-wrap">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> AI B2B Export Tools</div>
+        <h1>小郑AI外贸工具站</h1>
+        <p>
+          面向阿里国际站运营、B2B外贸业务员、外贸SOHO和中小企业老板的AI工具站。
+          用免费工具、快捷指令和实战案例，解决询盘判断、客户跟进、标题关键词、广告复盘和图片素材处理问题。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tools.html">开始使用免费工具</a>
+          <a class="btn btn-light" href="prompts.html">复制快捷指令</a>
+          <a class="btn btn-light" href="resources.html">领取资料</a>
         </div>
 
         <div class="stats">
-          <div class="stat">
+          <div class="stat-card">
             <div class="stat-number">6+</div>
-            <div class="stat-label">免费AI工具入口</div>
+            <div class="stat-label">AI工具入口</div>
           </div>
-          <div class="stat">
-            <div class="stat-number">3</div>
-            <div class="stat-label">付费资料/陪跑项目</div>
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">快捷指令模板</div>
           </div>
-          <div class="stat">
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">实战案例框架</div>
+          </div>
+          <div class="stat-card">
             <div class="stat-number">B2B</div>
-            <div class="stat-label">适配多行业外贸场景</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">AI</div>
-            <div class="stat-label">提升运营执行效率</div>
+            <div class="stat-label">外贸运营场景</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="tools">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Free Tools</div>
-            <h2>免费AI外贸工具</h2>
+      <div class="hero-panel">
+        <h2>这个网站适合解决什么？</h2>
+        <div class="home-mini-grid" style="grid-template-columns:1fr; gap:12px; margin-top:18px;">
+          <div class="home-mini-card">
+            <h3>询盘来了，不知道值不值得重点跟</h3>
+            <p>用询盘分级工具快速判断客户优先级。</p>
           </div>
-          <p>第一版先提供4个核心工具入口，不限制产品类目，适合机械、家居、服装、包装、电子、礼品、工业品等不同B2B行业做快速判断。</p>
-        </div>
-
-        <div class="grid-4">
-          <article class="card">
-            <div class="icon">📩</div>
-            <h3>B2B询盘分级工具</h3>
-            <p>输入客户国家、采购数量、产品/行业类型和当前状态，判断客户等级和跟进优先级。</p>
-            <ul class="list">
-              <li>客户等级 A/B/C/D</li>
-              <li>成交概率判断</li>
-              <li>当前卡点分析</li>
-              <li>下一步跟进建议</li>
-            </ul>
-            <div class="card-action"><a href="#demo" class="mini-btn">试用工具</a></div>
-          </article>
-
-          <article class="card">
-            <div class="icon">💬</div>
-            <h3>客户跟进话术生成器</h3>
-            <p>根据客户状态生成适合WhatsApp、阿里站内信和邮件使用的英文跟进话术。</p>
-            <ul class="list">
-              <li>报价后已读未回</li>
-              <li>客户嫌价格贵</li>
-              <li>MOQ太高应对</li>
-              <li>样品后跟进</li>
-            </ul>
-            <div class="card-action"><a href="#followup-demo" class="mini-btn">试用工具</a></div>
-          </article>
-
-          <article class="card">
-            <div class="icon">🔎</div>
-            <h3>阿里标题关键词生成器</h3>
-            <p>根据产品名称/类目、核心关键词、应用场景和目标客户，生成更偏B端的标题和关键词包。</p>
-            <ul class="list">
-              <li>2条产品标题</li>
-              <li>核心关键词包</li>
-              <li>B端卖点表达</li>
-              <li>详情页短文案</li>
-            </ul>
-            <div class="card-action"><a href="#title-demo" class="mini-btn">试用工具</a></div>
-          </article>
-
-          <article class="card">
-            <div class="icon">📊</div>
-            <h3>广告数据体检工具</h3>
-            <p>输入曝光、点击、花费、询盘数和产品ID，初步判断广告产品要继续、优化还是暂停。</p>
-            <ul class="list">
-              <li>CTR判断</li>
-              <li>询盘率判断</li>
-              <li>CPL判断</li>
-              <li>产品处理建议</li>
-            </ul>
-            <div class="card-action"><a href="#ad-demo" class="mini-btn">试用工具</a></div>
-          </article>
-
-          <article class="card">
-            <div class="icon">图</div>
-            <h3>图片水印/多余文字处理助手</h3>
-            <p>适合处理自有或已授权图片里的水印、多余文字、杂乱背景和平台标识。点击后跳转到 Pic Copilot 使用。</p>
-            <ul class="list">
-              <li>去除水印/多余文字</li>
-              <li>优化产品图干净度</li>
-              <li>适合产品图/包装图</li>
-              <li>仅限授权图片</li>
-            </ul>
-            <div class="card-action"><a href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener" class="mini-btn">跳转使用</a></div>
-          </article>
-
-          <article class="card">
-            <div class="icon">译</div>
-            <h3>图片翻译改图助手</h3>
-            <p>适合产品图、包装图、海报图，把图片里的文字翻译成目标语言并替换成新的图片文字。</p>
-            <ul class="list">
-              <li>图片文字翻译</li>
-              <li>替换图片内文案</li>
-              <li>适合多语言市场</li>
-              <li>跳转 Pic Copilot 使用</li>
-            </ul>
-            <div class="card-action"><a href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener" class="mini-btn">跳转使用</a></div>
-          </article>
-        </div>
-
-        <div class="demo" id="image-tools">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Image Tools</div>
-              <h2>图片处理工具入口</h2>
-            </div>
-            <p>图片类工具需要专业AI图片处理能力，当前页面提供跳转入口，点击后前往 Pic Copilot 使用去水印和图片翻译功能。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div class="scenario-card">
-              <h3>图片去水印 / 清理多余文字</h3>
-              <p>适合处理自有或已授权图片中的水印、平台标识、多余文字和杂乱背景，让产品图更干净。</p>
-              <ul class="check-list">
-                <li>产品主图清洁</li>
-                <li>包装图文字清理</li>
-                <li>海报图视觉优化</li>
-              </ul>
-              <div class="card-action" style="margin-top:18px;">
-                <a class="btn btn-primary" href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener">跳转 Pic Copilot 使用</a>
-              </div>
-            </div>
-
-            <div class="scenario-card">
-              <h3>图片文字翻译 / 替换图片文案</h3>
-              <p>适合把产品图、包装图、详情页图、宣传图里的文字翻译成英文、西语、法语等目标语言。</p>
-              <ul class="check-list">
-                <li>多语言产品图</li>
-                <li>包装文案翻译</li>
-                <li>海外市场素材本地化</li>
-              </ul>
-              <div class="card-action" style="margin-top:18px;">
-                <a class="btn btn-primary" href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener">跳转 Pic Copilot 使用</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="notice">
-            使用提醒：图片处理请仅用于自有、已授权或可合法编辑的素材。涉及品牌、版权、平台水印的图片，请先确认授权和使用范围。
-          </div>
-        </div>
-
-
-        <div id="demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>B2B询盘分级工具 · 试用版</h2>
-            </div>
-            <p>这是第一版前端演示工具，不限制行业类目。填写任意产品/行业信息后，会生成一个简单的客户分级和跟进方向。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="country">客户国家</label>
-              <input id="country" placeholder="例如：United Kingdom / Spain / USA" />
-
-              <label for="product">产品/行业类型</label>
-              <input id="product" placeholder="例如：Machinery / Home Goods / Apparel / Packaging / Electronics" />
-
-              <label for="quantity">采购数量</label>
-              <input id="quantity" type="number" placeholder="例如：500" />
-
-              <label for="custom">是否需要定制</label>
-              <select id="custom">
-                <option value="yes">需要定制Logo/包装</option>
-                <option value="no">不需要定制</option>
-                <option value="unknown">暂不明确</option>
-              </select>
-
-              <label for="status">当前状态</label>
-              <select id="status">
-                <option value="new">新询盘</option>
-                <option value="quoted">已报价</option>
-                <option value="read">已读未回</option>
-                <option value="price">客户嫌价格贵</option>
-                <option value="moq">客户觉得MOQ太高</option>
-                <option value="sample">样品后未回复</option>
-              </select>
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateLeadScore()">生成客户分析</button>
-            </div>
-
-            <div>
-              <label>分析结果</label>
-              <div class="output" id="leadResult">请填写左侧信息，然后点击“生成客户分析”。</div>
-              <div class="notice">
-                提醒：这个结果适合作为初步判断。真实成交还需要结合聊天记录、利润空间、交期、付款方式和客户背景一起判断。
-              </div>
-            </div>
-          </div>
-
-          <div class="locked-box">
-            <div>
-              <h3>完整版询盘分级模型暂不开放免费试用</h3>
-              <p>当前免费版只保留基础判断，适合快速体验。完整版会加入更多维度，例如客户类型、采购时间、预算明确度、公司背景、主要卡点、成交路径和多轮跟进策略，用于资料包或智能体定制服务。</p>
-              <div class="locked-tags">
-                <span>客户类型判断</span>
-                <span>采购时间判断</span>
-                <span>预算/卡点分析</span>
-                <span>多轮跟进策略</span>
-                <span>付费版开放</span>
-              </div>
-            </div>
-            <a class="btn btn-primary" href="#paid">查看付费资料</a>
-          </div>
-        </div>
-
-        <div id="followup-demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>客户跟进话术生成器 · 试用版</h2>
-            </div>
-            <p>选择客户当前状态和沟通目标后，自动生成适合阿里站内信、WhatsApp和邮件使用的英文跟进话术。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="followProduct">产品/行业类型</label>
-              <input id="followProduct" placeholder="例如：Machinery / Home Goods / Apparel / Packaging / Electronics" />
-
-              <label for="followCountry">客户国家</label>
-              <input id="followCountry" placeholder="例如：Spain / UK / USA / Malaysia" />
-
-              <label for="followStatus">客户当前状态</label>
-              <select id="followStatus">
-                <option value="noReply">报价后已读未回</option>
-                <option value="expensive">客户嫌价格贵</option>
-                <option value="moq">客户觉得MOQ太高</option>
-                <option value="sample">样品后未回复</option>
-                <option value="thinking">客户说再考虑一下</option>
-                <option value="oldCustomer">老客户再开发</option>
-              </select>
-
-              <label for="followGoal">你想推进的目标</label>
-              <select id="followGoal">
-                <option value="confirm">确认客户是否继续推进</option>
-                <option value="sample">推动客户先确认样品</option>
-                <option value="budget">确认客户目标预算</option>
-                <option value="order">推动客户尽快下单</option>
-                <option value="call">预约一次语音/视频沟通</option>
-              </select>
-
-              <label for="followTone">话术语气</label>
-              <select id="followTone">
-                <option value="soft">自然礼貌，不强推</option>
-                <option value="direct">直接推进成交</option>
-                <option value="professional">专业稳重，适合B端客户</option>
-              </select>
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateFollowup()">生成跟进话术</button>
-            </div>
-
-            <div>
-              <label>生成结果</label>
-              <div class="output" id="followResult">请填写左侧信息，然后点击“生成跟进话术”。</div>
-              <div class="notice">
-                提醒：生成话术后，建议你根据客户真实聊天记录再微调1-2句，会更自然，也更像真人业务员。
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="title-demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>阿里标题关键词生成器 · 试用版</h2>
-            </div>
-            <p>输入产品、核心关键词、包装方式和目标客户后，自动生成更偏B端采购场景的标题、关键词包和卖点表达。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="titleProduct">产品名称/类目</label>
-              <input id="titleProduct" placeholder="例如：Machinery / Home Goods / Apparel / Packaging / Electronics" />
-
-              <label for="coreKeyword">核心关键词</label>
-              <input id="coreKeyword" placeholder="例如：Custom Packaging Box / CNC Router / Women Jacket / LED Strip Light" />
-
-              <label for="targetBuyer">目标客户</label>
-              <select id="targetBuyer">
-                <option value="wholesaler">批发商 / Distributor / Wholesaler</option>
-                <option value="brand">品牌商 / Private Label Brand</option>
-                <option value="gift">礼品客户 / Corporate Gift Buyer</option>
-                <option value="retail">商超零售 / Retail Chain</option>
-                <option value="ecommerce">电商卖家 / E-commerce Seller</option>
-              </select>
-
-              <label for="application">应用场景</label>
-              <select id="application">
-                <option value="wholesale">Wholesale / Bulk Purchase</option>
-                <option value="retail">Retail / E-commerce / Store Sales</option>
-                <option value="industrial">Industrial / Commercial Use</option>
-                <option value="customProject">Custom Project / OEM ODM</option>
-                <option value="promotion">Promotion / Gift / Seasonal Campaign</option>
-              </select>
-
-              <label for="packageType">包装/交付方式</label>
-              <select id="packageType">
-                <option value="custom">Custom Logo / Custom Packaging</option>
-                <option value="standard">Standard Export Packaging</option>
-                <option value="bulk">Bulk Packing</option>
-                <option value="retail">Retail Packaging</option>
-                <option value="premium">Premium / Gift Packaging</option>
-              </select>
-
-              <label for="titleFeature">核心卖点</label>
-              <input id="titleFeature" placeholder="例如：OEM ODM / Factory Direct / Custom Logo / Gift Set" />
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateTitleKeywords()">生成标题关键词</button>
-            </div>
-
-            <div>
-              <label>生成结果</label>
-              <div class="output" id="titleResult">请填写左侧信息，然后点击“生成标题关键词”。</div>
-              <div class="notice">
-                提醒：阿里标题建议控制在128字符以内，优先放核心词 + 产品属性 + B端采购场景，不要只堆关键词。
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="ad-demo" class="demo">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <div class="eyebrow"><span class="dot"></span> Demo</div>
-              <h2>阿里广告数据体检工具 · 试用版</h2>
-            </div>
-            <p>输入产品ID、曝光、点击、花费和询盘数后，自动判断产品是否建议继续跑、优化观察或暂停。</p>
-          </div>
-
-          <div class="demo-grid">
-            <div>
-              <label for="productId">产品ID</label>
-              <input id="productId" placeholder="例如：1601236849225" />
-
-              <label for="impressions">曝光量</label>
-              <input id="impressions" type="number" placeholder="例如：5000" />
-
-              <label for="clicks">点击量</label>
-              <input id="clicks" type="number" placeholder="例如：80" />
-
-              <label for="cost">广告花费</label>
-              <input id="cost" type="number" placeholder="例如：300" />
-
-              <label for="inquiries">询盘数</label>
-              <input id="inquiries" type="number" placeholder="例如：3" />
-
-              <label for="adMarket">目标市场</label>
-              <select id="adMarket">
-                <option value="欧美市场">欧美市场</option>
-                <option value="北美市场">北美市场</option>
-                <option value="欧洲市场">欧洲市场</option>
-                <option value="中东市场">中东市场</option>
-                <option value="南美市场">南美市场</option>
-                <option value="全球市场">全球市场</option>
-              </select>
-
-              <button class="btn btn-primary" style="margin-top:18px;width:100%;" onclick="generateAdDiagnosis()">生成广告体检</button>
-            </div>
-
-            <div>
-              <label>体检结果</label>
-              <div class="output" id="adResult">请填写左侧广告数据，然后点击“生成广告体检”。</div>
-              <div class="notice">
-                提醒：广告诊断要结合产品利润、国家质量、买家等级和聊天质量。工具结果适合作为每周复盘初筛。
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="industries">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Multi-industry</div>
-            <h2>不限制产品类目，适合不同B2B行业使用</h2>
-          </div>
-          <p>工具里的“产品类型”都是开放输入，不绑定某一个行业。无论你做的是设备、服装、包装、家居、电子还是礼品，都可以按自己的业务填写。</p>
-        </div>
-
-        <div class="scenario-grid">
-          <div class="scenario-card">
-            <h3>机械设备 / 工业品</h3>
-            <p>适合用于设备询盘分级、项目客户跟进、技术参数沟通、报价后推进和广告产品初筛。</p>
-          </div>
-          <div class="scenario-card">
-            <h3>服装 / 配饰 / 纺织</h3>
-            <p>适合用于OEM/ODM询盘判断、样品后跟进、尺码材质沟通、标题关键词和季节性推广。</p>
-          </div>
-          <div class="scenario-card">
-            <h3>包装 / 印刷 / 定制品</h3>
-            <p>适合用于定制需求确认、MOQ解释、打样推进、报价后跟进和私标客户开发。</p>
-          </div>
-          <div class="scenario-card">
-            <h3>家居 / 礼品 / 日用品</h3>
-            <p>适合用于批发商、礼品商、电商客户的产品方案推荐、英文话术和关键词生成。</p>
-          </div>
-          <div class="scenario-card">
-            <h3>电子配件 / 消耗品</h3>
-            <p>适合用于规格确认、批量采购跟进、价格梯度沟通和广告数据初步诊断。</p>
-          </div>
-          <div class="scenario-card">
-            <h3>美妆个护 / 宠物 / 其他类目</h3>
-            <p>只要是B2B外贸询盘、产品发布、客户跟进和广告复盘场景，都可以用这套工具框架。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="scenarios">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Use Cases</div>
-            <h2>这些工具适合解决哪些外贸问题？</h2>
-          </div>
-          <p>不是做一个好看的网页，而是把日常外贸运营里最频繁、最消耗时间的动作工具化。</p>
-        </div>
-
-        <div class="scenario-grid">
-          <div class="scenario-card">
-            <h3>新询盘进来，不知道优先级</h3>
-            <p>用询盘分级工具快速判断客户是A类重点客户、B类可推进客户，还是只适合低频跟进。</p>
-            <ul class="check-list">
-              <li>适合业务员每日筛客户</li>
-              <li>适合运营复盘询盘质量</li>
-              <li>适合老板判断团队跟进重点</li>
-            </ul>
-          </div>
-
-          <div class="scenario-card">
+          <div class="home-mini-card">
             <h3>客户已读未回，不知道怎么追</h3>
-            <p>用客户跟进话术生成器，根据客户卡点生成不同语气的话术，避免每次都只会说“Any update?”。</p>
-            <ul class="check-list">
-              <li>报价后跟进</li>
-              <li>嫌价格贵应对</li>
-              <li>MOQ太高应对</li>
-            </ul>
+            <p>用跟进话术工具生成更自然的英文话术。</p>
           </div>
-
-          <div class="scenario-card">
-            <h3>产品发布时标题关键词没思路</h3>
-            <p>用标题关键词生成器快速生成B端采购标题、关键词包和详情页短文案，适合新品发布和老品优化。</p>
-            <ul class="check-list">
-              <li>阿里国际站产品发布</li>
-              <li>关键词扩展</li>
-              <li>B端卖点表达</li>
-            </ul>
-          </div>
-
-          <div class="scenario-card">
-            <h3>广告烧钱但不知道停哪个品</h3>
-            <p>用广告体检工具计算CTR、询盘率、CPC和CPL，帮助做每周广告初筛和产品暂停判断。</p>
-            <ul class="check-list">
-              <li>20点击无询盘初筛</li>
-              <li>高花费低转化判断</li>
-              <li>广告复盘前快速整理</li>
-            </ul>
-          </div>
-
-          <div class="scenario-card">
-            <h3>想做公众号引流但缺少工具入口</h3>
-            <p>你可以把这些工具作为公众号文章底部的引流入口，让用户先免费体验，再转化到资料包或陪跑。</p>
-            <ul class="check-list">
-              <li>文章引流到工具</li>
-              <li>工具承接信任</li>
-              <li>资料包完成低价转化</li>
-            </ul>
-          </div>
-
-          <div class="scenario-card">
-            <h3>想把AI外贸做成副业产品</h3>
-            <p>这个工具站可以作为你的第一个MVP，用来验证用户需求、沉淀案例、承接咨询和智能体定制。</p>
-            <ul class="check-list">
-              <li>免费工具积累流量</li>
-              <li>付费资料转化</li>
-              <li>高价服务转化</li>
-            </ul>
+          <div class="home-mini-card">
+            <h3>产品标题、广告和图片素材需要优化</h3>
+            <p>用标题工具、广告体检和图片工具入口快速处理。</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-
-    <section id="articles">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Free Learning</div>
-            <h2>AI外贸学习内容中心</h2>
-          </div>
-          <p>这里不是单纯放文章标题，而是把外贸运营的高频问题拆成学习路径。每篇内容都可以搭配上方工具一起使用。</p>
+  <section class="home-section">
+    <div class="site">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Main Entry</div>
+          <h2>主要功能入口</h2>
         </div>
+        <p>首页只保留核心入口，详细内容点击对应页面查看。</p>
+      </div>
 
-        <div class="learning-path-grid">
-          <div class="learning-step">
-            <strong>01 先判断客户</strong>
-            <span>学会用AI快速判断客户意向、采购阶段、跟进优先级和核心卡点。</span>
-          </div>
-          <div class="learning-step">
-            <strong>02 再优化话术</strong>
-            <span>把已读未回、嫌价格贵、MOQ太高、样品后无回复拆成不同跟进策略。</span>
-          </div>
-          <div class="learning-step">
-            <strong>03 再优化产品</strong>
-            <span>用AI辅助标题、关键词、详情页卖点和产品发布，提高平台承接效率。</span>
-          </div>
-          <div class="learning-step">
-            <strong>04 最后复盘数据</strong>
-            <span>通过广告、询盘、客户质量和产品表现，形成每周运营复盘机制。</span>
-          </div>
+      <div class="home-shortcuts">
+        <article class="shortcut-card">
+          <div class="shortcut-icon">工</div>
+          <h3>免费工具</h3>
+          <p>询盘分级、客户跟进、标题关键词、广告体检、图片工具跳转。</p>
+          <a class="mini-btn" href="tools.html">进入工具页</a>
+        </article>
+
+        <article class="shortcut-card">
+          <div class="shortcut-icon">令</div>
+          <h3>快捷指令</h3>
+          <p>公众号用户可直接复制AI指令，粘贴到ChatGPT里使用。</p>
+          <a class="mini-btn" href="prompts.html">查看指令库</a>
+        </article>
+
+        <article class="shortcut-card">
+          <div class="shortcut-icon">学</div>
+          <h3>学习内容</h3>
+          <p>从客户判断、话术优化、产品发布到广告复盘的学习路径。</p>
+          <a class="mini-btn" href="articles.html">进入学习页</a>
+        </article>
+
+        <article class="shortcut-card">
+          <div class="shortcut-icon">案</div>
+          <h3>案例库</h3>
+          <p>用问题、分析、动作、复盘的结构拆解AI外贸实战案例。</p>
+          <a class="mini-btn" href="cases.html">查看案例库</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section" style="padding-top:20px;">
+    <div class="site">
+      <div class="home-mini-grid">
+        <div class="home-mini-card">
+          <h3>免费资料领取</h3>
+          <p>领取提示词体验包、话术体验版、广告体检表和运营检查清单。</p>
+          <div class="card-action"><a class="mini-btn" href="resources.html">去领取</a></div>
         </div>
-
-        <div class="article-grid">
-          <article class="article-card featured-article">
-            <span class="article-meta">新手必看</span>
-            <h3>外贸人如何用AI提升询盘转化？</h3>
-            <p>从客户分层、需求确认、报价前判断、报价后跟进四个环节，拆解AI如何真正进入外贸业务流程，而不是只用来写文案。</p>
-            <ul class="check-list">
-              <li>适合业务员和SOHO</li>
-              <li>搭配询盘分级工具使用</li>
-              <li>适合作为公众号首篇导流文章</li>
-            </ul>
-            <div class="article-actions">
-              <a href="#demo">使用询盘工具</a>
-              <a href="#resources" class="secondary">领取提示词</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <span class="article-meta">询盘转化</span>
-            <h3>客户已读未回，不一定是没兴趣</h3>
-            <p>客户不回复的原因可能是价格不匹配、MOQ卡住、方案不清晰、交期不确定或信任感不足。文章可拆成5种跟进模板。</p>
-            <ul class="check-list">
-              <li>报价后跟进</li>
-              <li>方案型追单</li>
-              <li>降低客户回复成本</li>
-            </ul>
-            <div class="article-actions">
-              <a href="#followup-demo">生成跟进话术</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <span class="article-meta">阿里运营</span>
-            <h3>阿里国际站标题关键词怎么写才更偏B端？</h3>
-            <p>标题不是关键词堆砌，而是“核心词 + 产品属性 + 采购场景 + B端能力”的组合。适合新品发布和老品重写。</p>
-            <ul class="check-list">
-              <li>核心词拆解</li>
-              <li>B端采购词</li>
-              <li>标题128字符控制</li>
-            </ul>
-            <div class="article-actions">
-              <a href="#title-demo">生成标题关键词</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <span class="article-meta">广告投流</span>
-            <h3>阿里广告每周复盘，先看这4个指标</h3>
-            <p>曝光、点击、询盘、CPL是广告初筛的基础。文章可以教用户用“20点击无询盘”做快速暂停判断。</p>
-            <ul class="check-list">
-              <li>CTR点击率</li>
-              <li>询盘率</li>
-              <li>CPL询盘成本</li>
-            </ul>
-            <div class="article-actions">
-              <a href="#ad-demo">做广告体检</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <span class="article-meta">图片素材</span>
-            <h3>外贸产品图如何快速做多语言版本？</h3>
-            <p>适合讲产品图、包装图、海报图的多语言改图流程，包括文字翻译、排版替换、图片清洁和本地化表达。</p>
-            <ul class="check-list">
-              <li>图片翻译</li>
-              <li>包装图本地化</li>
-              <li>产品图清洁</li>
-            </ul>
-            <div class="article-actions">
-              <a href="#image-tools">使用图片工具</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <span class="article-meta">工作流</span>
-            <h3>如何把AI外贸工具做成团队SOP？</h3>
-            <p>适合给老板或运营负责人看：把客户分析、话术生成、产品发布、广告体检变成固定流程，减少团队凭感觉操作。</p>
-            <ul class="check-list">
-              <li>业务员SOP</li>
-              <li>运营复盘SOP</li>
-              <li>AI工具使用规范</li>
-            </ul>
-            <div class="article-actions">
-              <a href="#contact">交流工具搭建</a>
-            </div>
-          </article>
+        <div class="home-mini-card">
+          <h3>付费项目</h3>
+          <p>适合需要完整资料包、话术库或AI外贸智能体搭建陪跑的人。</p>
+          <div class="card-action"><a class="mini-btn" href="paid.html">查看项目</a></div>
         </div>
-
-        <div class="content-note">
-          <h3>内容更新建议</h3>
-          <p>后续公众号可以围绕这6个方向一篇篇展开，每篇文章底部都引导用户回到对应工具。这样网站不是单独存在，而是和公众号、小红书、朋友圈形成闭环。</p>
+        <div class="home-mini-card">
+          <h3>联系交流</h3>
+          <p>关注公众号「小郑的运营笔记」，后续可承接资料领取和服务咨询。</p>
+          <div class="card-action"><a class="mini-btn" href="contact.html">联系我</a></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-
-
-    <section id="cases">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Case Library</div>
-            <h2>AI外贸实战案例库</h2>
-          </div>
-          <p>案例库的目标不是展示“结果多厉害”，而是展示问题、判断、动作和复盘过程。对外展示时可以全部脱敏。</p>
-        </div>
-
-        <div class="case-grid">
-          <article class="case-card detailed">
-            <h3>案例1：广告点击多，但询盘少</h3>
-            <p>适合用于展示广告体检工具的价值，帮助用户理解为什么不能只看曝光和点击。</p>
-            <div class="case-flow">
-              <div>
-                <strong>问题</strong>
-                <span>某产品广告点击持续增加，但询盘数少，消耗偏高。</span>
-              </div>
-              <div>
-                <strong>分析</strong>
-                <span>可能是主图吸引点击，但详情页、价格、MOQ或产品定位没有承接住。</span>
-              </div>
-              <div>
-                <strong>动作</strong>
-                <span>筛选20点击无询盘产品，优化标题、主图和详情页首屏，必要时暂停。</span>
-              </div>
-              <div>
-                <strong>复盘</strong>
-                <span>下一周重点观察CTR、询盘率、CPL和国家点击质量。</span>
-              </div>
-            </div>
-            <div class="case-tag-row">
-              <span>广告体检</span>
-              <span>产品暂停</span>
-              <span>CPL优化</span>
-            </div>
-          </article>
-
-          <article class="case-card detailed">
-            <h3>案例2：报价后客户已读未回</h3>
-            <p>适合用于展示客户跟进话术工具的价值，让用户知道“追客户”不是简单催单。</p>
-            <div class="case-flow">
-              <div>
-                <strong>问题</strong>
-                <span>客户看完报价后不回复，业务员不知道是价格贵还是暂时没决定。</span>
-              </div>
-              <div>
-                <strong>分析</strong>
-                <span>客户可能缺少对比方案、预算不匹配、决策链未完成或担心交期风险。</span>
-              </div>
-              <div>
-                <strong>动作</strong>
-                <span>用方案型话术跟进：提供基础款/升级款，询问目标预算和时间节点。</span>
-              </div>
-              <div>
-                <strong>复盘</strong>
-                <span>如果客户仍不回复，进入低频跟进池，不继续高强度消耗时间。</span>
-              </div>
-            </div>
-            <div class="case-tag-row">
-              <span>已读未回</span>
-              <span>报价跟进</span>
-              <span>英文话术</span>
-            </div>
-          </article>
-
-          <article class="case-card detailed">
-            <h3>案例3：产品标题太C端，B端点击弱</h3>
-            <p>适合用于展示标题关键词生成器的价值，帮助用户理解B2B标题不是堆词。</p>
-            <div class="case-flow">
-              <div>
-                <strong>问题</strong>
-                <span>标题只有产品名和形容词，没有体现批发、定制、OEM、应用场景。</span>
-              </div>
-              <div>
-                <strong>分析</strong>
-                <span>B端买家更关注供应能力、定制能力、规格属性、包装和应用场景。</span>
-              </div>
-              <div>
-                <strong>动作</strong>
-                <span>重写标题结构：核心词 + Wholesale/Custom/OEM + 属性 + 场景 + 买家类型。</span>
-              </div>
-              <div>
-                <strong>复盘</strong>
-                <span>观察曝光、点击率、询盘关键词和买家质量变化。</span>
-              </div>
-            </div>
-            <div class="case-tag-row">
-              <span>标题优化</span>
-              <span>关键词</span>
-              <span>B2B表达</span>
-            </div>
-          </article>
-
-          <article class="case-card detailed">
-            <h3>案例4：客户嫌价格贵</h3>
-            <p>适合用于展示“价格异议处理”的思路，不直接降价，而是先拆方案。</p>
-            <div class="case-flow">
-              <div>
-                <strong>问题</strong>
-                <span>客户反馈价格高，业务员担心继续沟通会丢单。</span>
-              </div>
-              <div>
-                <strong>分析</strong>
-                <span>价格贵不一定是拒绝，可能是客户没有看到配置、材质、包装和服务差异。</span>
-              </div>
-              <div>
-                <strong>动作</strong>
-                <span>拆成基础方案、标准方案、升级方案，让客户按预算选择。</span>
-              </div>
-              <div>
-                <strong>复盘</strong>
-                <span>记录客户目标价，为后续类似客户建立报价梯度模板。</span>
-              </div>
-            </div>
-            <div class="case-tag-row">
-              <span>价格异议</span>
-              <span>方案分层</span>
-              <span>预算确认</span>
-            </div>
-          </article>
-
-          <article class="case-card detailed">
-            <h3>案例5：样品后客户不反馈</h3>
-            <p>适合展示样品阶段的跟进逻辑：先问反馈，再推进修改和订单。</p>
-            <div class="case-flow">
-              <div>
-                <strong>问题</strong>
-                <span>样品寄出后客户没有明确反馈，也没有进入订单阶段。</span>
-              </div>
-              <div>
-                <strong>分析</strong>
-                <span>客户可能还没测试、内部没确认、包装/规格有疑虑，或项目优先级下降。</span>
-              </div>
-              <div>
-                <strong>动作</strong>
-                <span>跟进质量、包装、尺寸、Logo、测试结果，而不是直接问是否下单。</span>
-              </div>
-              <div>
-                <strong>复盘</strong>
-                <span>把样品反馈记录进客户档案，用于下一次方案修改。</span>
-              </div>
-            </div>
-            <div class="case-tag-row">
-              <span>样品跟进</span>
-              <span>客户反馈</span>
-              <span>订单推进</span>
-            </div>
-          </article>
-
-          <article class="case-card detailed">
-            <h3>案例6：图片素材需要多语言版本</h3>
-            <p>适合展示图片工具入口的价值，帮助用户处理产品图、包装图和海报图。</p>
-            <div class="case-flow">
-              <div>
-                <strong>问题</strong>
-                <span>中文或英文图片素材不能直接用于目标市场，影响详情页和社媒投放。</span>
-              </div>
-              <div>
-                <strong>分析</strong>
-                <span>图片文字需要翻译、本地化、排版替换，同时不能破坏产品主体。</span>
-              </div>
-              <div>
-                <strong>动作</strong>
-                <span>通过图片工具跳转处理去水印、多余文字、图片翻译和素材清洁。</span>
-              </div>
-              <div>
-                <strong>复盘</strong>
-                <span>建立多语言素材库：英文、西语、法语、德语等版本按市场使用。</span>
-              </div>
-            </div>
-            <div class="case-tag-row">
-              <span>图片翻译</span>
-              <span>素材本地化</span>
-              <span>视觉优化</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="content-note">
-          <h3>案例展示建议</h3>
-          <p>正式对外发布时，建议每个案例都使用“问题 - 分析 - 动作 - 复盘”的结构，客户名称、聊天截图、产品ID和金额可以全部打码，只保留可学习的方法。</p>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="learn">
-      <div class="site split">
-        <div class="panel">
-          <div class="eyebrow"><span class="dot"></span> Learning Path</div>
-          <h2>从免费工具，到系统化外贸运营能力</h2>
-          <p>这个网站不是单纯放工具，而是把AI外贸实战方法沉淀下来。你可以先用免费工具解决单点问题，再通过资料包、模板和陪跑服务建立自己的运营SOP。</p>
-          <a class="btn btn-primary" href="#paid">查看进阶资料</a>
-        </div>
-
-        <div class="panel">
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div><strong>先用免费工具解决高频问题</strong><br><span>从询盘分级、客户跟进、标题关键词和广告体检开始。</span></div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div><strong>再用模板建立自己的SOP</strong><br><span>把日常运营动作标准化，减少重复劳动。</span></div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div><strong>最后定制行业专属AI智能体</strong><br><span>根据行业、产品、客户类型和平台数据，搭建可长期复用的AI助手。</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="resources">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Free Resources</div>
-            <h2>免费资料领取区</h2>
-          </div>
-          <p>工具适合快速体验和判断方向，资料适合收藏复用。你可以先领取体验版模板，再根据自己的行业做调整。</p>
-        </div>
-
-        <div class="resource-grid">
-          <article class="resource-card">
-            <span class="resource-label">体验版</span>
-            <h3>AI外贸提示词体验包</h3>
-            <p>适合刚开始学习AI外贸的人，包含客户分析、标题关键词、跟进话术和广告复盘的基础提示词。</p>
-            <ul class="list">
-              <li>客户分析基础提示词</li>
-              <li>标题关键词基础提示词</li>
-              <li>跟进话术基础提示词</li>
-            </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">关注公众号领取</a></div>
-          </article>
-
-          <article class="resource-card">
-            <span class="resource-label">模板</span>
-            <h3>B2B客户跟进话术体验版</h3>
-            <p>适合报价后已读未回、客户嫌价格贵、MOQ太高、样品后未回复等常见场景。</p>
-            <ul class="list">
-              <li>WhatsApp短话术</li>
-              <li>阿里站内信话术</li>
-              <li>邮件跟进话术</li>
-            </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">回复关键词领取</a></div>
-          </article>
-
-          <article class="resource-card">
-            <span class="resource-label">表格</span>
-            <h3>广告体检表体验版</h3>
-            <p>适合每周广告初筛，记录曝光、点击、花费、询盘数、CPL和产品处理动作。</p>
-            <ul class="list">
-              <li>产品ID记录</li>
-              <li>CTR/询盘率/CPL</li>
-              <li>暂停/优化/观察判断</li>
-            </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">获取表格模板</a></div>
-          </article>
-
-          <article class="resource-card">
-            <span class="resource-label">清单</span>
-            <h3>AI外贸运营检查清单</h3>
-            <p>适合新手快速检查自己的产品发布、客户跟进、广告复盘和内容引流是否有遗漏。</p>
-            <ul class="list">
-              <li>产品发布检查</li>
-              <li>询盘跟进检查</li>
-              <li>广告复盘检查</li>
-            </ul>
-            <div class="card-action"><a href="#contact" class="mini-btn">领取检查清单</a></div>
-          </article>
-        </div>
-
-        <div class="notice" style="margin-top:18px;">
-          建议领取方式：关注公众号「小郑的运营笔记」，后续可设置自动回复关键词，例如「AI工具站」「提示词」「话术库」「广告表」。
-        </div>
-      </div>
-    </section>
-
-    <section id="paid">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> Paid Projects</div>
-            <h2>付费资料与陪跑项目</h2>
-          </div>
-          <p>如果你想从“体验工具”进一步升级到“系统执行”，可以选择完整资料、话术库或智能体搭建陪跑。</p>
-        </div>
-
-        <div class="pricing">
-          <article class="price-card">
-            <span class="badge">入门资料</span>
-            <h3>AI外贸提示词资料包</h3>
-            <p>适合刚开始学习AI外贸、希望快速拿到可复制模板和基础工作流的人。</p>
-            <div class="price">¥49 <small>/ 套</small></div>
-            <ul>
-              <li>外贸客户分析提示词</li>
-              <li>询盘分级完整版判断维度</li>
-              <li>标题关键词提示词</li>
-              <li>英文跟进话术提示词</li>
-              <li>广告诊断提示词</li>
-            </ul>
-            <a class="btn btn-light" href="#contact" style="width:100%;">联系领取</a>
-          </article>
-
-          <article class="price-card featured">
-            <span class="badge">推荐</span>
-            <h3>B2B客户跟进话术库</h3>
-            <p>适合每天需要跟进客户，但经常卡在“怎么写英文话术”的外贸业务员和SOHO。</p>
-            <div class="price">¥99 <small>/ 套</small></div>
-            <ul>
-              <li>报价后跟进话术</li>
-              <li>已读未回跟进话术</li>
-              <li>嫌价格贵应对话术</li>
-              <li>MOQ太高应对话术</li>
-              <li>样品后跟进话术</li>
-              <li>老客户再开发话术</li>
-            </ul>
-            <a class="btn btn-primary" href="#contact" style="width:100%;">咨询购买</a>
-          </article>
-
-          <article class="price-card">
-            <span class="badge">陪跑服务</span>
-            <h3>AI外贸智能体搭建陪跑</h3>
-            <p>适合想把AI真正放进询盘分析、标题关键词、客户跟进和广告复盘流程的团队或个人。</p>
-            <div class="price">¥399 <small>起</small></div>
-            <ul>
-              <li>行业专属智能体设计</li>
-              <li>询盘分析助手搭建</li>
-              <li>标题关键词助手搭建</li>
-              <li>客户跟进助手搭建</li>
-              <li>广告诊断助手搭建</li>
-              <li>基础使用教程</li>
-            </ul>
-            <a class="btn btn-light" href="#contact" style="width:100%;">预约沟通</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="faq">
-      <div class="site">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow"><span class="dot"></span> FAQ</div>
-            <h2>常见问题</h2>
-          </div>
-          <p>这一部分可以降低用户使用门槛，也能提前回答“这个工具适不适合我”的问题。</p>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-card">
-            <h3>这些工具是完全自动AI吗？</h3>
-            <p>当前第一版是前端规则工具，不需要登录，也不连接后台AI接口。它的优势是打开快、使用简单、适合免费体验。</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>工具生成的内容可以直接发给客户吗？</h3>
-            <p>可以作为初稿使用，但建议结合客户真实聊天记录、产品价格、交期和公司政策再微调，会更自然。</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>适合哪些行业？</h3>
-            <p>适合大部分B2B外贸行业，包括机械设备、家居用品、服装配件、包装材料、美妆个护、电子配件、礼品定制、工业品和消耗品等。</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>付费资料和免费工具有什么区别？</h3>
-            <p>免费工具只保留基础体验，帮助用户快速判断方向；付费资料会提供完整判断维度、提示词、SOP表格、话术库、案例模板和实操教程。</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>可以帮我的行业定制智能体吗？</h3>
-            <p>可以。后续可以根据你的产品、客户类型、平台数据和业务流程，定制询盘分析、标题关键词、广告诊断等智能体。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="final-cta">
-      <div class="site">
-        <div class="cta-strip">
-          <div>
-            <h2>先用免费工具跑起来，再用资料和方法建立自己的AI外贸工作流</h2>
-            <p>先从免费工具体验开始，再通过资料、模板、案例和智能体搭建，把AI真正用到日常外贸运营流程里。</p>
-          </div>
-          <div class="actions" style="margin:0;">
-            <a class="btn btn-primary" href="#tools">返回使用工具</a>
-            <a class="btn btn-light" href="#contact">联系领取资料</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="site">
-        <div class="contact-box">
-          <div>
-            <div class="eyebrow" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.16);color:white;"><span class="dot"></span> Contact</div>
-            <h2>想要资料包、工具定制或AI外贸陪跑？</h2>
-            <p>你可以通过公众号或微信联系我。后续这个网站会持续更新更多AI外贸工具、真实案例和运营模板。</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="javascript:void(0)">添加微信 / 公众号咨询</a>
-              <a class="btn btn-light" href="#tools">先试用免费工具</a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-row">
-              <strong>公众号</strong>
-              <span>小郑的运营笔记</span>
-            </div>
-            <div class="contact-row">
-              <strong>微信</strong>
-              <span>这里替换成你的微信号或二维码说明</span>
-            </div>
-            <div class="contact-row">
-              <strong>适合咨询</strong>
-              <span>AI外贸资料包 / 阿里运营诊断 / 智能体搭建 / 外贸工具站搭建</span>
-            </div>
-            <div class="contact-row">
-              <strong>建议自动回复关键词</strong>
-              <span>AI工具站 / 提示词 / 话术库 / 广告表 / 智能体</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <footer>
-    <div class="site">© 2026 小郑AI外贸工具站 · AI for B2B Trade Operations · V22</div>
+    <div class="site">
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V25 彩色导航版</p>
+    </div>
   </footer>
 
-  <script>
-    function generateLeadScore() {
-      const country = document.getElementById("country").value.trim() || "未填写";
-      const product = document.getElementById("product").value.trim() || "未填写";
-      const quantity = Number(document.getElementById("quantity").value || 0);
-      const custom = document.getElementById("custom").value;
-      const status = document.getElementById("status").value;
-
-      let score = 0;
-      let level = "C类普通客户";
-      let probability = "中低";
-      let action = "先补充关键信息，再判断是否值得重点推进。";
-      let pain = "信息不完整，客户意向还需要进一步确认。";
-      let message = "Hi, thanks for your inquiry. Could you please share your target quantity, packaging requirement, and delivery timeline? Then we can recommend a more suitable solution for you.";
-
-      if (quantity >= 500) score += 35;
-      else if (quantity >= 200) score += 20;
-      else if (quantity > 0) score += 8;
-
-      if (custom === "yes") score += 25;
-      if (custom === "unknown") score += 10;
-
-      if (status === "new") score += 12;
-      if (status === "quoted") score += 18;
-      if (status === "read") score += 8;
-      if (status === "price") score += 12;
-      if (status === "moq") score += 6;
-      if (status === "sample") score += 20;
-
-      if (score >= 70) {
-        level = "A类重点客户";
-        probability = "高";
-        pain = "客户具备较强采购可能，建议重点推进报价细节、样品或包装方案。";
-        action = "24小时内跟进，提供基础款/升级款两个方案，并推动客户确认数量、包装和交期。";
-        message = "Hi, based on your quantity and customization needs, we can prepare two options for you: a basic solution and an upgraded packaging solution. Could you confirm your preferred target price and delivery timeline? Then we can move forward with the sample or final quotation.";
-      } else if (score >= 45) {
-        level = "B类可推进客户";
-        probability = "中高";
-        pain = "客户有一定兴趣，但还需要通过方案、价格梯度或样品降低决策成本。";
-        action = "建议继续跟进，重点确认预算、用途、目标市场和是否能接受MOQ。";
-        message = "Hi, to recommend the most suitable option, may I know your target market and expected budget? We can also offer different product configurations to help match your price range.";
-      } else if (score >= 25) {
-        level = "C类培育客户";
-        probability = "中低";
-        pain = "客户需求不够明确，可能处于比价或早期了解阶段。";
-        action = "先轻量跟进，不要投入过多定制设计成本，可引导客户先看现有方案或样品。";
-        message = "Hi, no worries. I can first share some popular options for your reference. If you have a target quantity or packaging idea later, we can provide a more accurate quotation.";
-      } else {
-        level = "D类低优先级客户";
-        probability = "低";
-        pain = "数量、需求或预算信息不足，暂不建议作为重点客户投入。";
-        action = "建议用标准话术收集信息，若客户无回复，则进入低频跟进池。";
-        message = "Hi, thanks for your interest. Could you please share more details about your required quantity and usage? This will help us check whether we can support your order properly.";
-      }
-
-      const result =
-`客户国家：${country}
-产品类型：${product}
-采购数量：${quantity || "未填写"}
-
-客户等级：${level}
-成交概率：${probability}
-综合评分：${score}/100
-
-当前核心卡点：
-${pain}
-
-建议下一步动作：
-${action}
-
-英文跟进话术：
-${message}`;
-
-      document.getElementById("leadResult").textContent = result;
-    }
-
-    function generateFollowup() {
-      const product = document.getElementById("followProduct").value.trim() || "your product";
-      const country = document.getElementById("followCountry").value.trim() || "your market";
-      const status = document.getElementById("followStatus").value;
-      const goal = document.getElementById("followGoal").value;
-      const tone = document.getElementById("followTone").value;
-
-      const statusMap = {
-        noReply: "报价后已读未回",
-        expensive: "客户嫌价格贵",
-        moq: "客户觉得MOQ太高",
-        sample: "样品后未回复",
-        thinking: "客户说再考虑一下",
-        oldCustomer: "老客户再开发"
-      };
-
-      let strategy = "";
-      let whatsapp = "";
-      let alibaba = "";
-      let email = "";
-
-      if (status === "noReply") {
-        strategy = "不要直接催单，先用“补充价值 + 低压力确认”的方式重新打开对话。";
-        whatsapp = `Hi, just checking if you had a chance to review our quotation for ${product}. If you need, I can also prepare a more cost-effective option for your ${country} market.`;
-        alibaba = `Hi, I would like to follow up on the quotation we sent for ${product}. To help you compare more easily, we can also provide another option based on your target price or packaging requirement.`;
-        email = `Hi,
-
-I hope you are doing well. I just wanted to follow up on our quotation for ${product}.
-
-If the current option is not fully matching your budget, we can also adjust the product configuration, packaging, or material to make it more suitable for your ${country} market.
-
-May I know if this project is still under consideration?
-
-Best regards`;
-      } else if (status === "expensive") {
-        strategy = "不要马上降价，先拆分价格原因，再给客户两个方案：基础款和升级款。";
-        whatsapp = `I understand your concern about the price. For ${product}, we can check a basic version and an upgraded version for you, so you can compare both options more easily.`;
-        alibaba = `Thanks for your feedback. The price depends on the material, specification, packaging and quantity. We can help adjust the solution to better match your target budget.`;
-        email = `Hi,
-
-Thank you for your feedback. I understand that price is an important point for this project.
-
-For ${product}, the cost is mainly affected by material, specification, packaging and quantity. We can prepare two options for you: a basic version for better cost control, and an upgraded version for better presentation.
-
-Could you share your target price range? Then we can recommend the most suitable solution.
-
-Best regards`;
-      } else if (status === "moq") {
-        strategy = "先解释MOQ原因，再提供样品/试单/简化包装方案，避免客户直接流失。";
-        whatsapp = `Our standard MOQ is mainly for customized production and packaging. If you want to test first, we can start with a sample order before bulk production.`;
-        alibaba = `For customized ${product}, MOQ is related to production setup and packaging cost. If your quantity is still under discussion, we can first support sample checking.`;
-        email = `Hi,
-
-I understand the MOQ concern. For customized ${product}, MOQ is mainly required because of production setup, logo process and packaging cost.
-
-If you are not ready for bulk order yet, we can first arrange samples for quality and packaging checking. After you confirm the sample, we can move forward with the bulk order plan.
-
-Would you like us to prepare the sample details first?
-
-Best regards`;
-      } else if (status === "sample") {
-        strategy = "样品后跟进要聚焦反馈，而不是只问是否下单。先问质量、包装、修改点，再推进订单。";
-        whatsapp = `Hi, may I know if you have received or checked the sample of ${product}? Any feedback on quality, packaging or details would be helpful for the next step.`;
-        alibaba = `Hi, I would like to follow up on the sample checking status. Please let us know if there is anything you would like to adjust before bulk order.`;
-        email = `Hi,
-
-I hope the sample of ${product} has arrived safely.
-
-May I know your feedback on the quality, packaging and overall presentation? If there is anything that needs to be adjusted, we can revise it before moving to bulk order.
-
-Looking forward to your comments.
-
-Best regards`;
-      } else if (status === "thinking") {
-        strategy = "客户说考虑一下时，要给一个决策辅助点，比如库存、交期、方案有效期或替代方案。";
-        whatsapp = `No problem. To help with your decision, I can also prepare a short comparison of the available options for ${product}.`;
-        alibaba = `Sure, please take your time. If helpful, we can provide a comparison between different product configurations and packaging options.`;
-        email = `Hi,
-
-No problem, please take your time to review.
-
-To make your decision easier, we can also prepare a simple comparison for ${product}, including different product configurations, packaging options and estimated lead time.
-
-Would this be helpful for your evaluation?
-
-Best regards`;
-      } else {
-        strategy = "老客户再开发不要一上来推销，先用新品/趋势/促销节点重新激活。";
-        whatsapp = `Hi, long time no talk. We recently updated some new ${product} options that may be suitable for your market. Would you like me to share a quick catalog?`;
-        alibaba = `Hi, we have recently updated several new options for ${product}. Since you checked similar products before, I thought these might be useful for your next purchasing plan.`;
-        email = `Hi,
-
-I hope everything is going well.
-
-We recently updated some new ${product} options, including different configurations and packaging solutions. Since you were interested in similar products before, I thought these might be useful for your upcoming purchasing plan.
-
-Would you like me to share the latest options for your review?
-
-Best regards`;
-      }
-
-      const goalText = {
-        confirm: "当前目标：确认客户是否继续推进。",
-        sample: "当前目标：推动客户先确认样品。",
-        budget: "当前目标：确认客户目标预算。",
-        order: "当前目标：推动客户尽快下单。",
-        call: "当前目标：预约一次语音/视频沟通。"
-      }[goal];
-
-      const toneText = {
-        soft: "语气建议：自然礼貌，不要压迫客户。",
-        direct: "语气建议：可以更直接推进下一步动作。",
-        professional: "语气建议：保持专业、稳重，突出解决方案。"
-      }[tone];
-
-      const result =
-`客户状态：${statusMap[status]}
-产品类型：${product}
-客户市场：${country}
-
-跟进策略：
-${strategy}
-
-${goalText}
-${toneText}
-
-WhatsApp短话术：
-${whatsapp}
-
-阿里站内信话术：
-${alibaba}
-
-邮件跟进话术：
-${email}
-
-下一步建议：
-如果客户24-48小时内仍未回复，可以再补发一条“方案选择型”消息，例如：Would you prefer a more cost-effective option or a premium packaging option?`;
-
-      document.getElementById("followResult").textContent = result;
-    }
-
-    function generateTitleKeywords() {
-      const product = document.getElementById("titleProduct").value.trim() || "Custom B2B Product";
-      const core = document.getElementById("coreKeyword").value.trim() || product;
-      const buyer = document.getElementById("targetBuyer").value;
-      const app = document.getElementById("application").value;
-      const pack = document.getElementById("packageType").value;
-      const feature = document.getElementById("titleFeature").value.trim() || "OEM ODM Custom Logo";
-
-      const buyerMap = {
-        wholesaler: "Wholesale Distributor",
-        brand: "Private Label Brand",
-        gift: "Corporate Gift Buyer",
-        retail: "Retail Chain Buyer",
-        ecommerce: "E-commerce Seller"
-      };
-
-      const appMap = {
-        wholesale: "Wholesale Bulk Purchase",
-        retail: "Retail E-commerce Store Sales",
-        industrial: "Industrial Commercial Use",
-        customProject: "Custom Project OEM ODM",
-        promotion: "Promotion Gift Seasonal Campaign"
-      };
-
-      const packMap = {
-        custom: "Custom Logo Custom Packaging",
-        standard: "Standard Export Packaging",
-        bulk: "Bulk Packing",
-        retail: "Retail Packaging",
-        premium: "Premium Gift Packaging"
-      };
-
-      const title1 = `Wholesale ${core} ${feature} for ${buyerMap[buyer]} with ${packMap[pack]}`;
-      const title2 = `Custom ${product} ${appMap[app]} ${packMap[pack]} OEM ODM Factory Direct`;
-
-      const keywords = [
-        core,
-        product,
-        `wholesale ${core}`,
-        `custom ${core}`,
-        `${core} supplier`,
-        `${core} manufacturer`,
-        `${product} factory`,
-        `OEM ${product}`,
-        `ODM ${product}`,
-        `${packMap[pack]}`,
-        `${appMap[app]}`,
-        `${buyerMap[buyer]}`,
-        "bulk order",
-        "factory direct",
-        "custom logo",
-        "B2B supplier",
-        "private label"
-      ];
-
-      const sellingPoints =
-`1. Suitable for B2B buyers across different industries.
-2. Support OEM/ODM, private label, custom specifications or custom packaging when applicable.
-3. Suitable for ${buyerMap[buyer]} and ${appMap[app]} scenarios.
-4. Factory direct or supplier-direct solution based on target budget and order quantity.
-5. Product specifications, packaging, material, size or configuration can be adjusted based on project requirements.`;
-
-      const detailText =
-`This ${product} is designed for ${buyerMap[buyer]} looking for ${appMap[app]} solutions. We support ${feature}, ${packMap[pack]}, and flexible OEM/ODM customization for bulk orders.`;
-
-      const result =
-`高曝光标题1：
-${title1}
-
-高曝光标题2：
-${title2}
-
-核心关键词：
-${core}
-
-关键词包：
-${keywords.join(", ")}
-
-B端卖点表达：
-${sellingPoints}
-
-详情页短文案：
-${detailText}
-
-优化提醒：
-标题优先顺序建议：核心关键词 + Wholesale/Custom/OEM + 产品属性/规格 + 应用场景 + 目标客户类型。`;
-
-      document.getElementById("titleResult").textContent = result;
-    }
-
-    function generateAdDiagnosis() {
-      const productId = document.getElementById("productId").value.trim() || "未填写";
-      const impressions = Number(document.getElementById("impressions").value || 0);
-      const clicks = Number(document.getElementById("clicks").value || 0);
-      const cost = Number(document.getElementById("cost").value || 0);
-      const inquiries = Number(document.getElementById("inquiries").value || 0);
-      const market = document.getElementById("adMarket").value;
-
-      const ctr = impressions > 0 ? (clicks / impressions * 100) : 0;
-      const inquiryRate = clicks > 0 ? (inquiries / clicks * 100) : 0;
-      const cpc = clicks > 0 ? (cost / clicks) : 0;
-      const cpl = inquiries > 0 ? (cost / inquiries) : 0;
-
-      let status = "";
-      let action = "";
-      let issue = "";
-      let next = "";
-
-      if (clicks >= 20 && inquiries === 0) {
-        status = "建议暂停或降权观察";
-        issue = "产品已有一定点击，但没有产生询盘，可能存在主图、价格、详情页承接或客户不匹配问题。";
-        action = "先暂停高消耗投放，检查主图、标题、价格区间、MOQ和详情页卖点。";
-        next = "如果产品本身利润和供应链一般，建议暂停；如果是战略品，可换主图和标题后小预算测试。";
-      } else if (inquiries > 0 && inquiryRate >= 8) {
-        status = "建议继续投放，可适度加预算";
-        issue = "点击后询盘率较好，说明产品承接能力较强。";
-        action = "继续保留，并重点看询盘质量、买家等级和国家质量。";
-        next = "可以增加同类产品、扩展长尾关键词，并沉淀为优爆品模板。";
-      } else if (clicks > 0 && inquiryRate > 0 && inquiryRate < 5) {
-        status = "建议优化后继续观察";
-        issue = "产品有询盘但转化偏弱，说明不是完全无效，但承接效率不够。";
-        action = "优化首图、价格表达、MOQ说明、详情页前3屏和询盘入口。";
-        next = "再观察7-14天，如果点击继续增加但询盘无改善，再考虑暂停。";
-      } else if (impressions > 0 && ctr < 0.5) {
-        status = "建议优化标题和主图";
-        issue = "曝光有了但点击率偏低，说明买家看到后点击意愿不足。";
-        action = "优先换主图、标题前半段关键词和产品卖点表达。";
-        next = "用更强的B端词：Wholesale / Custom / OEM / Factory Direct。";
-      } else if (clicks < 20) {
-        status = "数据不足，继续观察";
-        issue = "点击量还不足，暂时不能判断产品真实转化能力。";
-        action = "先保持小预算测试，等点击累计到20-30以上再做暂停判断。";
-        next = "同步检查国家点击来源，避免预算被低质量市场消耗。";
-      } else {
-        status = "建议进入人工复盘";
-        issue = "数据处于中间状态，需要结合买家质量、产品利润和国家来源进一步判断。";
-        action = "查看点击国家、买家等级、详情页停留和询盘内容质量。";
-        next = "把该产品加入每周广告复盘表，和同类产品横向对比。";
-      }
-
-      const ctrText = ctr >= 1 ? "点击率表现尚可" : "点击率偏低，需要优化主图/标题";
-      const inquiryText = inquiryRate >= 8 ? "询盘率较好" : inquiryRate > 0 ? "询盘率偏弱，可优化承接" : "暂无询盘";
-      const cplText = inquiries > 0 ? `CPL约为 ${cpl.toFixed(2)}` : "暂无询盘，无法计算CPL";
-
-      const result =
-`产品ID：${productId}
-目标市场：${market}
-
-基础指标：
-曝光量：${impressions}
-点击量：${clicks}
-广告花费：${cost}
-询盘数：${inquiries}
-
-计算结果：
-CTR点击率：${ctr.toFixed(2)}%
-询盘率：${inquiryRate.toFixed(2)}%
-CPC平均点击成本：${cpc.toFixed(2)}
-${cplText}
-
-诊断结论：
-${status}
-
-指标判断：
-${ctrText}
-${inquiryText}
-
-核心问题：
-${issue}
-
-建议动作：
-${action}
-
-下一步：
-${next}`;
-
-      document.getElementById("adResult").textContent = result;
-    }
-  </script>
 
 </body>
 </html>

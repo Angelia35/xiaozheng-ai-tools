@@ -3,1745 +3,505 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小郑AI外贸工具站 - 首页</title>
+  <title>小郑AI外贸工具站｜AI外贸运营工具、资料包与诊断模板</title>
+  <meta name="description" content="小郑AI外贸工具站，专注阿里国际站、B2B外贸、AI提示词、店铺诊断、广告体检、询盘跟进和运营表格工具。" />
   <style>
-
-    :root {
-      --bg: #f6f7fb;
-      --card: #ffffff;
-      --text: #172033;
-      --muted: #667085;
-      --primary: #3157ff;
-      --primary-dark: #1838c9;
-      --dark: #0f172a;
-      --line: #e6e9f1;
-      --soft: #eef2ff;
-      --success: #12b76a;
-      --warning: #ffb020;
-      --shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .site {
-      width: 100%;
-      max-width: 1180px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(246, 247, 251, 0.95);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-row {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #3157ff, #7c3aed);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 10px 25px rgba(49, 87, 255, 0.25);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-cta {
-      padding: 10px 16px;
-      background: var(--dark);
-      color: #fff !important;
-      border-radius: 999px;
-    }
-
-    .hero {
-      padding: 76px 0 56px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
-      gap: 56px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--primary);
-      font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 28px rgba(16, 24, 40, 0.04);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: var(--success);
-      border-radius: 50%;
-      flex: 0 0 auto;
-    }
-
-    h1,
-    h2,
-    h3 {
-      margin: 0;
-      line-height: 1.18;
-      letter-spacing: -0.045em;
-    }
-
-    h1 {
-      font-size: clamp(42px, 5.2vw, 70px);
-      max-width: 700px;
-    }
-
-    h2 {
-      font-size: clamp(30px, 4vw, 46px);
-    }
-
-    h3 {
-      font-size: 22px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #3157ff, #7c3aed);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      margin: 24px 0 30px;
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 13px 20px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      font-weight: 900;
-      font-size: 15px;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 15px 35px rgba(49, 87, 255, 0.24);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-light {
-      background: #fff;
-      border-color: var(--line);
-      color: var(--text);
-    }
-
-    .btn-light:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .tag {
-      padding: 7px 11px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-    }
-
-    .hero-panel {
-      width: 100%;
-      background: rgba(255,255,255,0.86);
-      border: 1px solid rgba(230,233,241,0.95);
-      border-radius: 32px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .mock {
-      background: var(--dark);
-      border-radius: 24px;
-      overflow: hidden;
-      color: #fff;
-    }
-
-    .mock-top {
-      height: 44px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 0 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .circle {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.35);
-    }
-
-    .mock-body {
-      padding: 22px;
-    }
-
-    .result-card {
-      padding: 16px;
-      margin-bottom: 14px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 18px;
-    }
-
-    .result-card strong {
-      display: block;
-      margin-bottom: 7px;
-    }
-
-    .bar {
-      height: 9px;
-      margin-top: 10px;
-      background: rgba(255,255,255,0.13);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .bar span {
-      display: block;
-      height: 100%;
-      background: linear-gradient(90deg, var(--warning), var(--success));
-      border-radius: 999px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .stat {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 16px;
-      box-shadow: 0 10px 30px rgba(16, 24, 40, 0.04);
-    }
-
-    .stat-number {
-      color: var(--primary);
-      font-size: 26px;
-      line-height: 1;
-      font-weight: 950;
-      letter-spacing: -0.04em;
-    }
-
-    .stat-label {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    section {
-      padding: 62px 0;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-      align-items: end;
-      gap: 28px;
-      margin-bottom: 28px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-      transition: 0.22s ease;
-      display: flex;
-      flex-direction: column;
-      min-height: 360px;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-      border-color: rgba(49, 87, 255, 0.25);
-    }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: var(--soft);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-
-    .card p {
-      color: var(--muted);
-      margin: 10px 0 16px;
-      font-size: 14.5px;
-    }
-
-    .list {
-      padding: 0;
-      margin: 0 0 20px;
-      list-style: none;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .list li {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .list li::before {
-      content: "✓";
-      color: var(--success);
-      font-weight: 900;
-    }
-
-    .card-action {
-      margin-top: auto;
-    }
-
-    .mini-btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 13px;
-      border-radius: 12px;
-      background: var(--dark);
-      color: #fff;
-      font-weight: 900;
-      font-size: 13px;
-    }
-
-    .mini-btn:hover {
-      background: var(--primary);
-    }
-
-    .demo {
-      margin-top: 22px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: 0 12px 36px rgba(16, 24, 40, 0.05);
-    }
-
-    .demo-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    label {
-      display: block;
-      font-weight: 900;
-      font-size: 13px;
-      margin: 14px 0 7px;
-    }
-
-    label:first-child {
-      margin-top: 0;
-    }
-
-    input,
-    select {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 13px;
-      font: inherit;
-      background: #fbfcff;
-      color: var(--text);
-      outline: none;
-    }
-
-    input:focus,
-    select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(49, 87, 255, 0.08);
-      background: #fff;
-    }
-
-    .output {
-      min-height: 220px;
-      white-space: pre-line;
-      background: var(--dark);
-      color: #fff;
-      border-radius: 22px;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    .notice {
-      margin-top: 14px;
-      padding: 13px 15px;
-      background: #fffbeb;
-      border: 1px solid #fef3c7;
-      border-radius: 16px;
-      color: #92400e;
-      font-size: 14px;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 24px;
-    }
-
-    .panel {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 12px 36px rgba(16, 24, 40, 0.05);
-    }
-
-    .panel p {
-      color: var(--muted);
-    }
-
-    .steps {
-      display: grid;
-      gap: 14px;
-    }
-
-    .step {
-      display: flex;
-      gap: 14px;
-      background: #fafbff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .step-num {
-      flex: 0 0 auto;
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: var(--primary);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-weight: 950;
-    }
-
-    .step span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .price-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 12px 36px rgba(16, 24, 40, 0.05);
-    }
-
-    .price-card.featured {
-      border-color: rgba(49,87,255,0.36);
-      box-shadow: var(--shadow);
-    }
-
-    .badge {
-      display: inline-flex;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--primary);
-      font-weight: 900;
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
-
-    .price {
-      margin: 14px 0;
-      font-size: 36px;
-      font-weight: 950;
-      letter-spacing: -0.05em;
-    }
-
-    .price small {
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 700;
-      letter-spacing: 0;
-    }
-
-    .price-card ul {
-      padding: 0;
-      margin: 18px 0 24px;
-      list-style: none;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .price-card li {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .price-card li::before {
-      content: "•";
-      color: var(--primary);
-      font-weight: 900;
-    }
-
-    .contact-box {
-      background: linear-gradient(135deg, #111827, #182152);
-      color: #fff;
-      border-radius: 34px;
-      padding: 44px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-      gap: 30px;
-      align-items: center;
-      box-shadow: 0 24px 60px rgba(17, 24, 39, 0.2);
-    }
-
-    .contact-box p {
-      color: rgba(255,255,255,0.75);
-    }
-
-    .contact-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 24px;
-      padding: 22px;
-    }
-
-    .contact-row {
-      padding: 13px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .contact-row:last-child {
-      border-bottom: 0;
-    }
-
-    .contact-row strong {
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .contact-row span {
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
-    }
-
-    footer {
-      padding: 34px 0;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
-    }
-
-
-    .scenario-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .scenario-card,
-    .article-card,
-    .case-card,
-    .faq-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-    }
-
-    .scenario-card h3,
-    .article-card h3,
-    .case-card h3,
-    .faq-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .scenario-card p,
-    .article-card p,
-    .case-card p,
-    .faq-card p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 14.5px;
-    }
-
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .article-meta {
-      display: inline-flex;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .case-kpi {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .case-kpi div {
-      background: #f8f9ff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px;
-    }
-
-    .case-kpi strong {
-      display: block;
-      color: var(--primary);
-      font-size: 20px;
-      line-height: 1.1;
-    }
-
-    .case-kpi span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .roadmap {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .roadmap-item {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 20px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.04);
-    }
-
-    .roadmap-item strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 17px;
-    }
-
-    .roadmap-item span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .cta-strip {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 34px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-strip p {
-      color: var(--muted);
-      margin: 12px 0 0;
-    }
-
-    .check-list {
-      padding: 0;
-      margin: 16px 0 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .check-list li {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: var(--success);
-      font-weight: 900;
-    }
-
-
-    .locked-box {
-      margin-top: 18px;
-      background: linear-gradient(135deg, #101828, #1d2b6c);
-      color: #fff;
-      border-radius: 24px;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
-      align-items: center;
-      box-shadow: 0 18px 45px rgba(16, 24, 40, 0.14);
-    }
-
-    .locked-box h3 {
-      margin-bottom: 8px;
-    }
-
-    .locked-box p {
-      color: rgba(255,255,255,0.76);
-      margin: 0;
-      font-size: 14.5px;
-    }
-
-    .locked-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .locked-tags span {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.14);
-      font-size: 12px;
-      color: rgba(255,255,255,0.82);
-    }
-
-
-    .image-preview {
-      margin-top: 12px;
-      width: 100%;
-      min-height: 160px;
-      border: 1px dashed var(--line);
-      border-radius: 18px;
-      background: #fbfcff;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
-      padding: 12px;
-    }
-
-    .image-preview img {
-      max-width: 100%;
-      max-height: 260px;
-      display: block;
-      border-radius: 14px;
-    }
-
-    .tool-disclaimer {
-      margin-top: 16px;
-      padding: 14px 16px;
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-radius: 18px;
-      color: #9a3412;
-      font-size: 14px;
-    }
-
-
-    .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .resource-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-      display: flex;
-      flex-direction: column;
-      min-height: 285px;
-    }
-
-    .resource-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .resource-card p {
-      color: var(--muted);
-      margin: 0 0 16px;
-      font-size: 14.5px;
-    }
-
-    .resource-card .card-action {
-      margin-top: auto;
-    }
-
-    .resource-label {
-      display: inline-flex;
-      width: fit-content;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .contact-highlight {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .contact-highlight div {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .contact-highlight strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .contact-highlight span {
-      color: rgba(255,255,255,0.72);
-      font-size: 13px;
-    }
-
-
-    .learning-path-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .learning-step {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-    }
-
-    .learning-step strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .learning-step span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .article-card.featured-article {
-      border-color: rgba(49,87,255,0.3);
-      box-shadow: var(--shadow);
-    }
-
-    .article-actions {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .article-actions a {
-      display: inline-flex;
-      padding: 9px 12px;
-      border-radius: 12px;
-      background: var(--dark);
-      color: #fff;
-      font-weight: 900;
-      font-size: 13px;
-    }
-
-    .article-actions a.secondary {
-      background: #fff;
-      color: var(--primary);
-      border: 1px solid var(--line);
-    }
-
-    .case-card.detailed {
-      display: flex;
-      flex-direction: column;
-      min-height: 420px;
-    }
-
-    .case-flow {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .case-flow div {
-      background: #f8f9ff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px;
-    }
-
-    .case-flow strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .case-flow span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .case-tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-      padding-top: 18px;
-    }
-
-    .case-tag-row span {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .content-note {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 26px;
-      margin-top: 22px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-    }
-
-    .content-note p {
-      color: var(--muted);
-      margin: 10px 0 0;
-    }
-
-
-    .prompt-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .prompt-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-      display: flex;
-      flex-direction: column;
-      min-height: 360px;
-    }
-
-    .prompt-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .prompt-card p {
-      color: var(--muted);
-      margin: 0 0 14px;
-      font-size: 14.5px;
+    :root{
+      --primary:#2563eb;
+      --primary-dark:#1d4ed8;
+      --secondary:#06b6d4;
+      --accent:#f97316;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --soft-blue:#eff6ff;
+      --soft-orange:#fff7ed;
+      --soft-green:#ecfdf5;
+      --shadow:0 18px 50px rgba(15,23,42,.08);
+      --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#f8fbff 0%,#ffffff 42%,#f8fafc 100%);
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,92%);margin:0 auto}
+
+    /* 顶部多页面导航栏 */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(226,232,240,.9);
+      box-shadow:0 8px 28px rgba(15,23,42,.04);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:10px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      font-size:20px;
+      letter-spacing:-.02em;
+      white-space:nowrap;
+    }
+    .logo{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:900;
+      box-shadow:0 12px 28px rgba(37,99,235,.22);
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color:#334155;
+      font-weight:800;
+    }
+    .nav-links a{
+      padding:9px 11px;
+      border-radius:999px;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .nav-links a:hover{
+      color:var(--primary);
+      background:#eff6ff;
+    }
+    .nav-links a.active{
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      box-shadow:0 10px 22px rgba(37,99,235,.18);
+    }
+    .nav-cta{
+      background:#0f172a!important;
+      color:#fff!important;
+      box-shadow:0 12px 26px rgba(15,23,42,.16);
+    }
+
+    .hero{padding:72px 0 54px;position:relative;overflow:hidden}
+    .hero:before{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:-140px;
+      width:520px;
+      height:520px;
+      border-radius:999px;
+      background:radial-gradient(circle,rgba(37,99,235,.18),rgba(6,182,212,.08),transparent 70%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:42px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--primary);
+      font-weight:900;
+      font-size:14px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+      margin-bottom:18px;
+    }
+    h1{font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-.05em;margin-bottom:20px}
+    .gradient-text{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{font-size:18px;color:#475569;max-width:720px;margin-bottom:26px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 26px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:13px 20px;
+      border-radius:14px;
+      font-weight:900;
+      border:1px solid transparent;
+      transition:.2s ease;
+      cursor:pointer;
+      font-size:15px;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 16px 34px rgba(37,99,235,.22)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 42px rgba(37,99,235,.28)}
+    .btn-secondary{background:#fff;color:var(--text);border-color:var(--line);box-shadow:0 12px 26px rgba(15,23,42,.06)}
+    .btn-secondary:hover{border-color:#bfdbfe;color:var(--primary);transform:translateY(-2px)}
+    .hero-notes{display:flex;flex-wrap:wrap;gap:10px;color:#64748b;font-size:14px}
+    .hero-notes span{padding:6px 10px;background:#fff;border:1px solid var(--line);border-radius:999px}
+    .hero-card{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{content:"";position:absolute;inset:0 0 auto 0;height:7px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+    .mini-dashboard{display:grid;gap:14px;margin-top:6px}
+    .dash-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:16px;border-radius:18px;background:#f8fafc;border:1px solid #eef2f7}
+    .dash-row strong{font-size:15px}.dash-row span{color:var(--muted);font-size:13px}
+    .tag{padding:5px 10px;border-radius:999px;font-size:12px;font-weight:900;white-space:nowrap}
+    .tag-blue{background:#dbeafe;color:#1d4ed8}.tag-green{background:#dcfce7;color:#15803d}.tag-orange{background:#ffedd5;color:#c2410c}.tag-red{background:#fee2e2;color:#b91c1c}
+
+    .section{padding:70px 0}
+    .section-alt{background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%);border-top:1px solid #eef2f7;border-bottom:1px solid #eef2f7}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+    .section-kicker{color:var(--primary);font-weight:900;font-size:14px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
+    h2{font-size:clamp(28px,3vw,42px);line-height:1.16;letter-spacing:-.035em;margin-bottom:10px}
+    .section-desc{color:#64748b;max-width:760px;font-size:16px}
+    .grid{display:grid;gap:20px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 12px 32px rgba(15,23,42,.05);transition:.2s ease;position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-4px);box-shadow:0 22px 52px rgba(15,23,42,.09);border-color:#bfdbfe}
+    .icon{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:23px;margin-bottom:14px;background:var(--soft-blue)}
+    .card h3{font-size:20px;margin-bottom:8px;letter-spacing:-.02em}
+    .card p{color:#64748b;font-size:15px;margin-bottom:14px}
+    .card ul{padding-left:18px;color:#475569;font-size:14px;margin:10px 0 0}
+    .card li{margin:5px 0}
+    .card-link{display:inline-flex;margin-top:8px;color:var(--primary);font-weight:900;font-size:14px}
+    .tool-card:after{content:"免费";position:absolute;right:18px;top:18px;padding:4px 9px;border-radius:999px;background:#ecfdf5;color:#047857;font-size:12px;font-weight:900}
+    .data-card:after{content:"数据分析";position:absolute;right:18px;top:18px;padding:4px 9px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:12px;font-weight:900}
+    .price-card{padding:28px}.price{font-size:32px;font-weight:1000;margin:10px 0;color:var(--primary)}.price small{font-size:14px;color:var(--muted);font-weight:700}
+    .highlight{border:2px solid rgba(37,99,235,.38);box-shadow:0 22px 60px rgba(37,99,235,.13)}
+    .highlight:before{content:"推荐";position:absolute;right:-34px;top:20px;background:var(--accent);color:#fff;font-weight:900;font-size:13px;padding:7px 38px;transform:rotate(35deg)}
+    .steps{counter-reset:step}.step{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 28px rgba(15,23,42,.04)}
+    .step:before{counter-increment:step;content:counter(step);width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;font-weight:1000;display:grid;place-items:center;font-size:20px}.step h3{font-size:18px;margin-bottom:4px}.step p{color:var(--muted);font-size:15px}
+    .case-box{background:#0f172a;color:#fff;border-radius:28px;padding:32px;overflow:hidden;position:relative}.case-box:before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:999px;background:rgba(37,99,235,.32)}.case-box h2,.case-box p,.case-box div{position:relative;z-index:1}.case-box p{color:#cbd5e1}.case-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.metric{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}.metric strong{display:block;font-size:24px;margin-bottom:4px}.metric span{color:#cbd5e1;font-size:13px}
+    .faq{display:grid;gap:14px}.faq-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.faq-item h3{font-size:17px;margin-bottom:6px}.faq-item p{color:var(--muted);font-size:15px}
+    .contact-panel{background:linear-gradient(135deg,#eff6ff,#ecfeff);border:1px solid #bfdbfe;border-radius:30px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}.contact-panel p{color:#475569}.contact-box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px}.contact-box strong{display:block;margin-bottom:8px}.contact-box p{font-size:14px;margin-bottom:8px}
+    footer{padding:34px 0;color:#64748b;border-top:1px solid var(--line);background:#fff;font-size:14px}.footer-flex{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a:hover{color:var(--primary)}
+
+    @media (max-width:1050px){
+      .nav{align-items:flex-start;flex-direction:column}
+      .nav-links{justify-content:flex-start;width:100%}
+    }
+    @media (max-width:900px){
+      .hero-grid,.grid-3,.grid-4,.grid-2,.contact-panel{grid-template-columns:1fr}
+      .section-head{display:block}
+      .case-metrics{grid-template-columns:repeat(2,1fr)}
+      .hero{padding-top:46px}
+      .section{padding:52px 0}
+    }
+    @media (max-width:520px){
+      .hero-actions .btn{width:100%}
+      .case-metrics{grid-template-columns:1fr}
+      .card,.price-card{padding:20px}
+      .brand{font-size:18px}
+      .nav-links{gap:6px;font-size:13px}
+      .nav-links a{padding:7px 9px}
     }
-
-    .prompt-box {
-      background: #0f172a;
-      color: #fff;
-      border-radius: 18px;
-      padding: 16px;
-      font-size: 13px;
-      line-height: 1.7;
-      white-space: pre-line;
-      margin-top: 10px;
-      flex: 1;
-    }
-
-    .copy-btn {
-      margin-top: 14px;
-      width: fit-content;
-      border: 0;
-      border-radius: 12px;
-      padding: 10px 13px;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 900;
-      cursor: pointer;
-      font: inherit;
-      font-size: 13px;
-    }
-
-    .copy-btn:hover {
-      background: var(--primary-dark);
-    }
-
-    .prompt-category {
-      display: inline-flex;
-      width: fit-content;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .prompt-note {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 26px;
-      margin-top: 22px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-    }
-
-    .prompt-note p {
-      color: var(--muted);
-      margin: 10px 0 0;
-    }
-
-
-    .page-hero {
-      padding: 58px 0 26px;
-      background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 55%, #ffffff 100%);
-    }
-
-    .page-hero .hero-panel {
-      min-height: auto;
-    }
-
-    .home-shortcuts {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .shortcut-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-    }
-
-    .shortcut-card h3 {
-      margin: 10px 0 8px;
-    }
-
-    .shortcut-card p {
-      color: var(--muted);
-      margin: 0 0 18px;
-      font-size: 14.5px;
-    }
-
-    .shortcut-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: var(--soft);
-      color: var(--primary);
-      font-weight: 900;
-    }
-
-    .home-section {
-      padding: 50px 0;
-    }
-
-    .home-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .home-mini-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
-    }
-
-    .home-mini-card p {
-      color: var(--muted);
-      margin: 8px 0 0;
-      font-size: 14px;
-    }
-
-    @media (max-width: 1050px) {
-      .home-shortcuts,
-      .home-mini-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 720px) {
-      .home-shortcuts,
-      .home-mini-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 1050px) {
-      .hero-grid,
-      .split,
-      .contact-box,
-      .locked-box {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-panel {
-        max-width: 760px;
-      }
-
-      .grid-4,
-      .scenario-grid,
-      .article-grid,
-      .case-grid,
-      .resource-grid,
-      .contact-highlight,
-      .learning-path-grid,
-      .prompt-grid,
-      .roadmap {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 900px) {
-      .section-head,
-      .cta-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .site {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .nav-row {
-        height: auto;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-
-      .stats,
-      .grid-4,
-      .scenario-grid,
-      .article-grid,
-      .case-grid,
-      .resource-grid,
-      .contact-highlight,
-      .learning-path-grid,
-      .prompt-grid,
-      .roadmap,
-      .demo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-box {
-        padding: 28px;
-      }
-    }
-  
-  
-    header {
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    }
-
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex: 0 0 auto;
-    }
-
-    .brand-logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #3157ff, #7c3aed);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 20px;
-      box-shadow: 0 14px 28px rgba(49, 87, 255, 0.22);
-    }
-
-    .brand strong {
-      display: block;
-      font-size: 17px;
-      letter-spacing: -0.2px;
-    }
-
-    .brand span {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 9px 13px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      color: #334155;
-      border: 1px solid transparent;
-      transition: 0.18s ease;
-      white-space: nowrap;
-    }
-
-    nav a::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: currentColor;
-      opacity: 0.72;
-    }
-
-    nav a:nth-child(1) {
-      background: #eef2ff;
-      color: #3157ff;
-      border-color: #dbe4ff;
-    }
-
-    nav a:nth-child(2) {
-      background: #ecfeff;
-      color: #0891b2;
-      border-color: #cffafe;
-    }
-
-    nav a:nth-child(3) {
-      background: #f0fdf4;
-      color: #16a34a;
-      border-color: #dcfce7;
-    }
-
-    nav a:nth-child(4) {
-      background: #fff7ed;
-      color: #ea580c;
-      border-color: #fed7aa;
-    }
-
-    nav a:nth-child(5) {
-      background: #fdf2f8;
-      color: #db2777;
-      border-color: #fbcfe8;
-    }
-
-    nav a:nth-child(6) {
-      background: #f5f3ff;
-      color: #7c3aed;
-      border-color: #ddd6fe;
-    }
-
-    nav a:nth-child(7) {
-      background: #fff1f2;
-      color: #e11d48;
-      border-color: #fecdd3;
-    }
-
-    nav a:nth-child(8) {
-      background: #f8fafc;
-      color: #475569;
-      border-color: #e2e8f0;
-    }
-
-    nav a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
-      filter: saturate(1.08);
-    }
-
-    nav a.active {
-      color: #fff !important;
-      border-color: transparent !important;
-      background: linear-gradient(135deg, #3157ff, #7c3aed) !important;
-      box-shadow: 0 12px 28px rgba(49, 87, 255, 0.22);
-    }
-
-    nav a.active::before {
-      background: #fff;
-      opacity: 1;
-    }
-
-    @media (max-width: 1050px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: flex-start;
-      }
-    }
-
-    @media (max-width: 720px) {
-      header {
-        position: static;
-      }
-
-      nav {
-        gap: 7px;
-      }
-
-      nav a {
-        font-size: 12px;
-        padding: 8px 10px;
-      }
-
-      .brand-logo {
-        width: 42px;
-        height: 42px;
-      }
-    }
-
-  
-    nav a:nth-child(9){background:#ecfdf5;color:#059669;border-color:#bbf7d0;}
-    .purchase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:24px}
-    .purchase-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 16px 44px rgba(16,24,40,.06);display:flex;flex-direction:column}
-    .purchase-card.featured{border-color:rgba(49,87,255,.36);box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .purchase-card.featured:before{content:"推荐";position:absolute;top:18px;right:-36px;width:140px;text-align:center;transform:rotate(36deg);background:linear-gradient(135deg,#3157ff,#7c3aed);color:#fff;font-size:12px;font-weight:900;padding:6px 0}
-    .purchase-price{font-size:38px;font-weight:950;color:var(--text);margin:12px 0;letter-spacing:-1px}
-    .purchase-price small{font-size:15px;color:var(--muted);font-weight:800}
-    .agent-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-    .agent-list div{padding:12px 14px;border:1px solid var(--line);background:#f8f9ff;border-radius:16px;font-weight:800}
-    .notice-box{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:22px;padding:22px;margin-top:22px;line-height:1.8}
-    .process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:22px}
-    .process-step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 12px 34px rgba(16,24,40,.05)}
-    .process-step strong{display:block;color:var(--primary);margin-bottom:8px}.process-step span{color:var(--muted);font-size:13.5px}
-    .confirm-form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);margin-top:22px}
-    .checkbox-row{display:flex;gap:10px;align-items:flex-start;margin:12px 0;color:var(--muted);font-size:14px;line-height:1.65}.checkbox-row input{width:auto;margin-top:5px}
-    .buy-output{margin-top:18px;background:#0f172a;color:#fff;border-radius:18px;padding:18px;white-space:pre-line;line-height:1.75;font-size:14px}
-    @media(max-width:1050px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:720px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:1fr}}
-
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="site nav">
-      <div class="brand">
-        <div class="brand-logo">郑</div>
-        <div>
-          <strong>小郑AI外贸工具站</strong>
-          <span>AI B2B Tools</span>
-        </div>
-      </div>
-      <nav>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand"><span class="logo">郑</span><span>小郑AI外贸工具站</span></a>
+      <nav class="nav-links" aria-label="主导航">
         <a href="index.html" class="active">首页</a>
-        <a href="tools.html">免费工具</a>
-        <a href="prompts.html">快捷指令</a>
-        <a href="resources.html">资料领取</a>
-        <a href="articles.html">学习内容</a>
+        <a href="tools.html">工具中心</a>
+        <a href="prompts.html">提示词库</a>
+        <a href="resources.html">资料库</a>
         <a href="cases.html">案例库</a>
-        <a href="paid.html">付费项目</a>
-        <a href="buy.html">购买确认</a>
-        <a href="contact.html">联系我</a>
+        <a href="articles.html">实战文章</a>
+        <a href="paid.html">付费资料</a>
+        <a href="buy.html">购买说明</a>
+        <a href="contact.html" class="nav-cta">联系我</a>
       </nav>
     </div>
   </header>
 
-
-  <section class="hero">
-    <div class="site hero-wrap">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> AI B2B Export Tools</div>
-        <h1>小郑AI外贸工具站</h1>
-        <p>
-          面向阿里国际站运营、B2B外贸业务员、外贸SOHO和中小企业老板的AI工具站。
-          用免费工具、快捷指令和实战案例，解决询盘判断、客户跟进、标题关键词、广告复盘和图片素材处理问题。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="tools.html">开始使用免费工具</a>
-          <a class="btn btn-light" href="prompts.html">复制快捷指令</a>
-          <a class="btn btn-light" href="resources.html">领取资料</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat-card">
-            <div class="stat-number">6+</div>
-            <div class="stat-label">AI工具入口</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">快捷指令模板</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">实战案例框架</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">B2B</div>
-            <div class="stat-label">外贸运营场景</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-panel">
-        <h2>这个网站适合解决什么？</h2>
-        <div class="home-mini-grid" style="grid-template-columns:1fr; gap:12px; margin-top:18px;">
-          <div class="home-mini-card">
-            <h3>询盘来了，不知道值不值得重点跟</h3>
-            <p>用询盘分级工具快速判断客户优先级。</p>
-          </div>
-          <div class="home-mini-card">
-            <h3>客户已读未回，不知道怎么追</h3>
-            <p>用跟进话术工具生成更自然的英文话术。</p>
-          </div>
-          <div class="home-mini-card">
-            <h3>产品标题、广告和图片素材需要优化</h3>
-            <p>用标题工具、广告体检和图片工具入口快速处理。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-section">
-    <div class="site">
-      <div class="section-head">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><span class="dot"></span> Main Entry</div>
-          <h2>主要功能入口</h2>
+          <div class="badge">AI × 阿里国际站 × B2B外贸运营</div>
+          <h1>给外贸人用的<br><span class="gradient-text">AI运营工具和实战资料库</span></h1>
+          <p>这里整理我在阿里国际站运营、广告诊断、询盘跟进、关键词标题、客户背调和AI智能体搭建中的实用方法。适合外贸运营、业务员、代运营和中小B2B商家直接使用。</p>
+          <div class="hero-actions">
+            <a href="#free-tools" class="btn btn-primary">先看免费工具</a>
+            <a href="tools.html" class="btn btn-secondary">进入数据分析工具</a>
+            <a href="paid.html" class="btn btn-secondary">查看付费资料</a>
+          </div>
+          <div class="hero-notes">
+            <span>产品标题</span><span>关键词</span><span>广告体检</span><span>店铺诊断</span><span>询盘SOP</span><span>客户背调</span>
+          </div>
         </div>
-        <p>首页只保留核心入口，详细内容点击对应页面查看。</p>
-      </div>
-
-      <div class="home-shortcuts">
-        <article class="shortcut-card">
-          <div class="shortcut-icon">工</div>
-          <h3>免费工具</h3>
-          <p>询盘分级、客户跟进、标题关键词、广告体检、图片工具跳转。</p>
-          <a class="mini-btn" href="tools.html">进入工具页</a>
-        </article>
-
-        <article class="shortcut-card">
-          <div class="shortcut-icon">令</div>
-          <h3>快捷指令</h3>
-          <p>公众号用户可直接复制AI指令，粘贴到ChatGPT里使用。</p>
-          <a class="mini-btn" href="prompts.html">查看指令库</a>
-        </article>
-
-        <article class="shortcut-card">
-          <div class="shortcut-icon">学</div>
-          <h3>学习内容</h3>
-          <p>从客户判断、话术优化、产品发布到广告复盘的学习路径。</p>
-          <a class="mini-btn" href="articles.html">进入学习页</a>
-        </article>
-
-        <article class="shortcut-card">
-          <div class="shortcut-icon">案</div>
-          <h3>案例库</h3>
-          <p>用问题、分析、动作、复盘的结构拆解AI外贸实战案例。</p>
-          <a class="mini-btn" href="cases.html">查看案例库</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-section" style="padding-top:20px;">
-    <div class="site">
-      <div class="home-mini-grid">
-        <div class="home-mini-card">
-          <h3>免费资料领取</h3>
-          <p>领取提示词体验包、话术体验版、广告体检表和运营检查清单。</p>
-          <div class="card-action"><a class="mini-btn" href="resources.html">去领取</a></div>
-        </div>
-        <div class="home-mini-card">
-          <h3>付费项目</h3>
-          <p>适合需要完整资料包、话术库或AI外贸智能体搭建陪跑的人。</p>
-          <div class="card-action"><a class="mini-btn" href="paid.html">查看项目</a></div>
-        </div>
-        <div class="home-mini-card">
-          <h3>联系交流</h3>
-          <p>关注公众号「小郑的运营笔记」，后续可承接资料领取和服务咨询。</p>
-          <div class="card-action"><a class="mini-btn" href="contact.html">联系我</a></div>
+        <div class="hero-card">
+          <h3>你可以在这里解决什么问题？</h3>
+          <div class="mini-dashboard">
+            <div class="dash-row"><div><strong>不知道哪些产品该重点推</strong><br><span>用产品爆品筛选器判断优爆品/潜力品/低效品</span></div><em class="tag tag-blue">产品</em></div>
+            <div class="dash-row"><div><strong>广告花费高但询盘少</strong><br><span>用全站推体检器找高消耗无转化产品</span></div><em class="tag tag-red">广告</em></div>
+            <div class="dash-row"><div><strong>客户来了不知道怎么跟</strong><br><span>用S1-S5跟进逻辑判断客户阶段和动作</span></div><em class="tag tag-green">询盘</em></div>
+            <div class="dash-row"><div><strong>想做自己的AI外贸智能体</strong><br><span>用提示词和智能体指令搭建专属工作流</span></div><em class="tag tag-orange">AI</em></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="section section-alt" id="free-tools">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Free Tools</div>
+            <h2>免费AI外贸工具</h2>
+            <p class="section-desc">这些是适合日常直接使用的轻量工具入口，适合做标题、关键词、提示词、图片处理、资料查看和案例学习。</p>
+          </div>
+          <a href="resources.html" class="btn btn-secondary">查看全部资料</a>
+        </div>
+        <div class="grid grid-4">
+          <article class="card tool-card">
+            <div class="icon">🔎</div>
+            <h3>标题关键词工具</h3>
+            <p>用于生成阿里国际站产品标题、核心关键词、长尾词和B端采购词。</p>
+            <ul><li>适合产品发布</li><li>适合广告词拓展</li><li>适合标题优化</li></ul>
+            <a class="card-link" href="prompts.html">进入提示词库 →</a>
+          </article>
+          <article class="card tool-card">
+            <div class="icon">💬</div>
+            <h3>询盘跟进话术</h3>
+            <p>按新询盘、已报价、已读未回、嫌贵、催样品、催付款等场景整理。</p>
+            <ul><li>S1-S5客户分层</li><li>英文跟进话术</li><li>小白可复制</li></ul>
+            <a class="card-link" href="prompts.html">查看话术 →</a>
+          </article>
+          <article class="card tool-card">
+            <div class="icon">🖼️</div>
+            <h3>图片翻译处理</h3>
+            <p>适合处理产品图、详情页图片、英文图片翻译和基础视觉优化。</p>
+            <ul><li>图片文字替换</li><li>详情页图片处理</li><li>跨境图片优化</li></ul>
+            <a class="card-link" href="https://www.piccopilot.com/?actionType=" target="_blank" rel="noopener">打开图片工具 →</a>
+          </article>
+          <article class="card tool-card">
+            <div class="icon">📚</div>
+            <h3>外贸运营资料库</h3>
+            <p>整理运营表格、案例拆解、广告优化、店铺诊断和客户跟进资料。</p>
+            <ul><li>运营表格</li><li>诊断模板</li><li>实战案例</li></ul>
+            <a class="card-link" href="resources.html">进入资料库 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="data-tools">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Data Analysis Tools</div>
+            <h2>AI外贸运营数据分析工具</h2>
+            <p class="section-desc">上传阿里国际站后台导出的数据表，快速分析产品表现、广告浪费点、访客质量和询盘跟进优先级。这个模块是新增的工具中心，不会替代原来的免费工具。</p>
+          </div>
+          <a href="tools.html" class="btn btn-primary">进入工具中心</a>
+        </div>
+        <div class="grid grid-3">
+          <article class="card data-card">
+            <div class="icon">🏆</div>
+            <h3>产品爆品筛选器</h3>
+            <p>自动识别优爆品、潜力品、待优化品和建议暂停品，适合做月度产品复盘。</p>
+            <ul><li>优爆品清单</li><li>潜力品清单</li><li>低效产品清单</li></ul>
+            <a class="card-link" href="tools.html">去使用 →</a>
+          </article>
+          <article class="card data-card">
+            <div class="icon">📊</div>
+            <h3>全站推广告体检器</h3>
+            <p>筛选20点击无商机、高消耗无转化、低CPL有效品，辅助广告调整。</p>
+            <ul><li>暂停产品ID</li><li>预算浪费点</li><li>下周调整动作</li></ul>
+            <a class="card-link" href="tools.html">去使用 →</a>
+          </article>
+          <article class="card data-card">
+            <div class="icon">🧭</div>
+            <h3>店铺月度经营看板</h3>
+            <p>根据曝光、点击、访客、询盘、订单等数据生成经营诊断方向。</p>
+            <ul><li>曝光诊断</li><li>点击诊断</li><li>转化诊断</li></ul>
+            <a class="card-link" href="tools.html">去使用 →</a>
+          </article>
+          <article class="card data-card">
+            <div class="icon">🌍</div>
+            <h3>高质量访客识别器</h3>
+            <p>分析国家、买家质量、访问行为，判断哪些访客适合二次开发。</p>
+            <ul><li>重点国家</li><li>低质流量</li><li>二开客户</li></ul>
+            <a class="card-link" href="tools.html">去使用 →</a>
+          </article>
+          <article class="card data-card">
+            <div class="icon">🤝</div>
+            <h3>B2B询盘跟进CRM</h3>
+            <p>按照S1-S5阶段管理客户，判断今天该跟进谁、怎么跟进。</p>
+            <ul><li>客户分层</li><li>跟进动作</li><li>本地导出</li></ul>
+            <a class="card-link" href="tools.html">去使用 →</a>
+          </article>
+          <article class="card data-card">
+            <div class="icon">📄</div>
+            <h3>诊断报告承接</h3>
+            <p>工具适合做初筛，复杂店铺和广告账户可以继续生成完整诊断报告。</p>
+            <ul><li>产品ID诊断</li><li>广告策略</li><li>7天执行表</li></ul>
+            <a class="card-link" href="paid.html">查看诊断资料 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="workflow">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">How To Use</div>
+            <h2>建议你按这个流程使用</h2>
+            <p class="section-desc">先用免费工具解决单点问题，再用数据分析工具做复盘，最后用资料包或诊断模板沉淀成可执行方案。</p>
+          </div>
+        </div>
+        <div class="grid grid-4 steps">
+          <div class="step"><div><h3>先生成素材</h3><p>用标题、关键词、提示词、话术工具解决日常发布和跟进问题。</p></div></div>
+          <div class="step"><div><h3>再上传数据</h3><p>把产品、广告、访客、询盘数据导入工具中心，先跑一版初筛结果。</p></div></div>
+          <div class="step"><div><h3>找到问题点</h3><p>判断是曝光、点击、转化、客户质量还是跟进节奏出了问题。</p></div></div>
+          <div class="step"><div><h3>形成动作表</h3><p>把诊断结果转成7天优化清单，真正落到产品、广告和客户跟进上。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="paid">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Paid Resources</div>
+            <h2>付费资料与交付文件</h2>
+            <p class="section-desc">适合想节省整理时间、直接拿模板执行的外贸人。资料包以可复制、可填写、可复用为主。</p>
+          </div>
+          <a href="paid.html" class="btn btn-secondary">查看完整说明</a>
+        </div>
+        <div class="grid grid-3">
+          <article class="card price-card">
+            <div class="icon">📑</div>
+            <h3>阿里运营表格工具包</h3>
+            <div class="price">9.9 <small>元</small></div>
+            <p>适合日常记录产品、询盘、广告、客户跟进和月度复盘。</p>
+            <ul><li>产品数据表</li><li>询盘跟进表</li><li>广告体检表</li></ul>
+            <a class="btn btn-secondary" href="buy.html">查看获取方式</a>
+          </article>
+          <article class="card price-card highlight">
+            <div class="icon">🤖</div>
+            <h3>AI外贸提示词资料包</h3>
+            <div class="price">29.9 <small>元</small></div>
+            <p>覆盖标题关键词、详情页、询盘跟进、广告诊断、客户背调和智能体配置。</p>
+            <ul><li>复制即用提示词</li><li>小白输入格式</li><li>输出标准示例</li></ul>
+            <a class="btn btn-primary" href="buy.html">查看获取方式</a>
+          </article>
+          <article class="card price-card">
+            <div class="icon">📈</div>
+            <h3>店铺/广告增长诊断模板</h3>
+            <div class="price">99 <small>元/次起</small></div>
+            <p>适合需要整理成报告、给老板或客户复盘的运营和代运营人员。</p>
+            <ul><li>店铺经营诊断</li><li>广告暂停/保留建议</li><li>7天优化动作</li></ul>
+            <a class="btn btn-secondary" href="buy.html">查看获取方式</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="cases">
+      <div class="container">
+        <div class="case-box">
+          <h2>这个网站的定位不是“资料堆放”，而是外贸运营工作台</h2>
+          <p>免费工具负责引流和日常使用，数据分析工具负责建立专业感，保姆级资料和诊断模板负责承接深度需求。后续可以继续扩展客户背调、PDF报告生成、AI智能体配置和独立站工具。</p>
+          <div class="case-metrics">
+            <div class="metric"><strong>5+</strong><span>免费工具方向</span></div>
+            <div class="metric"><strong>5</strong><span>数据分析模块</span></div>
+            <div class="metric"><strong>3</strong><span>核心付费资料</span></div>
+            <div class="metric"><strong>S1-S5</strong><span>客户跟进逻辑</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2>常见问题</h2>
+            <p class="section-desc">如果你是第一次使用，建议先从免费工具和数据分析工具开始，不需要一次性看完所有资料。</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="faq-item"><h3>我是外贸小白，可以用吗？</h3><p>可以。工具和资料会尽量按“输入什么、怎么操作、输出什么、怎么判断”的方式整理。</p></div>
+          <div class="faq-item"><h3>数据分析工具会上传到服务器吗？</h3><p>当前工具是静态网页版本，主要在浏览器本地处理数据，不需要登录，也不需要数据库。</p></div>
+          <div class="faq-item"><h3>免费工具和数据分析工具有什么区别？</h3><p>免费工具偏日常生成和资料查看；数据分析工具偏上传表格后做产品、广告、访客、客户跟进诊断。</p></div>
+          <div class="faq-item"><h3>后续还会更新什么？</h3><p>后续可以继续增加客户背调工具、广告诊断报告导出、PDF报告生成、AI智能体搭建说明和更多行业案例。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>需要资料、诊断或定制工具，可以联系我</h2>
+            <p>适合阿里国际站运营、外贸业务员、代运营、外贸SOHO和想用AI提升效率的B2B商家。</p>
+            <div class="hero-actions">
+              <a href="contact.html" class="btn btn-primary">查看联系方式</a>
+              <a href="articles.html" class="btn btn-secondary">阅读实战文章</a>
+            </div>
+          </div>
+          <div class="contact-box">
+            <strong>适合咨询的内容</strong>
+            <p>1. 阿里国际站店铺诊断</p>
+            <p>2. 全站推广告体检</p>
+            <p>3. AI外贸提示词资料</p>
+            <p>4. 外贸智能体搭建</p>
+            <p>5. 询盘跟进SOP整理</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div class="site">
-      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V28 智能体购买确认页版</p>
+    <div class="container footer-flex">
+      <div>© 2026 小郑AI外贸工具站｜AI外贸运营实战工具</div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="tools.html">工具中心</a>
+        <a href="prompts.html">提示词库</a>
+        <a href="resources.html">资料库</a>
+        <a href="cases.html">案例库</a>
+        <a href="articles.html">实战文章</a>
+        <a href="paid.html">付费资料</a>
+        <a href="contact.html">联系我</a>
+      </div>
     </div>
   </footer>
-
-
 </body>
 </html>
-<section class="section">
-  <div class="container">
-    <h2>AI外贸运营数据分析工具</h2>
-    <p>
-      上传阿里国际站后台导出的数据表，快速分析产品表现、广告浪费点、访客质量和询盘跟进优先级。
-    </p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>产品爆品筛选器</h3>
-        <p>自动识别优爆品、潜力品、待优化品和建议暂停品。</p>
-      </div>
-
-      <div class="card">
-        <h3>全站推广告体检器</h3>
-        <p>筛选高消耗无转化产品、20点击无商机产品和低成本有效品。</p>
-      </div>
-
-      <div class="card">
-        <h3>店铺月度经营看板</h3>
-        <p>根据曝光、点击、访客、询盘、订单等数据生成经营诊断。</p>
-      </div>
-
-      <div class="card">
-        <h3>B2B询盘跟进CRM</h3>
-        <p>按照S1-S5阶段管理客户，判断重点跟进对象。</p>
-      </div>
-    </div>
-
-    <div style="margin-top: 24px;">
-      <a href="tools.html" class="btn">进入AI外贸运营工具中心</a>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <h2>免费AI外贸工具</h2>
-    <p>
-      这里整理了一些外贸运营常用的小工具，适合日常做标题、关键词、提示词、图片处理和资料整理。
-    </p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>AI标题与关键词工具</h3>
-        <p>适合快速生成阿里国际站产品标题、核心关键词、长尾词和B端搜索词。</p>
-        <a href="prompts.html" class="btn">查看工具</a>
-      </div>
-
-      <div class="card">
-        <h3>AI提示词资料库</h3>
-        <p>整理外贸运营、询盘跟进、产品优化、视觉设计等常用提示词。</p>
-        <a href="prompts.html" class="btn">进入提示词库</a>
-      </div>
-
-      <div class="card">
-        <h3>图片翻译与图片处理</h3>
-        <p>适合处理产品图、详情页图片、英文图片翻译和基础视觉优化。</p>
-        <a href="https://www.piccopilot.com/?actionType=" class="btn" target="_blank">打开图片工具</a>
-      </div>
-
-      <div class="card">
-        <h3>外贸运营资料库</h3>
-        <p>查看运营表格、案例拆解、店铺诊断、广告优化和客户跟进资料。</p>
-        <a href="resources.html" class="btn">查看资料</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <h2>AI外贸运营数据分析工具</h2>
-    ...
-    <a href="tools.html" class="btn">进入AI外贸运营工具中心</a>
-  </div>
-</section>

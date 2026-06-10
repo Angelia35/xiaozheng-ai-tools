@@ -1513,6 +1513,123 @@
     @media(max-width:1050px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:720px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:1fr}}
 
+  
+    .offer-section {
+      margin-top: 34px;
+    }
+
+    .offer-section-title {
+      margin: 0 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .offer-section-title span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--primary);
+      box-shadow: 0 0 0 7px var(--soft);
+    }
+
+    .offer-section-title h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .offer-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .offer-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 12px 34px rgba(16,24,40,.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 390px;
+    }
+
+    .offer-card.featured {
+      border-color: rgba(49,87,255,.35);
+      box-shadow: var(--shadow);
+    }
+
+    .offer-card h4 {
+      font-size: 21px;
+      margin: 0 0 10px;
+    }
+
+    .offer-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 14.5px;
+    }
+
+    .offer-price {
+      font-size: 34px;
+      font-weight: 950;
+      color: var(--text);
+      margin: 10px 0 14px;
+      letter-spacing: -1px;
+    }
+
+    .offer-price small {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .offer-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .offer-card .card-action {
+      margin-top: auto;
+    }
+
+    .offer-note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      border-radius: 22px;
+      padding: 20px;
+      margin-top: 22px;
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .offer-grid,
+      .offer-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .offer-grid,
+      .offer-grid.two {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1551,105 +1668,221 @@
     </div>
   </section>
 
-
-
-    <section id="agent-package">
-      <div class="site">
-        <div class="section-head">
-          <div><div class="eyebrow"><span class="dot"></span> GPTs Agent Links</div><h2>ChatGPT 外贸智能体模型链接</h2></div>
-          <p>客户使用自己的 ChatGPT 账号打开，我们交付的是智能体模型链接，不包含 ChatGPT 账号或会员服务。</p>
-        </div>
-        <div class="purchase-grid">
-          <article class="purchase-card">
-            <h3>单个智能体模型链接</h3>
-            <div class="purchase-price">¥99 <small>/ 个</small></div>
-            <p>适合只想先体验一个外贸智能体的人。</p>
-            <ul class="list"><li>任选 1 个智能体模型链接</li><li>基础使用说明</li><li>常用输入模板</li><li>适用场景说明</li></ul>
-            <div class="card-action"><a class="btn btn-primary" href="buy.html?type=single">购买单个智能体 ¥99</a></div>
-          </article>
-          <article class="purchase-card featured">
-            <h3>6个智能体全套组合包</h3>
-            <div class="purchase-price">¥499 <small>/ 套</small></div>
-            <p>适合想把AI工具直接放进日常外贸运营流程的个人或团队。</p>
-            <ul class="list"><li>6 个智能体模型链接</li><li>每个智能体使用说明</li><li>常用输入模板</li><li>基础上手指引</li></ul>
-            <div class="card-action"><a class="btn btn-primary" href="buy.html?type=package">购买6个全套 ¥499</a></div>
-          </article>
-        </div>
-        <div class="agent-list">
-          <div>全球选品大师</div><div>国际站增长诊断官</div><div>外贸询盘操盘官</div><div>B2B视觉设计师</div><div>广告操盘官</div><div>关键词大师</div>
-        </div>
-        <div class="notice-box"><strong>重要说明：</strong><br>本产品交付的是 ChatGPT 外贸智能体模型链接，不包含 ChatGPT 账号、Plus会员或其他官方会员服务。客户需要使用自己的 ChatGPT 账号打开和使用。智能体模型链接一次购买，长期可用；实际访问权限、使用次数、响应速度和功能限制，以客户自己的 ChatGPT 账号状态为准。</div>
-      </div>
-    </section>
-
     <section id="paid">
       <div class="site">
         <div class="section-head">
           <div>
             <div class="eyebrow"><span class="dot"></span> Paid Projects</div>
-            <h2>付费资料与陪跑项目</h2>
+            <h2>付费项目与进阶服务</h2>
           </div>
-          <p>如果你想从“体验工具”进一步升级到“系统执行”，可以选择完整资料、话术库或智能体搭建陪跑。</p>
+          <p>这里把项目分成资料包、智能体模型链接、诊断服务和陪跑服务。低价资料适合第一次体验，诊断和陪跑适合需要具体问题解决的人。</p>
         </div>
 
-        <div class="pricing">
-          <article class="price-card">
-            <span class="badge">入门资料</span>
-            <h3>AI外贸提示词资料包</h3>
-            <p>适合刚开始学习AI外贸、希望快速拿到可复制模板和基础工作流的人。</p>
-            <div class="price">¥49 <small>/ 套</small></div>
-            <ul>
-              <li>外贸客户分析提示词</li>
-              <li>询盘分级完整版判断维度</li>
-              <li>标题关键词提示词</li>
-              <li>英文跟进话术提示词</li>
-              <li>广告诊断提示词</li>
-            </ul>
-            <a class="btn btn-light" href="contact.html" style="width:100%;">联系领取</a>
-          </article>
+        <div class="offer-section">
+          <div class="offer-section-title">
+            <span></span>
+            <h3>低价资料包</h3>
+          </div>
 
-          <article class="price-card featured">
-            <span class="badge">推荐</span>
-            <h3>B2B客户跟进话术库</h3>
-            <p>适合每天需要跟进客户，但经常卡在“怎么写英文话术”的外贸业务员和SOHO。</p>
-            <div class="price">¥99 <small>/ 套</small></div>
-            <ul>
-              <li>报价后跟进话术</li>
-              <li>已读未回跟进话术</li>
-              <li>嫌价格贵应对话术</li>
-              <li>MOQ太高应对话术</li>
-              <li>样品后跟进话术</li>
-              <li>老客户再开发话术</li>
-            </ul>
-            <a class="btn btn-primary" href="contact.html" style="width:100%;">咨询购买</a>
-          </article>
+          <div class="offer-grid">
+            <article class="offer-card featured">
+              <span class="offer-label">入门资料</span>
+              <h4>AI外贸提示词资料包</h4>
+              <div class="offer-price">¥29.9 <small>/ 份</small></div>
+              <p>适合刚开始用AI做外贸运营的人，直接复制提示词，把自己的产品、客户和聊天记录替换进去即可。</p>
+              <ul class="list">
+                <li>询盘分析提示词</li>
+                <li>客户跟进提示词</li>
+                <li>价格异议处理提示词</li>
+                <li>标题关键词提示词</li>
+                <li>广告诊断提示词</li>
+                <li>图片改图提示词</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="buy.html">购买/咨询</a></div>
+            </article>
 
-          <article class="price-card">
-            <span class="badge">陪跑服务</span>
-            <h3>AI外贸智能体搭建陪跑</h3>
-            <p>适合想把AI真正放进询盘分析、标题关键词、客户跟进和广告复盘流程的团队或个人。</p>
-            <div class="price">¥399 <small>起</small></div>
-            <ul>
-              <li>行业专属智能体设计</li>
-              <li>询盘分析助手搭建</li>
-              <li>标题关键词助手搭建</li>
-              <li>客户跟进助手搭建</li>
-              <li>广告诊断助手搭建</li>
-              <li>基础使用教程</li>
-            </ul>
-            <a class="btn btn-light" href="contact.html" style="width:100%;">预约沟通</a>
-          </article>
+            <article class="offer-card">
+              <span class="offer-label">表格工具</span>
+              <h4>阿里运营表格工具包</h4>
+              <div class="offer-price">¥9.9 <small>/ 份</small></div>
+              <p>适合阿里国际站运营、外贸业务员和老板做每周复盘，先把数据和客户跟进流程记录起来。</p>
+              <ul class="list">
+                <li>广告每周体检表</li>
+                <li>询盘客户分级表</li>
+                <li>客户跟进节奏表</li>
+                <li>产品发布检查清单</li>
+                <li>B2B标题关键词模板表</li>
+                <li>周会客户复盘表</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="buy.html">购买/咨询</a></div>
+            </article>
+
+            <article class="offer-card">
+              <span class="offer-label">话术库</span>
+              <h4>B2B客户跟进话术库</h4>
+              <div class="offer-price">¥99 <small>/ 份</small></div>
+              <p>适合每天需要跟客户沟通，但经常卡在“怎么写英文话术”的外贸业务员和SOHO。</p>
+              <ul class="list">
+                <li>报价后已读未回</li>
+                <li>客户嫌价格贵</li>
+                <li>MOQ太高</li>
+                <li>样品后不回复</li>
+                <li>老客户激活</li>
+                <li>节日节点跟进</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="buy.html">购买/咨询</a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="offer-section">
+          <div class="offer-section-title">
+            <span></span>
+            <h3>ChatGPT 外贸智能体模型链接</h3>
+          </div>
+
+          <div class="offer-grid two">
+            <article class="offer-card">
+              <span class="offer-label">单个模型</span>
+              <h4>单个智能体模型链接</h4>
+              <div class="offer-price">¥99 <small>/ 个</small></div>
+              <p>适合只想先体验一个智能体的人，比如只需要询盘分析、选品、广告诊断或视觉设计其中一个功能。</p>
+              <ul class="list">
+                <li>任选 1 个 ChatGPT 外贸智能体模型链接</li>
+                <li>基础使用说明</li>
+                <li>常用输入模板</li>
+                <li>适用场景说明</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="buy.html?type=single">购买单个智能体 ¥99</a></div>
+            </article>
+
+            <article class="offer-card featured">
+              <span class="offer-label">组合包</span>
+              <h4>6个智能体全套组合包</h4>
+              <div class="offer-price">¥499 <small>/ 套</small></div>
+              <p>适合外贸SOHO、阿里国际站运营、外贸业务员和小团队老板，把AI工具直接用到日常运营流程里。</p>
+              <ul class="list">
+                <li>全球选品大师</li>
+                <li>国际站增长诊断官</li>
+                <li>外贸询盘操盘官</li>
+                <li>B2B视觉设计师</li>
+                <li>广告操盘官</li>
+                <li>关键词大师</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="buy.html?type=package">购买6个全套 ¥499</a></div>
+            </article>
+          </div>
+
+          <div class="offer-note">
+            说明：智能体产品交付的是 ChatGPT 外贸智能体模型链接，不包含 ChatGPT 账号、Plus会员或其他官方会员服务。客户需要使用自己的 ChatGPT 账号打开和使用。
+          </div>
+        </div>
+
+        <div class="offer-section">
+          <div class="offer-section-title">
+            <span></span>
+            <h3>诊断服务</h3>
+          </div>
+
+          <div class="offer-grid">
+            <article class="offer-card">
+              <span class="offer-label">广告诊断</span>
+              <h4>阿里国际站广告账户体检</h4>
+              <div class="offer-price">¥99 <small>/ 次</small></div>
+              <p>适合广告有花费但没询盘、不知道哪些产品该暂停、全站推或关键词推广不知道怎么看数据的人。</p>
+              <ul class="list">
+                <li>产品ID维度诊断表</li>
+                <li>继续/优化/暂停建议</li>
+                <li>高点击无询盘产品清单</li>
+                <li>CPL偏高原因分析</li>
+                <li>下一周广告调整建议</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="contact.html">咨询广告体检</a></div>
+            </article>
+
+            <article class="offer-card featured">
+              <span class="offer-label">店铺诊断</span>
+              <h4>阿里国际站店铺增长诊断报告</h4>
+              <div class="offer-price">¥99 <small>/ 次</small></div>
+              <p>适合店铺开了但不知道问题在哪里，曝光、询盘、广告、产品结构和转化路径都需要整体看一遍。</p>
+              <ul class="list">
+                <li>店铺整体问题诊断</li>
+                <li>产品结构分析</li>
+                <li>广告数据初步体检</li>
+                <li>询盘转化问题判断</li>
+                <li>7天/14天优化动作清单</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="contact.html">咨询店铺诊断</a></div>
+            </article>
+
+            <article class="offer-card">
+              <span class="offer-label">客户分析</span>
+              <h4>重点客户聊天记录分析</h4>
+              <div class="offer-price">¥49 <small>/ 个客户</small></div>
+              <p>适合报价后已读未回、客户嫌价格贵、MOQ太高、样品后不反馈等关键客户。</p>
+              <ul class="list">
+                <li>客户意向等级判断</li>
+                <li>客户当前卡点</li>
+                <li>是否值得继续跟</li>
+                <li>下一步沟通策略</li>
+                <li>英文跟进话术</li>
+                <li>3轮追单节奏</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="contact.html">咨询客户分析</a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="offer-section">
+          <div class="offer-section-title">
+            <span></span>
+            <h3>陪跑服务</h3>
+          </div>
+
+          <div class="offer-grid two">
+            <article class="offer-card">
+              <span class="offer-label">7天陪跑</span>
+              <h4>阿里国际站7天诊断陪跑</h4>
+              <div class="offer-price">¥399 <small>/ 7天</small></div>
+              <p>适合想在一周内把店铺、产品、广告和询盘跟进梳理一遍的人。</p>
+              <ul class="list">
+                <li>第1天：店铺/广告/产品初诊</li>
+                <li>第2天：筛选重点优化产品</li>
+                <li>第3天：优化标题关键词</li>
+                <li>第4天：优化主图/详情页方向</li>
+                <li>第5天：广告产品处理建议</li>
+                <li>第6-7天：询盘跟进与复盘报告</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="contact.html">咨询7天陪跑</a></div>
+            </article>
+
+            <article class="offer-card">
+              <span class="offer-label">月度陪跑</span>
+              <h4>AI外贸运营1对1陪跑</h4>
+              <div class="offer-price">¥999 <small>/ 月起</small></div>
+              <p>适合外贸SOHO、小团队老板、阿里运营新人，把AI接入日常运营流程。</p>
+              <ul class="list">
+                <li>AI外贸工作流搭建</li>
+                <li>常用智能体配置建议</li>
+                <li>每周一次运营复盘</li>
+                <li>重点客户聊天记录分析</li>
+                <li>广告和产品优化建议</li>
+                <li>资料包/独立站/公众号引流建议</li>
+              </ul>
+              <div class="card-action"><a class="btn btn-primary" href="contact.html">咨询月度陪跑</a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="offer-note">
+          当前页面价格可作为参考版本。后续如果正式上线付款链接，建议低价资料包直接走自动交付；诊断服务、陪跑服务和客户聊天记录分析建议先联系确认需求，再付款交付。
         </div>
       </div>
     </section>
 
-
-    
-
-
-  <footer>
+<footer>
     <div class="site">
-      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V28 智能体购买确认页版</p>
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V31 付费项目价格修正版</p>
     </div>
   </footer>
 

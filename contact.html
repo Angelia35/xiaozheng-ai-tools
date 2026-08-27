@@ -1535,6 +1535,161 @@
       margin: 0;
     }
 
+  
+    .contact-panel {
+      background: radial-gradient(circle at 20% 20%, rgba(49,87,255,.22), transparent 32%),
+                  linear-gradient(135deg, #0f172a 0%, #17204a 100%);
+      border-radius: 34px;
+      padding: 48px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 42px;
+      align-items: center;
+      box-shadow: 0 28px 80px rgba(15,23,42,.24);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-panel::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -90px;
+      top: -100px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      filter: blur(2px);
+    }
+
+    .contact-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-panel h1 {
+      color: #fff;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.08;
+      margin: 24px 0 18px;
+      letter-spacing: -2px;
+      max-width: 680px;
+    }
+
+    .contact-panel p {
+      color: rgba(255,255,255,.8);
+      line-height: 1.95;
+      font-size: 16px;
+      max-width: 660px;
+    }
+
+    .contact-panel .eyebrow {
+      color: #fff;
+      background: rgba(255,255,255,.11);
+      border: 1px solid rgba(255,255,255,.16);
+      width: fit-content;
+      border-radius: 999px;
+      padding: 8px 14px;
+    }
+
+    .contact-panel .btn-light {
+      background: #fff;
+      color: #111827;
+      border-color: #fff;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .contact-card-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.13);
+      margin-bottom: 8px;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(49,87,255,.95);
+      box-shadow: 0 12px 30px rgba(49,87,255,.35);
+      font-size: 22px;
+    }
+
+    .contact-card-head h3 {
+      color: #fff;
+      margin: 0 0 3px;
+      font-size: 20px;
+    }
+
+    .contact-card-head p {
+      margin: 0;
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .contact-item {
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(255,255,255,.11);
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #fff;
+      font-size: 15.5px;
+      margin-bottom: 7px;
+    }
+
+    .contact-item span {
+      display: block;
+      color: rgba(255,255,255,.74);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .keyword-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .keyword-chips em {
+      font-style: normal;
+      display: inline-flex;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+@media (max-width: 900px) {
+      .contact-panel {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1571,47 +1726,62 @@
     </div>
   </section>
 
-
     <section id="contact">
       <div class="site">
-        <div class="contact-box">
+        <div class="contact-panel">
           <div>
-            <div class="eyebrow" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.16);color:white;"><span class="dot"></span> Contact</div>
-            <h2>想要资料包、工具定制或AI外贸陪跑？</h2>
-            <p>你可以通过公众号或微信联系我。后续这个网站会持续更新更多AI外贸工具、真实案例和运营模板。</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="javascript:void(0)">添加微信 / 公众号咨询</a>
-              <a class="btn btn-light" href="tools.html">先试用免费工具</a>
+            <div class="eyebrow"><span class="dot"></span> Contact</div>
+            <h1>想领取资料、使用工具或交流AI外贸？</h1>
+            <p>
+              你可以先关注公众号获取免费资料、工具更新和真实外贸案例。
+              后续如果有具体问题，也可以通过公众号后台留言，获取资料、工具更新和AI外贸实战内容。
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact-info">查看公众号关键词</a>
+              <a class="btn btn-light" href="tools.html">试用免费工具</a>
             </div>
           </div>
 
-          <div class="contact-card">
-            <div class="contact-row">
-              <strong>公众号</strong>
+          <div class="contact-card" id="contact-info">
+            <div class="contact-card-head">
+              <div class="contact-icon">✦</div>
+              <div>
+                <h3>公众号联系</h3>
+                <p>Public Account / Resource Access</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <strong>公众号名称</strong>
               <span>小郑的运营笔记</span>
             </div>
-            <div class="contact-row">
-              <strong>微信</strong>
-              <span>这里替换成你的微信号或二维码说明</span>
+
+            <div class="contact-item">
+              <strong>适合留言的问题</strong>
+              <span>AI外贸工具、资料领取、提示词、话术库、广告表、智能体、阿里运营诊断、工具站使用问题。</span>
             </div>
-            <div class="contact-row">
-              <strong>适合咨询</strong>
-              <span>AI外贸资料包 / 阿里运营诊断 / 智能体搭建 / 外贸工具站搭建</span>
-            </div>
-            <div class="contact-row">
+
+            <div class="contact-item">
               <strong>建议自动回复关键词</strong>
-              <span>AI工具站 / 提示词 / 话术库 / 广告表 / 智能体</span>
+              <div class="keyword-chips">
+                <em>AI工具站</em>
+                <em>提示词</em>
+                <em>话术库</em>
+                <em>广告表</em>
+                <em>询盘表</em>
+                <em>跟进表</em>
+                <em>智能体</em>
+                <em>咨询</em>
+              </div>
             </div>
-          </div>
+</div>
         </div>
       </div>
     </section>
-  
 
-
-  <footer>
+<footer>
     <div class="site">
-      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V32 对外引流工具站版</p>
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V35 联系页公开展示优化版</p>
     </div>
   </footer>
 

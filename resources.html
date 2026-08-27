@@ -1513,6 +1513,216 @@
     @media(max-width:1050px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:720px){.purchase-grid,.process-grid,.agent-list{grid-template-columns:1fr}}
 
+  
+    .download-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .download-summary {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .download-summary h3 {
+      margin-bottom: 10px;
+    }
+
+    .download-summary p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .keyword-box {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .keyword-box h3 {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .keyword-box p {
+      color: rgba(255,255,255,.75);
+      margin: 0 0 14px;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .keyword-list span {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .download-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 12px 34px rgba(16,24,40,.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+    }
+
+    .download-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .download-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 14.5px;
+    }
+
+    .download-card .card-action {
+      margin-top: auto;
+    }
+
+    .download-tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .download-meta {
+      background: #f8f9ff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      margin: 14px 0;
+    }
+
+    .download-meta strong {
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .download-meta span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .resource-process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .resource-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 12px 34px rgba(16,24,40,.05);
+    }
+
+    .resource-step strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .resource-step span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .resource-bottom-cta {
+      background: linear-gradient(135deg, #3157ff, #7c3aed);
+      color: #fff;
+      border-radius: 30px;
+      padding: 34px;
+      margin-top: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .resource-bottom-cta h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .resource-bottom-cta p {
+      color: rgba(255,255,255,.78);
+      margin: 0 0 18px;
+    }
+
+    @media (max-width: 1050px) {
+      .download-hero-grid,
+      .download-grid,
+      .resource-process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .download-hero-grid,
+      .download-grid,
+      .resource-process {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+    .note-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(16,24,40,.05);
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
+    .note-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .note-card p {
+      margin: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -1533,8 +1743,6 @@
         <a href="resources.html" class="active">资料领取</a>
         <a href="articles.html">学习内容</a>
         <a href="cases.html">案例库</a>
-        <a href="paid.html">付费项目</a>
-        <a href="buy.html">购买确认</a>
         <a href="contact.html">联系我</a>
       </nav>
     </div>
@@ -1551,79 +1759,202 @@
     </div>
   </section>
 
-
     <section id="resources">
       <div class="site">
         <div class="section-head">
           <div>
-            <div class="eyebrow"><span class="dot"></span> Free Resources</div>
-            <h2>免费资料领取区</h2>
+            <div class="eyebrow"><span class="dot"></span> Free Resource Center</div>
+            <h2>免费运营表格资料中心</h2>
           </div>
-          <p>工具适合快速体验和判断方向，资料适合收藏复用。你可以先领取体验版模板，再根据自己的行业做调整。</p>
+          <p>这里放适合外贸业务员、阿里国际站运营、SOHO和小团队直接使用的基础表格。建议通过公众号关键词领取，把网站流量沉淀到私域。</p>
         </div>
 
-        <div class="resource-grid">
-          <article class="resource-card">
-            <span class="resource-label">体验版</span>
-            <h3>AI外贸提示词体验包</h3>
-            <p>适合刚开始学习AI外贸的人，包含客户分析、标题关键词、跟进话术和广告复盘的基础提示词。</p>
-            <ul class="list">
-              <li>客户分析基础提示词</li>
-              <li>标题关键词基础提示词</li>
-              <li>跟进话术基础提示词</li>
-            </ul>
-            <div class="card-action"><a href="contact.html" class="mini-btn">关注公众号领取</a></div>
-          </article>
+        <div class="download-hero-grid">
+          <div class="download-summary">
+            <h3>这页的作用</h3>
+            <p>用户在工具页体验完以后，可以在这里领取表格模板，把一次性分析变成可持续复盘。第一批资料重点围绕广告、询盘、跟进、产品发布、标题关键词和AI指令。</p>
+            <div class="resource-process">
+              <div class="resource-step">
+                <strong>01 选择资料</strong>
+                <span>根据当前问题选择广告、询盘、跟进或产品发布类模板。</span>
+              </div>
+              <div class="resource-step">
+                <strong>02 关注公众号</strong>
+                <span>关注「小郑的运营笔记」，方便后续更新资料。</span>
+              </div>
+              <div class="resource-step">
+                <strong>03 回复关键词</strong>
+                <span>按卡片里的关键词回复，领取对应体验版资料。</span>
+              </div>
+              <div class="resource-step">
+                <strong>04 配合工具使用</strong>
+                <span>把工具分析结果记录到表格里，每周复盘。</span>
+              </div>
+            </div>
+          </div>
 
-          <article class="resource-card">
-            <span class="resource-label">模板</span>
-            <h3>B2B客户跟进话术体验版</h3>
-            <p>适合报价后已读未回、客户嫌价格贵、MOQ太高、样品后未回复等常见场景。</p>
-            <ul class="list">
-              <li>WhatsApp短话术</li>
-              <li>阿里站内信话术</li>
-              <li>邮件跟进话术</li>
-            </ul>
-            <div class="card-action"><a href="contact.html" class="mini-btn">回复关键词领取</a></div>
-          </article>
-
-          <article class="resource-card">
-            <span class="resource-label">表格</span>
-            <h3>广告体检表体验版</h3>
-            <p>适合每周广告初筛，记录曝光、点击、花费、询盘数、CPL和产品处理动作。</p>
-            <ul class="list">
-              <li>产品ID记录</li>
-              <li>CTR/询盘率/CPL</li>
-              <li>暂停/优化/观察判断</li>
-            </ul>
-            <div class="card-action"><a href="contact.html" class="mini-btn">获取表格模板</a></div>
-          </article>
-
-          <article class="resource-card">
-            <span class="resource-label">清单</span>
-            <h3>AI外贸运营检查清单</h3>
-            <p>适合新手快速检查自己的产品发布、客户跟进、广告复盘和内容引流是否有遗漏。</p>
-            <ul class="list">
-              <li>产品发布检查</li>
-              <li>询盘跟进检查</li>
-              <li>广告复盘检查</li>
-            </ul>
-            <div class="card-action"><a href="contact.html" class="mini-btn">领取检查清单</a></div>
-          </article>
-        </div>
-
-        <div class="notice" style="margin-top:18px;">
-          建议领取方式：关注公众号「小郑的运营笔记」，后续可设置自动回复关键词，例如「AI工具站」「提示词」「话术库」「广告表」。
+          <div class="keyword-box">
+            <h3>公众号领取关键词</h3>
+            <p>建议设置自动回复。用户不需要加微信也能先拿到体验版资料，后续再根据需求咨询智能体或服务。</p>
+            <div class="keyword-list">
+              <span>广告表</span>
+              <span>询盘表</span>
+              <span>跟进表</span>
+              <span>发布清单</span>
+              <span>关键词表</span>
+              <span>快捷指令</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    
+    <section id="downloads">
+      <div class="site">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> Templates</div>
+            <h2>可领取的免费学习资料</h2>
+          </div>
+          <p>第一阶段先放体验版表格和清单，用户拿到后能立刻套用。完整版本可在后续资料包或陪跑服务里继续升级。</p>
+        </div>
 
+        <div class="download-grid">
+          <article class="download-card">
+            <span class="download-tag">广告复盘</span>
+            <h3>阿里国际站广告每周体检表</h3>
+            <p>适合每周复盘广告产品，快速判断哪些产品继续投放、哪些需要优化、哪些应该暂停。</p>
+            <div class="download-meta">
+              <strong>适合谁</strong>
+              <span>阿里国际站运营、广告投放负责人、老板自己看数据的小团队。</span>
+            </div>
+            <div class="download-meta">
+              <strong>包含内容</strong>
+              <span>产品ID、曝光、点击、CTR、花费、询盘数、询盘率、CPL、国家来源、买家质量、处理动作。</span>
+            </div>
+            <ul class="list">
+              <li>适合每周复盘</li>
+              <li>配合广告体检工具使用</li>
+              <li>能沉淀产品处理记录</li>
+            </ul>
+            <div class="card-action"><a href="contact.html" class="mini-btn">回复关键词：广告表</a></div>
+          </article>
 
-  <footer>
+          <article class="download-card">
+            <span class="download-tag">询盘管理</span>
+            <h3>B2B询盘客户分级跟进表</h3>
+            <p>适合记录客户国家、需求、采购数量、阶段、等级和下一步动作，避免客户跟进混乱。</p>
+            <div class="download-meta">
+              <strong>适合谁</strong>
+              <span>外贸业务员、SOHO、需要管理多个询盘的新手团队。</span>
+            </div>
+            <div class="download-meta">
+              <strong>包含内容</strong>
+              <span>客户名称、国家、客户类型、产品需求、采购数量、预算、阶段、A/B/C/D等级、核心卡点、下次跟进时间。</span>
+            </div>
+            <ul class="list">
+              <li>配合询盘分级工具使用</li>
+              <li>适合日常客户管理</li>
+              <li>方便周会复盘客户</li>
+            </ul>
+            <div class="card-action"><a href="contact.html" class="mini-btn">回复关键词：询盘表</a></div>
+          </article>
+
+          <article class="download-card">
+            <span class="download-tag">客户跟进</span>
+            <h3>外贸客户7天跟进节奏表</h3>
+            <p>适合报价后、样品后、客户已读未回等场景，帮助业务员知道第几天该怎么跟。</p>
+            <div class="download-meta">
+              <strong>适合谁</strong>
+              <span>经常卡在“客户不回复，不知道怎么继续跟”的外贸业务员。</span>
+            </div>
+            <div class="download-meta">
+              <strong>包含内容</strong>
+              <span>第1天确认需求、第2天补充方案、第3天跟报价反馈、第5天给替代方案、第7天低压力确认、第14天二次激活。</span>
+            </div>
+            <ul class="list">
+              <li>配合聊天记录分析工具使用</li>
+              <li>适合报价后追单</li>
+              <li>能减少无效催单</li>
+            </ul>
+            <div class="card-action"><a href="contact.html" class="mini-btn">回复关键词：跟进表</a></div>
+          </article>
+
+          <article class="download-card">
+            <span class="download-tag">产品发布</span>
+            <h3>阿里国际站产品发布检查清单</h3>
+            <p>适合发布新品或重写老品时检查标题、主图、详情页、MOQ、定制能力和关键词覆盖。</p>
+            <div class="download-meta">
+              <strong>适合谁</strong>
+              <span>阿里运营、新手业务员、需要批量检查产品链接的团队。</span>
+            </div>
+            <div class="download-meta">
+              <strong>包含内容</strong>
+              <span>标题是否含核心词、是否偏B端、主图是否清晰、详情页前3屏是否讲清楚、是否突出定制/包装/交期。</span>
+            </div>
+            <ul class="list">
+              <li>适合新品发布前检查</li>
+              <li>适合老品优化复盘</li>
+              <li>配合标题关键词工具使用</li>
+            </ul>
+            <div class="card-action"><a href="contact.html" class="mini-btn">回复关键词：发布清单</a></div>
+          </article>
+
+          <article class="download-card">
+            <span class="download-tag">关键词标题</span>
+            <h3>B2B标题关键词组合模板表</h3>
+            <p>适合把核心关键词、属性词、客户类型词、应用场景词、定制能力词组合成更偏B端的标题。</p>
+            <div class="download-meta">
+              <strong>适合谁</strong>
+              <span>不知道怎么写标题、关键词堆砌严重、标题偏C端的运营和业务员。</span>
+            </div>
+            <div class="download-meta">
+              <strong>包含内容</strong>
+              <span>核心关键词、产品属性词、应用场景词、客户类型词、定制能力词、包装词、批发采购词、标题组合公式。</span>
+            </div>
+            <ul class="list">
+              <li>适合标题重写</li>
+              <li>适合关键词拓展</li>
+              <li>适合B端表达优化</li>
+            </ul>
+            <div class="card-action"><a href="contact.html" class="mini-btn">回复关键词：关键词表</a></div>
+          </article>
+
+          <article class="download-card">
+            <span class="download-tag">AI指令</span>
+            <h3>AI外贸快捷指令体验版</h3>
+            <p>适合不知道怎么问AI的人，直接复制模板，把自己的产品、客户、聊天记录替换进去。</p>
+            <div class="download-meta">
+              <strong>适合谁</strong>
+              <span>刚开始用ChatGPT做外贸运营、客户跟进、标题关键词和广告分析的人。</span>
+            </div>
+            <div class="download-meta">
+              <strong>包含内容</strong>
+              <span>询盘分析、已读未回跟进、价格异议处理、标题关键词生成、广告诊断、图片翻译改图指令。</span>
+            </div>
+            <ul class="list">
+              <li>适合公众号用户快速上手</li>
+              <li>配合快捷指令库使用</li>
+              <li>可直接复制替换信息</li>
+            </ul>
+            <div class="card-action"><a href="prompts.html" class="mini-btn">查看快捷指令库</a></div>
+          </article>
+        </div>
+
+        <div class="resource-bottom-cta">
+          <h3>建议领取方式</h3>
+          <p>关注公众号「小郑的运营笔记」，回复对应关键词即可领取体验版资料。后续网站也会继续更新更多外贸工具、运营表格和实战案例。</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="contact.html">查看联系方式</a>
+            <a class="btn btn-light" href="articles.html">查看学习内容</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer>
     <div class="site">
-      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V28 智能体购买确认页版</p>
+      <p>© 2026 小郑AI外贸工具站 · AI Tools for B2B Exporters · V32 对外引流工具站版</p>
     </div>
   </footer>
 
